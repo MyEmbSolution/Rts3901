@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Jan. 10, 2013
+#
+
+pkg_$(CONFIG_PACKAGE_gdbserver) += devel/gdb
+
+# dependency
+gdbserver: zlib

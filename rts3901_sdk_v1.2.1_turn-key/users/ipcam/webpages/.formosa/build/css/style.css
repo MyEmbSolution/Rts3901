@@ -1,0 +1,653 @@
+.container-header {
+    height: 82px;
+    overflow: hidden;
+}
+
+.container-body {
+    position: absolute;
+    top: 82px;
+    bottom: 28px;
+    width: 100%;
+    overflow: auto;
+}
+
+.container-bottom {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin: auto;
+    width: 100%;
+    height: 28px;
+    overflow: hidden;
+    color: #FFF;
+    word-spacing: 3px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #01499E;
+}
+
+#responseAlert {
+    position: absolute;
+    top: 82px;
+    right: 0px;
+    text-align: right;
+    padding: 8px;
+}
+
+#mdAlert {
+    position: absolute;
+    bottom: 56px;
+    right: 0px;
+    text-align: right;
+    padding: 8px;
+}
+
+.top_menu {
+    padding: 0px;
+}
+
+.column2 th {
+    width: 50%;
+}
+
+.column2 td {
+    width: 50%;
+}
+
+.full-fill {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.submenu {
+    height:100%;
+    background-color: #F5F5F5;
+    overflow: hidden;
+}
+
+.submenu > .submenu_entry {
+    position: relative;
+    margin: 15px 0px;
+    height: 20px;
+}
+
+.submenu > .submenu_entry > .submenu_icon {
+    position: absolute;
+}
+
+.submenu > .submenu_entry > .submenu_text {
+    position: absolute;
+    left: 32px;
+}
+
+.submenu > .submenu_entry > .submenu_arrow {
+    position: absolute;
+    right: 0px;
+}
+
+.param_menu {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.param_menu_entry {
+    position: relative;
+    margin: 15px 0px;
+    height: 44px;
+}
+
+.param_menu_entry > div {
+    height: 22px;
+}
+
+.param_menu_entry > div > div.param_menu_icon {
+    position: absolute;
+    margin-top: 3px;
+}
+
+.param_menu_entry > div > div.param_menu_text {
+    position: absolute;
+    left: 28px;
+}
+
+.param_menu_entry > div.param_menu_control {
+    position: absolute;
+    left: 28px;
+    right: 0px;
+}
+
+.param_menu_entry > div > div.param_menu_description {
+    position: absolute;
+}
+
+.param_menu_entry > div > div.param_menu_value {
+    position: absolute;
+    right: 0px;
+}
+
+.param_menu_entry div.start {
+    position: absolute;
+}
+
+.param_menu_entry div.end {
+    position: absolute;
+    right: 0px;
+}
+
+.main-content {
+    height: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    background: url("/img/content_left_bar.png") repeat-y scroll -18px 0px transparent;
+    overflow: hidden;
+}
+
+.main-content-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('/img/realtek_background_logo.png') no-repeat right bottom;
+    overflow-y: auto;
+}
+
+.sub-content {
+    height: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    background: url("/img/content_left_bar.png") repeat-y scroll -18px 0px transparent;
+    overflow: hidden;
+}
+
+.liveview-video,.motion-video {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 48px;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
+
+.video-params,.motion-params {
+    position: absolute;
+    height: 48px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding-top: 12px;
+    text-align: center;
+    background-color: #F5F5F5;
+}
+
+.video-params strong {
+    margin-right: 18px;
+}
+
+.motion-params strong {
+    margin-right: 18px;
+}
+
+ul.nav {
+    margin-top: 20px;
+}
+
+div.tab-content {
+    position: absolute;
+    overflow-y: auto;
+    top: 68px;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+}
+
+div.tab-content > div.tab-pane {
+    position: relative;
+    height: 100%;
+}
+
+div.tab-content > div.tab-pane > div.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+div.tab-content > div.tab-pane > div.tab-first-row{
+    position: absolute;
+    height: 32px;
+    left: 15px;
+    right: 15px;
+}
+
+div.tab-content > div.tab-pane > div.tab-second-row{
+    position: absolute;
+    top: 32px;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+}
+
+div.fit-height {
+    height: 100%;
+}
+
+div.ap-list {
+    position: absolute;
+    top: 8px;
+    bottom: 48px;
+    left: 15px;
+    right: 15px;
+    overflow: auto;
+    background-color: #e1e1e1;
+    border: outset #e1e1e1 1px;
+}
+
+div.ap-list > table {
+    width: 100%;
+}
+
+div.ap-list + button {
+    position: absolute;
+    right: 15px;
+    bottom: 0px;
+}
+
+input[name=station_wpsMode] {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#station_wpsServerPin,#station_wpsClientPin {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 90px;
+}
+
+.input-password {padding: 0;margin: 0;border: 1px solid #ccc;width: 150px;border-radius: 5px;overflow: hidden;background-color: #fff}
+.input-password input {padding: 0px 0px;width: 80%;color:#4374bb;border:none;box-shadow: none;background-color: transparent; background-image: none;-webkit-appearance: none;-moz-appearance: none;appearance: none;}
+.input-password input:focus {outline: none;}
+.image-eye-off {float:right;padding: 0;margin: 0;border: none;width: 25px;border-radius: 5px;overflow: hidden;background-color: #fff;background: url("/img/eye-off.png") no-repeat 100% -2px;;cursor:pointer;cursor:hand}
+.image-eye-on {float:right;padding: 0;margin: 0;border: none;width: 25px;border-radius: 5px;overflow: hidden;background-color: #fff;background: url("/img/eye-on.png") no-repeat 100% -2px;;cursor:pointer;cursor:hand}
+
+.list-parent-dir {
+    background-color: #ddd;
+}
+
+.list-directory {
+    background-color: #eee;
+}
+
+.fileTree {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 192px;
+    overflow-y: auto;
+    border: outset #e1e1e1 1px;
+}
+
+.leftTimeInfo {
+    position: absolute;
+    height: 84px;
+    left: 15px;
+    right: 15px;
+    bottom: 96px;
+}
+
+.storageInfo {
+    position: absolute;
+    height: 96px;
+    left: 15px;
+    right: 15px;
+    bottom: 0px;
+}
+
+.storageInfo > div {
+    margin-top: 8px;
+}
+
+.storageInfo > div.storageTextInfo {
+    height: 44px;
+}
+
+.storageInfo .totalSize {
+    position: absolute;
+    left: 0px;
+}
+
+.storageInfo .freeSize {
+    position: absolute;
+    right: 0px;
+}
+
+.storageInfo #storage_capability_bg {
+    height: 5px;
+    background-color: #888;
+}
+
+.storageInfo #storage_capability {
+    background-color:blue;
+    height:5px;
+    width:0%;
+}
+
+.storageInfo > .storageButton {
+    position: absolute;
+    height: 22px;
+    right: 0px;
+}
+
+.range-style > input[type=range] {
+    display: inline;
+    width: 80%;
+    padding: 0px;
+}
+
+div.range-style > span {
+    position: absolute;
+    right: 0px;
+}
+
+td.range-style > span {
+    position: absolute;
+    margin-left: 8px;
+}
+
+/* background-color */
+ .main_content_bg{
+        background: #C9CACA;
+        /*Chrome*/
+        background:-webkit-gradient(linear, left top, left bottom, from(#C9CACA), to(#F1F1F1));
+        /*FireFox*/
+        background: -moz-linear-gradient(top, #C9CACA, #F1F1F1);
+        /*IE6~IE8*/
+        filter: progid: DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#C9CACA', endColorstr='#F1F1F1');
+        /* Opera 11.10+ */
+        background: -o-linear-gradient(top, #C9CACA, #F1F1F1);
+        margin: 0px;
+}
+
+    .ui-slider .ui-slider-handle { width:0.75em; height:0.75em; background:url(img/sliderbutton.png) -2px -2px no-repeat; border:none; cursor:pointer; }
+    .ui-slider-horizontal { height:2px; width:100%; background:#d6d6d6; border:#d6d6d6; }
+    .ui-slider-horizontal .ui-slider-handle { top:-0.15em; margin-left:-0.3em; }
+
+
+.top_menu_icon_liveview_off{width:32px;height:32px;margin: auto; background:  url("/img/top_menu_icon.png") no-repeat scroll 0px 0px transparent;}
+.top_menu_icon_liveview_on{width:32px;height:32px;margin: auto; background:  url("/img/top_menu_icon.png") no-repeat scroll 0px -42px transparent;}
+.top_menu_icon_network_off{width:32px;height:32px;margin: auto; background:  url("/img/top_menu_icon.png") no-repeat scroll 0px -86px transparent;}
+.top_menu_icon_network_on{width:32px;height:32px;margin: auto; background:  url("/img/top_menu_icon.png") no-repeat scroll 0px -128px transparent;}
+.top_menu_icon_camera_off{width:32px;height:32px;margin: auto; background:  url("/img/top_menu_icon.png") no-repeat scroll 0px -170px transparent;}
+.top_menu_icon_camera_on{width:32px;height:32px;margin: auto; background:  url("/img/top_menu_icon.png") no-repeat scroll 0px -212px transparent;}
+.top_menu_icon_admin_off{width:32px;height:32px;margin: auto; background:  url("/img/top_menu_icon.png") no-repeat scroll 0px -256px transparent;}
+.top_menu_icon_admin_on{width:32px;height:32px;margin: auto; background:  url("/img/top_menu_icon.png") no-repeat scroll 0px -298px transparent;}
+.top_menu_icon_alarm_off{width:32px;height:32px;margin: auto; background:  url("/img/top_menu_icon.png") no-repeat scroll 0px -340px transparent;}
+.top_menu_icon_alarm_on{width:32px;height:32px;margin: auto; background:  url("/img/top_menu_icon.png") no-repeat scroll 0px -382px transparent;}
+.top_menu_icon_status_off{width:32px;height:32px;margin: auto; background:  url("/img/top_menu_icon.png") no-repeat scroll 0px -424px transparent;}
+.top_menu_icon_status_on{width:32px;height:32px;margin: auto; background:  url("/img/top_menu_icon.png") no-repeat scroll 0px -466px transparent;}
+
+.top_menu_bg_on{padding: 15px;background: url("/img/ipcam_icon.png") no-repeat scroll 0% 0% transparent;background-size: 319% 102%;cursor:pointer;cursor:hand}
+.top_menu_bg_off{padding: 15px;background: url("/img/ipcam_icon.png") no-repeat scroll 49% 0% transparent;background-size: 319% 102%;cursor:pointer;cursor:hand}
+
+.top_menu_text_on{color:#FFFFFF;position: relative;top:10px;font-weight:bold;text-align: center;}
+.top_menu_text_off{color:#717171;position: relative;top:10px;font-weight:bold;text-align: center;}
+
+.ipcam_icon{width:168px;height:40px;margin: auto;background:  url("/img/ipcam_icon.png") no-repeat scroll -415px 0px transparent;}
+.ipcam_icon_bg{height:82px;padding: 15px;background:  url("/img/ipcam_logo_bg.png") repeat-x -593px 0px transparent;}
+
+
+
+
+.liveview_select_bar_bg{height:58px;background:url("/img/liveview_select_bar_bg.png") repeat-x transparent;}
+.liveview_control_icon_brightness{width:15px;height:15px;background:  url("/img/liveview_control_icon.png") no-repeat scroll 0px 3px transparent;}
+.liveview_control_icon_mic{width:15px;height:15px;background:  url("/img/liveview_control_icon.png") no-repeat scroll 0px -21px transparent;}
+.liveview_control_icon_speaker{width:15px;height:15px;background:  url("/img/liveview_control_icon.png") no-repeat scroll 0px -43px transparent;}
+.liveview_control_text{color:#717171;position: relative;left:4px;}
+
+.liveview_control_button_dzoom_off{width:96px;height:67px;background:  url("/img/liveview_control_button.png") no-repeat scroll 0px 0px transparent;margin:5px}
+.liveview_control_button_fullscreen_off{width:96px;height:67px;background:  url("/img/liveview_control_button.png") no-repeat scroll 0px -77px transparent;margin:5px}
+.liveview_control_button_play_off{width:96px;height:67px;background:  url("/img/liveview_control_button.png") no-repeat scroll 0px -154px transparent;margin:5px}
+.liveview_control_button_recording_off{width:96px;height:67px;background:  url("/img/liveview_control_button.png") no-repeat scroll 0px -231px transparent;margin:5px}
+.liveview_control_button_snapshot_off{width:96px;height:67px;background:  url("/img/liveview_control_button.png") no-repeat scroll 0px -308px transparent;margin:5px}
+.liveview_control_button_stop_off{width:96px;height:67px;background:  url("/img/liveview_control_button.png") no-repeat scroll 0px -385px transparent;margin:5px}
+.liveview_control_button_talk_off{width:96px;height:67px;background:  url("/img/liveview_control_button.png") no-repeat scroll 0px -462px transparent;margin:5px}
+
+.liveview_control_ptz_off{width:202px;height:202px;background:  url("/img/ptz_control.png") no-repeat scroll 0px 0px transparent;margin:5px}
+
+.liveview_select_bar_text{color:#717171;font-weight:bold;}
+.select-style {padding: 0;margin: 0;border: 1px solid #ccc;border-radius: 5px;overflow: hidden;background-color: #fff;background: #fff url("/img/select_box_icon.png") no-repeat 100% 0px;}
+.select-style select {padding: 0px 0px;width: 100%;color:#4374bb;border: none;box-shadow: none;background-color: transparent; background-image: none;-webkit-appearance: none;-moz-appearance: none;appearance: none;}
+.select-style select:focus {outline: none;}
+
+.submenu_text_off{color:#717171;position: relative;left:10px;font-weight:bold;cursor:pointer;cursor:hand}
+.submenu_text_on{color:#00479d;position: relative;left:10px;font-weight:bold;cursor:pointer;cursor:hand}
+.submenu_arrow_off{display:none}
+.submenu_arrow_on{color:#00479d;font-weight:bold}
+.submenu_space{height:15px}
+
+.submenu_icon_isp_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll 0px 0px transparent;}
+.submenu_icon_isp_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll 0px -27px transparent;}
+.submenu_icon_mask_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll 0px -54px transparent;}
+.submenu_icon_mask_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll 0px -81px transparent;}
+
+.submenu_icon_osd_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -28px 0px transparent;}
+.submenu_icon_osd_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -28px -27px transparent;}
+.submenu_icon_stream_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -28px -54px transparent;}
+.submenu_icon_stream_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -28px -81px transparent;}
+
+.submenu_icon_discovery_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -56px 0px transparent;}
+.submenu_icon_discovery_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -56px -27px transparent;}
+.submenu_icon_network_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -56px -54px transparent;}
+.submenu_icon_network_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -56px -81px transparent;}
+
+.submenu_icon_wireless_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -84px 0px transparent;}
+.submenu_icon_wireless_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -84px -27px transparent;}
+.submenu_icon_wireless_signal{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -84px -54px transparent;}
+.submenu_icon_wireless_lock{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -84px -81px transparent;}
+
+.submenu_icon_fwupgrade_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -112px 0px transparent;}
+.submenu_icon_fwupgrade_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -112px -27px transparent;}
+.submenu_icon_reboot_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -112px -54px transparent;}
+.submenu_icon_reboot_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -112px -81px transparent;}
+
+.submenu_icon_reset_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -140px 0px transparent;}
+.submenu_icon_reset_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -140px -27px transparent;}
+.submenu_icon_user_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -140px -54px transparent;}
+.submenu_icon_user_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -140px -81px transparent;}
+
+.submenu_icon_alarm_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -168px 0px transparent;}
+.submenu_icon_alarm_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -168px -27px transparent;}
+.submenu_icon_motion_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -168px -54px transparent;}
+.submenu_icon_motion_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -168px -81px transparent;}
+
+.submenu_icon_sd_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -196px 0px transparent;}
+.submenu_icon_sd_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -196px -27px transparent;}
+.submenu_icon_tcpip_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -196px -54px transparent;}
+.submenu_icon_tcpip_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -196px -81px transparent;}
+.submenu_icon_ethernet_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -196px -54px transparent;}
+.submenu_icon_ethernet_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -196px -81px transparent;}
+
+.submenu_icon_system_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -224px 0px transparent;}
+.submenu_icon_system_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -224px -27px transparent;}
+.submenu_icon_wireless_off{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -224px -54px transparent;}
+.submenu_icon_wireless_on{width:18px;height:17px;background:  url("/img/menu_icon.png") no-repeat scroll -224px -81px transparent;}
+
+.submenu_icon_audio_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll 0px 0px transparent;}
+.submenu_icon_audio_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll 0px -28px transparent;}
+.submenu_icon_ddns_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll 0px -56px transparent;}
+.submenu_icon_ddns_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll 0px -84px transparent;}
+
+.submenu_icon_ipfilter_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -28px 0px transparent;}
+.submenu_icon_ipfilter_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -28px -28px transparent;}
+.submenu_icon_p2p_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -28px -56px transparent;}
+.submenu_icon_p2p_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -28px -84px transparent;}
+
+.submenu_icon_portforwarding_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -56px -0px transparent;}
+.submenu_icon_portforwarding_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -56px -28px transparent;}
+.submenu_icon_pppoe_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -56px -56px transparent;}
+.submenu_icon_pppoe_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -56px -84px transparent;}
+
+.submenu_icon_qos_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -84px -0px transparent;}
+.submenu_icon_qos_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -84px -28px transparent;}
+.submenu_icon_schedule_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -84px -56px transparent;}
+.submenu_icon_schedule_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -84px -84px transparent;}
+
+.submenu_icon_time_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -112px -0px transparent;}
+.submenu_icon_time_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -112px -28px transparent;}
+.submenu_icon_upnp_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -112px -56px transparent;}
+.submenu_icon_upnp_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -112px -84px transparent;}
+
+.submenu_icon_audiodetct_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -140px -0px transparent;}
+.submenu_icon_audiodetct_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -140px -28px transparent;}
+.submenu_icon_email_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -140px -56px transparent;}
+.submenu_icon_email_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -140px -84px transparent;}
+
+.submenu_icon_ftp_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -168px -0px transparent;}
+.submenu_icon_ftp_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -168px -28px transparent;}
+.submenu_icon_notification_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -168px -56px transparent;}
+.submenu_icon_notification_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -168px -84px transparent;}
+
+.submenu_icon_samba_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -196px -0px transparent;}
+.submenu_icon_samba_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -196px -28px transparent;}
+.submenu_icon_tamper_off{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -196px -56px transparent;}
+.submenu_icon_tamper_on{width:18px;height:18px;background:  url("/img/menu_icon_2.png") no-repeat scroll -196px -84px transparent;}
+
+
+.tab{margin-top: 20px;}
+.tab_on{border:outset #00479d 2px;margin-right:1px;text-align:center;border-radius: 7px;background:#00479d;color:#FFFFFF;margin-left:-6px;cursor:pointer;cursor:hand}
+.tab_off{border:outset #898989 2px;margin-right:1px;text-align:center;border-radius: 7px;background:#898989;color:#FFFFFF;margin-left:-6px;cursor:pointer;cursor:hand}
+.tab_title{color:#004495;font-weight:bold;font-size:1.3em}
+.tab_sub_title{color:#5c5b5b;font-weight:bold;font-size:1.0em}
+.tab_control_discription{color:#807f80;font-weight:bold;font-size:1.0em}
+
+.camera_isp_text{color:#717171;font-weight:bold;}
+.camera_isp_icon_awb{width:14px;height:13px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px 0px transparent;}
+.camera_isp_icon_brightness{width:17px;height:11px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -23px transparent;}
+.camera_isp_icon_contrast{width:13px;height:13px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -44px transparent;}
+.camera_isp_icon_flicker{width:14px;height:14px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -67px transparent;}
+.camera_isp_icon_flip{width:15px;height:15px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -91px transparent;}
+.camera_isp_icon_gamma{width:13px;height:13px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -116px transparent;}
+.camera_isp_icon_mirror{width:16px;height:15px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -139px transparent;}
+.camera_isp_icon_saturation{width:16px;height:14px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -164px transparent;}
+.camera_isp_icon_sharpness{width:17px;height:11px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -188px transparent;}
+.camera_isp_icon_3dnr{width:18px;height:18px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -204px transparent;}
+.camera_isp_icon_corridormode{width:18px;height:18px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -227px transparent;}
+.camera_isp_icon_dehaze{width:18px;height:18px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -250px transparent;}
+.camera_isp_icon_ldc{width:18px;height:18px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -273px transparent;}
+.camera_isp_icon_rotate{width:18px;height:18px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -296px transparent;}
+.camera_isp_icon_wdr{width:18px;height:18px;background:  url("/img/camera_isp_icon.png") no-repeat scroll 0px -319px transparent;}
+
+
+.wifi_aplist_lock_off{width:18px;height:17px;background:  url("/img/wfi_ap_list.png") no-repeat scroll 0px 0px transparent;}
+.wifi_aplist_lock_on{width:18px;height:17px;background:  url("/img/wfi_ap_list.png") no-repeat scroll 0px -32px transparent;}
+.wifi_aplist_signal_off_30{width:18px;height:17px;background:  url("/img/wfi_ap_list.png") no-repeat scroll 0px -64px transparent;}
+.wifi_aplist_signal_on_30{width:18px;height:17px;background:  url("/img/wfi_ap_list.png") no-repeat scroll 0px -96px transparent;}
+.wifi_aplist_signal_off_60{width:18px;height:17px;background:  url("/img/wfi_ap_list.png") no-repeat scroll 0px -128px transparent;}
+.wifi_aplist_signal_on_60{width:18px;height:17px;background:  url("/img/wfi_ap_list.png") no-repeat scroll 0px -160px transparent;}
+.wifi_aplist_signal_off_100{width:18px;height:17px;background:  url("/img/wfi_ap_list.png") no-repeat scroll 0px -192px transparent;}
+.wifi_aplist_signal_on_100{width:18px;height:17px;background:  url("/img/wfi_ap_list.png") no-repeat scroll 0px -224px transparent;}
+.wifi_aplist_tr_select_bg{width:10px;height:27px;background:  url("/img/wfi_ap_list.png") repeat-x 0px -256px transparent;cursor:pointer;cursor:hand;}
+.wifi_aplist_tr_unselect_bg{height:27px;background: url('/img/wifi_list_line.png') no-repeat scroll bottom;cursor:pointer;cursor:hand}
+
+
+div.tableContainer {
+	display: table;
+	text-indent: 5px;
+	padding:10px 0px 0px 0px;
+	/*border: 1px solid red;*/
+}
+
+div.tableRow {
+	display: table-row;
+}
+
+div.tableCell {
+	display: table-cell;
+	height: 40px;
+	/*border: 1px solid red;*/
+	vertical-align: top;
+}
+.scheduleCell {
+	width: 100px;
+	font-weight: bold;
+}
+
+.scheduleCheckbox {
+	width: 20px;
+}
+
+.scheduleContainer {
+	width: 500px;
+}
+
+.scheduleWindow {
+	width: 100px;
+	text-align: right;
+}
+
+#eventSchedule {
+	font-weight: bold;
+}
+
+#scheduleRecurrence {
+	width: 600px;
+	text-align: right;
+}
+
+.scheduleRow {
+	width: 1100px;
+	text-align: right;
+}
+#btn_apply,#btn_cancel,#btn_selectall,#btn_clearall,#btn_undoall{
+	margin:5px;
+	width: 100px;
+}
+
+.tableContainer1 {
+	border-bottom:2px solid black;
+	/*padding:100px 0px 100px 0px;*/
+}
+
+.tableContainer3 {
+	width:1000px;
+	border-top:2px solid black;
+}
+
+#scheduleColor {
+	width:25px;
+	height:25px;
+	background-color:#337ab7;
+	border-style:none;
+	border-top-left-radius:0.5em;
+	border-top-right-radius:0.5em;
+	border-bottom-left-radius:0.5em;
+	border-bottom-right-radius:0.5em;
+}
+#notScheduleColor {
+	width:25px;
+	height:25px;
+	background-color:#ffffff;
+	border:3px solid black;
+	border-top-left-radius:0.5em;
+	border-top-right-radius:0.5em;
+	border-bottom-left-radius:0.5em;
+	border-bottom-right-radius:0.5em;
+}
+
+#setRule {
+	width:1200px;
+	height:700px;
+	margin: auto;
+  	position: absolute;
+  	top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#responseWarn {
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+    text-align: right;
+    padding: 8px;
+}

@@ -1,0 +1,9 @@
+# Realtek Semiconductor Corp.
+#
+# hurray_niu (huray_niu@realsil.com.cn)
+# Aug. 21, 2015
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_dnrd) += network/dnrd
+

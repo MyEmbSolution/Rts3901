@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Ming Qian (ming_qian@realsil.com.cn)
+# Nov. 24, 2014
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_rtstream) += rtscore/rtstream
+
+# dependency
+rtstream: librtsv4l2 librtsisp h1_encoder alsa-lib librtsmp3 opencore-amr librtsaec libaacenc

@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/del_sdcard_files.c
+unistd.h
+-
+sys/statfs.h
+-
+sys/stat.h
+-
+dirent.h
+-
+stdio.h
+-
+stdint.h
+-
+string.h
+-
+fcntl.h
+-
+stdlib.h
+-
+

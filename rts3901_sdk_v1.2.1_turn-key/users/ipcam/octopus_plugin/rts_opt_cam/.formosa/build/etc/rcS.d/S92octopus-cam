@@ -1,0 +1,4 @@
+#!/bin/sh
+#start up camera plugin when peacock has been started up successfully, so sleep 2s
+sleep 2s
+octopus -f cam -v 0x1C -D

@@ -1,0 +1,9 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Wei WANG (wei_wang@realsil.com.cn)
+# Dec. 25, 2014
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_cunit) += libs/cunit

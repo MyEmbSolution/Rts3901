@@ -1,0 +1,97 @@
+{
+"network_eth":{
+		"type":0
+},
+
+"network_wan":{
+		"port":"br0",
+		"method":1,
+		"ipaddr":"0.0.0.0",
+		"gateway":"0.0.0.0",
+		"netmask":"0.0.0.0",
+		"dns1":"0.0.0.0",
+		"dns2":"0.0.0.0"
+},
+
+"network_wan6":{
+		"method":1,
+		"ipaddr6":"",
+		"prefix":64,
+		"gateway6":""
+},
+
+"network_lan":{
+		"port":"wlan1",
+		"method":1,
+		"begin":"192.168.0.2",
+		"end":"192.168.0.254",
+		"ipaddr":"192.168.0.1",
+		"netmask":"255.255.255.0"
+},
+
+"network_sta":{
+		"enable":1,
+		"ssid":"",
+		"auth":0,
+		"encry":0,
+		"index":0,
+		"password":"",
+		"wps_pin":""
+},
+
+"network_softap":{
+		"enable":0,
+		"mode":0,
+		"hw_mode":2,
+		"ssid":"",
+		"hide_ssid":0,
+		"channel":1,
+		"auth":0,
+		"encry":0,
+		"index":0,
+		"password":"",
+		"wps_enable":0,
+		"wps_pin":""
+},
+
+"network_ddns":{
+		"enable":0,
+		"type":0,
+		"domain":"",
+		"username":"",
+		"password":""
+},
+
+"network_pppoe":{
+		"enable":0,
+		"username":"",
+		"password":""
+},
+
+"network_upnp":{
+		"enable":1,
+		"friendlyName":""
+},
+
+"network_bonjour":{
+		"enable":1,
+		"hostname":""
+},
+
+"network_ipfilter":{
+	"common":{
+		"enable":0,
+		"mode":0,
+		"index":0
+	},
+
+	"rules":[
+	]
+},
+
+"network_qos":{
+		"enable":0,
+		"dscp":47
+},
+
+}

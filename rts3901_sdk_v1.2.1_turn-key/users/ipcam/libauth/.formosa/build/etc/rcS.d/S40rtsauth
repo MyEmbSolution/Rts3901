@@ -1,0 +1,15 @@
+#!/bin/sh
+
+CONF_DIR=/usr/conf
+
+if [ ! -f $CONF_DIR/pub_key ]; then
+	cp /etc/conf/pub_key $CONF_DIR/pub_key
+fi
+
+if [ ! -f $CONF_DIR/private_key ]; then
+	cp /etc/conf/private_key $CONF_DIR/private_key
+fi
+
+if [ ! -f $CONF_DIR/user_info.dat ]; then
+	cp /etc/conf/user_info.dat $CONF_DIR/user_info.dat
+fi

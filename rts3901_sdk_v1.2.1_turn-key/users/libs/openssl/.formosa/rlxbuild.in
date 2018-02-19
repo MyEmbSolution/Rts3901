@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Jan. 10, 2014
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_openssl) += libs/openssl
+
+# dependency
+openssl: zlib

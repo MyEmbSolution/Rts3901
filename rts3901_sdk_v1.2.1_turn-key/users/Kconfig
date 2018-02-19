@@ -1,0 +1,16 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2008
+#
+
+source "system/Kconfig"
+source "libs/Kconfig"
+source "network/Kconfig"
+source "devel/Kconfig"
+source "utils/Kconfig"
+source "benchmark/Kconfig"
+source "rtscore/Kconfig"
+source "ipcam/Kconfig"
+source "drivers/Kconfig"

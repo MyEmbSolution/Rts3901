@@ -1,0 +1,28 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2008
+#
+
+menu "Base System"
+
+config PACKAGE_busybox
+	bool "busybox"
+	default y
+	help
+	  BusyBox combines tiny versions of many common UNIX utilities into
+	  a single small executable.  It provides minimalist replacements
+	  for most of the utilities you usually find in fileutils, shellutils,
+	  findutils, textutils, grep, gzip, tar, etc.  Simply select those
+	  utilities and options you want.
+
+config PACKAGE_example
+	tristate "example"
+	select PACKAGE_cunit
+	select PACKAGE_libmtd
+	default n
+	help
+	  A small example, only for demonstration.
+
+endmenu

@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../include/rts_io_ptz.h
+stdint.h
+-
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/example/testptz.c
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+errno.h
+-
+rts_io_ptz.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/example/rts_io_ptz.h
+

@@ -1,0 +1,13 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Peter Sun (peter_sun@realtek.com)
+# Jan. 10, 2011
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_uvcd) += ipcam/uvcd
+
+#dependency
+uvcd:h1_encoder
+

@@ -1,0 +1,12 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/include/rtscamkit.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/include/rtscolor.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/include/rts_log.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/include/rts_errno.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/include/rts_linux_lock.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/include/list.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/include/rts_queue.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/include/rts_pthreadpool.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/lib/librtscamkit.so.0.1.7
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/lib/librtscamkit.so.0
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/lib/librtscamkit.so
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/lib/librtscamkit.a

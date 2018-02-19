@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ntpclient -s -c 0 -i 600 -h time.nist.gov &

@@ -1,0 +1,45 @@
+#
+# rts_ipcam misc device configuration
+#
+
+menu "Realtek IPCam misc devices"
+
+config DBG_IOMEM
+	tristate "IOMEM Driver for debug"
+	help
+	  If this driver is compiled as a module, it will be named dbg_iomem.
+
+config DBG_IOMEM_DMATEST
+	bool "IOMEM DMA Test"
+	depends on DBG_IOMEM
+	help
+	  Use IOMEM to test DMA
+
+config RTS_EFUSE
+	tristate "EFUSE Driver"
+	help
+	  If this driver is compiled as a module, it will be named rts_efuse.
+
+config RTS_EFUSE_SYSFS
+	bool "EFUSE SYSFS utility"
+	default n
+	depends on RTS_EFUSE
+	help
+	  This enables SYSFS support for the efuse driver and exports
+	  efuse read/write interface to user space. This is mostly useful
+	  to diagnose efuse problems and program efuse by shell.
+
+config WLAN_WPS
+	tristate "Wifi wps_gpio driver"
+	default n
+	help
+	  Enable GPIO for wifi wps_pbc
+
+if WLAN_WPS
+	config WPS_GPIO_NUM
+		int "WPS_GPIO_NUM(1-16)"
+		range 1 16
+		default "1"
+endif
+
+endmenu

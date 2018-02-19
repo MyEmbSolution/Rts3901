@@ -1,0 +1,740 @@
+#!/bin/sh
+#############################################################################
+#
+#	This script gets called in two ways,  the first is to set the
+#	default config up.  The second "final" pass is to save any settings
+#	back to the boards directory for permanent inclusion.
+#
+#	Copyright (C) 2001       Lineo    <davidm@snapgear.com>
+#	Copyright (C) 2001-2002  SnapGear <davidm@snapgear.com>
+#	Copyright (C) 2008-2013  Tony Wu  <tonywu@realtek.com>
+#
+#############################################################################
+#
+# Some basic starting points
+#
+
+DOTCONFIG=.config
+if [ -f ./.oldconfig ]
+then
+	. ./.oldconfig
+fi
+
+PASS="$1"
+LINUX=""
+BTLOAD=""
+
+INITCFG=0
+LINUXDIR=""
+LINUXVER=""
+LINUXCFG=""
+USERSDIR="users"
+BZBOXDIR="users/system/busybox"
+BTLOADDIR=""
+CCFLAGS=""
+BDTARGET=""
+
+DFTCFGDIR="config/default"
+
+CLEAN_ROOTS=0
+CLEAN_LINUX=0
+
+#############################################################################
+#
+# this code closely matches that in genconfig,  it has to !
+#
+
+get_board_target()
+{
+        BDTARGET="`grep '^CONFIG_TARGET_.*=y' ${DOTCONFIG}`"
+        if [ -z "${BDTARGET}" ]; then
+                return 1
+        fi
+        BDTARGET=${BDTARGET##CONFIG_TARGET_}
+        BDTARGET=${BDTARGET%%=y}
+        return 0
+}
+
+get_board_dir()
+{
+	BOARD="`grep '^CONFIG_BOARD_.*=y' ${DOTCONFIG}`"
+	if [ -z "${BOARD}" ]; then
+		echo "ERROR: unknown board configuration." >&2
+		exit 1
+	fi
+
+	BOARD=${BOARD##CONFIG_BOARD_}
+	BOARD=${BOARD%%=y}
+	BOARDDIR="boards/${BOARD}"
+	if [ ! -d ${BOARDDIR} ]; then
+		echo "ERROR: missing board directory ${BOARDDIR}." >&2
+		exit 1
+	fi
+	return 0
+}
+
+get_model_dir()
+{
+	MODEL="`grep '^CONFIG_MODEL_.*=y' ${DOTCONFIG}`"
+	if [ -z "${MODEL}" ]; then
+		MODEL="."
+		MODELDIR="."
+		return 0
+	fi
+
+	MODEL=${MODEL##CONFIG_MODEL_${BOARD}_}
+	MODEL=${MODEL%%=y}
+	MODELDIR="model/${MODEL}"
+	if [ ! -d boards/${BOARD}/${MODELDIR} ]; then
+		echo "ERROR: missing model directory ${MODELDIR}." >&2
+		exit 1
+	fi
+	return 0
+}
+
+get_profile_dir()
+{
+	PROFILE="`grep '^CONFIG_PROFILE.*=y' ${DOTCONFIG}`"
+	if [ -z "${PROFILE}" ]; then
+		PROFILE="."
+		PROFILEDIR="."
+		return 0
+	fi
+
+	PROFILE=${PROFILE##CONFIG_PROFILE_${BOARD}_${MODEL}_}
+	PROFILE=${PROFILE%%=y}
+	PROFILEDIR="profile/${PROFILE}"
+	if [ ! -d boards/${BOARD}/${MODELDIR}/${PROFILEDIR} ]; then
+		echo "ERROR: missing config directory ${PROFILEDIR}." >&2
+		exit 1
+	fi
+	return 0
+}
+
+get_btload_dir()
+{
+	BTLOAD="`grep '^CONFIG_BTLOAD_.*=y' ${DOTCONFIG}`"
+	if [ -z "${BTLOAD}" ]; then
+		exit 1
+	fi
+	BTLOAD=${BTLOAD##CONFIG_BTLOAD_}
+	BTLOAD=${BTLOAD%%=y}
+
+	BTLOADDIR="bootloader/${BTLOAD}"
+	if [ x"${BTLOAD}" != x"NONE" ] && [ ! -d ${BTLOADDIR} ]; then
+		echo "ERROR: missing bootloader directory ${BTLOAD}." >&2
+		exit 1
+	fi
+	return 0
+}
+
+get_rsdk_dir()
+{
+	INSTALL_PATH=/rts-ipc/toolchain
+	RSDK="`grep '^CONFIG_RSDK_.*=y' ${DOTCONFIG}`"
+	if [ -z "${RSDK}" ]; then
+		echo "ERROR: unknown RSDK configuration." >&2
+		exit 1
+	fi
+	RSDK=${RSDK##CONFIG_RSDK_}
+	RSDK=${RSDK%%=y}
+
+	if [ ${INITCFG} != 1 ]; then
+		if [ ${RSDK:0:8} == "INSTALL_" ]; then
+			RSDK=${RSDK##INSTALL_}
+			RSDKDIR=${INSTALL_PATH}/${RSDK}
+		else
+			RSDKDIR="`pwd`/toolchain/${RSDK}"
+		fi
+		if [ ! -d $RSDKDIR ]; then
+			echo "ERROR: missing RSDK directory ${RSDKDIR}." >&2
+			exit 1
+		fi
+	fi
+
+	return 0
+}
+
+get_linux_cfg()
+{
+	VER_MAJOR=$1
+	VER_MINOR=$2
+	VER_RANGE=5
+
+	if [ $VER_MINOR -le $VER_RANGE ]; then
+		VER_RANGE=$VER_MINOR
+	fi
+
+	## prefer config from lower version
+	for ((i=0; i < $VER_RANGE; i++))
+	do
+		let VER_MINOR--
+		LINUXCFG="$VER_MAJOR.$VER_MINOR"
+		if [ -f "target/selection/config.linux-$LINUXCFG" ]; then
+			return
+		fi
+	done
+
+	## if not, check config from upper version
+	VER_MINOR=$2
+	for ((i=1; i < 5; i++))
+	do
+		let VER_MINOR++
+		LINUXCFG="$VER_MAJOR.$VER_MINOR"
+		if [ -f "target/selection/config.linux-$LINUXCFG" ]; then
+			return
+		fi
+	done
+}
+
+get_linux_ver()
+{
+	VER_MAJOR="`grep '^VERSION.*' $LINUXDIR/Makefile | sed -e s,[^0-9],,g`"
+	VER_MINOR="`grep '^PATCHLEVEL.*' $LINUXDIR/Makefile | sed -e s,[^0-9],,g`"
+	LINUXVER="$VER_MAJOR.$VER_MINOR"
+	if [ ! -f "target/selection/config.linux-$LINUXVER" ]; then
+		get_linux_cfg $VER_MAJOR $VER_MINOR
+	fi
+	return 0
+}
+
+get_linux_dir()
+{
+	LINUX="`grep '^CONFIG_LINUX_.*=y' ${DOTCONFIG}`"
+	if [ -z "${LINUX}" ]; then
+		echo "ERROR: unknown kernel configuration." >&2
+		exit 1
+	fi
+	LINUX=${LINUX##CONFIG_LINUX_}
+	LINUX=${LINUX%%=y}
+
+	LINUXDIR="linux-${LINUX}"
+	if [ ! -d ${LINUXDIR} ]; then
+		echo "ERROR: missing kernel directory ${LINUXDIR}." >&2
+		exit 1
+	fi
+	return 0
+}
+
+get_model_arch()
+{
+	ARCH=`sed -n -e 's,^CONFIG_ARCH_CPU_\([ARM][RLI][MXP]S*\)=y,\1,p' ${DOTCONFIG}`
+	case $ARCH in
+	ARM)
+		VAR_ARCH=arm
+		CROSS_COMPILE=asdk-linux-
+		;;
+	RLX)
+		VAR_ARCH=rlx
+		CROSS_COMPILE=rsdk-linux-
+		;;
+	MIPS)
+		VAR_ARCH=mips
+		CROSS_COMPILE=msdk-linux-
+		;;
+	esac
+
+	export VAR_ARCH
+	export CROSS_COMPILE
+}
+
+get_ccflags()
+{
+	CCFLAGS=""
+	if var_isset CONFIG_OPT_LEVEL_O0; then CCFLAGS="$CCFLAGS -O0"; fi
+	if var_isset CONFIG_OPT_LEVEL_O2; then CCFLAGS="$CCFLAGS -O2"; fi
+	if var_isset CONFIG_OPT_LEVEL_OS; then CCFLAGS="$CCFLAGS -Os"; fi
+	if var_isset CONFIG_OPT_LEVEL_O3; then CCFLAGS="$CCFLAGS -O3"; fi
+	if var_isset CONFIG_OPT_DEBUG; then CCFLAGS="$CCFLAGS -g"; fi
+	if var_isset CONFIG_OPT_SALIASING; then CCFLAGS="$CCFLAGS -fstrict-aliasing"; fi
+	if var_isset CONFIG_OPT_SOVERFLOW; then CCFLAGS="$CCFLAGS -fstrict-overflow"; fi
+}
+
+var_isset()
+{
+
+	# because of make evironment inheritance, we must look in the file
+	if grep "$1=y" ${DOTCONFIG} > /dev/null
+	then
+		return 0
+	fi
+	return 1
+}
+
+var_convert()
+{
+        TOKEN=$(grep ^$1.*=y ${DOTCONFIG})
+        if [ -z "${TOKEN}" ]; then
+		return
+        fi
+        TOKEN=${TOKEN##CONFIG_}
+        TOKEN=${TOKEN%%=y}
+
+	echo "config ${TOKEN}" >> $2
+	echo "	bool" >> $2
+	echo "	default y" >> $2
+	echo >> $2
+}
+
+#
+# remove line containing $1 append line $2 to file in $3
+#
+replace_line()
+{
+	TMPR="/tmp/setconfig.$$"
+	if [ -f "$3" ]
+	then
+		cat "$3" | grep -v "$1" > "$TMPR"
+	else
+		touch "$TMPR"
+	fi
+	echo "$2" >> "$TMPR"
+	cp "$TMPR" "$3"
+	rm -f "$TMPR"
+}
+
+fix_conf_file()
+{
+	#
+	# add some bits for convienence, must be done after each stage
+	#
+	replace_line CONFIG_BOARDDIR= "CONFIG_BOARDDIR=$BOARDDIR" .config
+	replace_line CONFIG_MODELDIR= "CONFIG_MODELDIR=$MODELDIR" .config
+	replace_line CONFIG_PROFILEDIR= "CONFIG_PROFILEDIR=$PROFILEDIR" .config
+	replace_line CONFIG_LINUXDIR= "CONFIG_LINUXDIR=$LINUXDIR" .config
+	replace_line CONFIG_RSDKDIR= "CONFIG_RSDKDIR=$RSDKDIR" .config
+	replace_line CONFIG_BTLOADDIR= "CONFIG_BTLOADDIR=$BTLOADDIR" .config
+	replace_line CONFIG_CCFLAGS= "CONFIG_CCFLAGS=$CCFLAGS" .config
+
+	replace_line OLD_BOARDDIR= "OLD_BOARDDIR=\"$BOARDDIR\"" ./.oldconfig
+	replace_line OLD_MODELDIR= "OLD_MODELDIR=\"$MODELDIR\"" ./.oldconfig
+	replace_line OLD_PROFILEDIR= "OLD_PROFILEDIR=\"$PROFILEDIR\"" ./.oldconfig
+	replace_line OLD_LINUXDIR= "OLD_LINUXDIR=\"$LINUXDIR\"" ./.oldconfig
+	replace_line OLD_RSDKDIR= "OLD_RSDKDIR=\"$RSDKDIR\"" ./.oldconfig
+	replace_line OLD_BTLOADDIR= "OLD_BTLOADDIR=\"$BTLOADDIR\"" ./.oldconfig
+	replace_line OLD_CCFLAGS= "OLD_CCFLAGS=\"$CCFLAGS\"" ./.oldconfig
+	replace_line OLD_BDTARGET= "OLD_BDTARGET=\"$BDTARGET\"" ./.oldconfig
+}
+
+read_conf_file()
+{
+	#####################################################################
+	#
+	# get processor arch, ARM, RLX or MIPS
+	#
+	get_model_arch
+
+	#####################################################################
+	#
+	# board version
+	#
+
+	# get_board defines BOARD and BOARDDIR for us
+	get_board_dir
+
+	# get_model defines MODEL and MODELDIR for us
+	get_model_dir
+
+	# get_config defines CONFIG and PROFILEDIR for us
+	get_profile_dir
+
+	# get_board_target defines TARGET for us
+	get_board_target
+
+	#####################################################################
+	#
+	# kernel version
+	#
+
+	# get_linux defines LINUX and LINUXDIR for us
+	get_linux_dir
+	get_linux_ver
+
+	#####################################################################
+	#
+	# bootloader directory
+	#
+
+	# get_btload defines BTLOAD and BTLOADDIR for us
+	get_btload_dir
+
+	#####################################################################
+	#
+	# optimization
+	#
+	get_ccflags
+}
+
+read_conf_rsdk()
+{
+	#####################################################################
+	#
+	# toolchain version
+	#
+
+	# get_rsdk defines RSDK and RSDKDIR for us
+	get_rsdk_dir
+	export PATH=$RSDKDIR/bin:$PATH
+}
+
+load_conf_linux()
+{
+	if [ ! -f $LINUXDIR/.config ]; then
+		if [ -f "$DFTCFGDIR/config.linux-$LINUXVER.${BDTARGET}" ]; then
+			cp "$DFTCFGDIR/config.linux-$LINUXVER.${BDTARGET}" $LINUXDIR/.config
+			echo "[CONFIG] config $LINUXDIR using config.linux-$LINUXVER.${BDTARGET}"
+			make -C $LINUXDIR -s silentoldconfig
+		else
+			echo "[CONFIG] config $LINUXDIR using defconfig"
+			make ARCH=$VAR_ARCH -C $LINUXDIR -s defconfig
+		fi
+	fi
+}
+
+load_conf_users()
+{
+	if [ ! -f $USERSDIR/.config ]; then
+		if [ -f "$DFTCFGDIR/config.users.${BDTARGET}" ]; then
+			cp "$DFTCFGDIR/config.users.${BDTARGET}" $USERSDIR/.config
+			echo "[CONFIG] config users using config.users.${BDTARGET}"
+			make -C $USERSDIR -s silentoldconfig
+		else
+			echo "[CONFIG] config users defconfig"
+			make -C $USERSDIR -s defconfig
+		fi
+	fi
+}
+
+load_conf_bzbox()
+{
+	if [ ! -f $BZBOXDIR/.config ]; then
+		if [ -f "$DFTCFGDIR/config.busybox.${BDTARGET}" ]; then
+			cp "$DFTCFGDIR/config.busybox.${BDTARGET}" $BZBOXDIR/.config
+			echo "[CONFIG] config busybox using config.busybox.${BDTARGET}"
+			make -C $BZBOXDIR -s silentoldconfig
+		else
+			echo "[CONFIG] config busybox using defconfig"
+			make -C $BZBOXDIR -s defconfig
+		fi
+	fi
+}
+
+load_conf_btload()
+{
+	if [ "$BTLOAD" != "NONE" ]; then
+		if [ ! -f $BTLOADDIR/.config ]; then
+			if [ -f "$DFTCFGDIR/config.bootloader.${BDTARGET}" ]; then
+				cp "$DFTCFGDIR/config.bootloader.${BDTARGET}" $BTLOADDIR/.config
+				echo "[CONFIG] config bootloader using config.bootloader.${BDTARGET}"
+				make -C $BTLOADDIR -s silentoldconfig
+			else
+				echo "[CONFIG] config bootloader using defconfig"
+				make -C $BTLOADDIR -s defconfig
+			fi
+		fi
+	fi
+}
+
+load_conf_arch()
+{
+	INITCFG=1
+#	grep -v CONFIG_LINUX_ < .config |
+#		grep -v CONFIG_BTLOAD_ |
+#		grep -v CONFIG_RSDK_ |
+#		grep -v CONFIG_OPT_ > .config.tmp
+
+#	mv .config.tmp .config
+#	grep ^CONFIG_LINUX_ target/selection/config.arch >> .config
+#	grep ^CONFIG_RSDK_ target/selection/config.arch >> .config
+#	grep ^CONFIG_BTLOAD_ target/selection/config.arch >> .config
+#	grep CONFIG_OPT_ target/selection/config.arch >> .config
+	config/${VAR_HOST}/conf --silentoldconfig Kconfig
+
+	read_conf_rsdk
+	read_conf_file
+}
+
+save_conf_arch()
+{
+	echo "CONFIG_LINUX_$LINUX=y" > "target/selection/config.arch"
+	echo "CONFIG_RSDK_$RSDK=y" >> "target/selection/config.arch"
+	echo "CONFIG_BTLOAD_$BTLOAD=y" >> "target/selection/config.arch"
+	grep CONFIG_OPT_ ${DOTCONFIG} >> "target/selection/config.arch"
+}
+
+#
+# save cpu and endian info
+#
+save_conf_top()
+{
+	TOP=target/selection/config.top
+
+	echo "# Automatically generated, do not edit" > ${TOP}
+	echo >> ${TOP}
+	var_convert CONFIG_ARCH_CPU_ARMA ${TOP}
+	var_convert CONFIG_ARCH_CPU_MIPS.*K ${TOP}
+	var_convert CONFIG_ARCH_CPU_RLX.*1 ${TOP}
+	var_convert CONFIG_ARCH_CPU_EB ${TOP}
+	var_convert CONFIG_ARCH_CPU_EL ${TOP}
+	var_convert CONFIG_ARCH_CPU_SMP ${TOP}
+	var_convert CONFIG_CPU_ENABLE_MIPSMT ${TOP}
+	var_convert CONFIG_CPU_ENABLE_TLS ${TOP}
+	var_convert CONFIG_CPU_ENABLE_FPU ${TOP}
+	var_convert CONFIG_CPU_ENABLE_FPU_EMU ${TOP}
+	var_convert CONFIG_CPU_ENABLE_DSP ${TOP}
+	var_convert CONFIG_CPU_ENABLE_RADIAX ${TOP}
+	var_convert CONFIG_CPU_ENABLE_WATCH ${TOP}
+	var_convert CONFIG_CPU_ENABLE_WMPU ${TOP}
+}
+
+make_clean()
+{
+	if [ "$CLEAN_ROOTS" = "1" ]; then
+		make -s clean
+		make -C target clean
+	else
+		if [ "$CLEAN_LINUX" = "1" ]; then
+			echo "[CLEAN] clean $LINUXDIR"
+			make -C $LINUXDIR -s clean
+			echo "[CLEAN] clean target residues"
+			make -C target clean
+		fi
+	fi
+}
+
+#############################################################################
+#
+# Now create target and model links
+#
+init_configs()
+{
+	rm -f tmpfs
+	rm -f midfs
+	rm -f romfs
+	rm -f extfs
+	rm -f image
+	rm -f target/tmpfs
+	rm -f target/midfs
+	rm -f target/romfs
+	rm -f target/extfs
+	rm -f target/image
+	rm -f target
+
+	rm -f .config.tmp
+	rm -f .config.cfg
+
+	ln -s $BOARDDIR target
+
+	mkdir -p target/box/$BDTARGET/tmpfs
+	mkdir -p target/box/$BDTARGET/midfs
+	mkdir -p target/box/$BDTARGET/romfs
+	mkdir -p target/box/$BDTARGET/extfs
+	mkdir -p target/box/$BDTARGET/image
+
+	ln -s box/$BDTARGET/tmpfs target/tmpfs
+	ln -s box/$BDTARGET/midfs target/midfs
+	ln -s box/$BDTARGET/romfs target/romfs
+	ln -s box/$BDTARGET/extfs target/extfs
+	ln -s box/$BDTARGET/image target/image
+	ln -s target/tmpfs tmpfs
+	ln -s target/midfs midfs
+	ln -s target/romfs romfs
+	ln -s target/extfs extfs
+	ln -s target/image image
+
+	rm -f target/selection
+	ln -s ${MODELDIR}/${PROFILEDIR} target/selection
+
+	TOOLCHAIN_DIR=`pwd`/toolchain
+	if [ -d ${TOOLCHAIN_DIR} ]; then
+		rm -f toolchain/rsdk
+		ln -s $RSDK toolchain/rsdk
+	fi
+}
+
+#############################################################################
+#
+# Now install the configs,  careful not dump on them unless they asked us to
+#
+if [ ! -e ${DOTCONFIG} ]; then
+	exit 0
+fi
+
+#
+# we need toolchain for make clean/menuconfig stuff
+#
+read_conf_rsdk
+
+if [ "$PASS" = "config" ]; then
+
+	#
+	# read config files
+	#
+	read_conf_file
+
+	#
+	# initialize links and prepare for configs
+	#
+	init_configs
+
+	#
+	# create target specific config.top
+	#
+	save_conf_top
+
+	#
+	# if the user touches any important settings then force a clean
+	# otherwise bad things can happen in the tree
+	#
+	if [ "$OLD_BOARDDIR$OLD_MODELDIR$OLD_PROFILEDIR$OLD_BDTARGET" != "$BOARDDIR$MODELDIR$PROFILEDIR$BDTARGET" ]
+	then
+		CLEAN_ROOTS=1
+
+		rm -f $LINUXDIR/.config*
+		rm -f $USERSDIR/.config*
+		rm -f $BZBOXDIR/.config*
+		rm -f $LINUXDIR/include/config/auto.conf*
+		rm -f $BTLOADDIR/.config*
+		load_conf_arch
+	fi
+
+	if [ "$OLD_RSDKDIR$OLD_CCFLAGS" != "$RSDKDIR$CCFLAGS" ]; then
+		CLEAN_ROOTS=1
+	fi
+
+	if [ "$OLD_LINUXDIR" != "$LINUXDIR" ]; then
+		rm -f $LINUXDIR/.config $LINUXDIR/.config.old
+		CLEAN_LINUX=1
+	fi
+
+	# once before the oldconfig stuff is run
+	fix_conf_file
+
+	load_conf_linux
+	load_conf_users
+	load_conf_bzbox
+	load_conf_btload
+
+	make_clean > /dev/null
+fi
+
+if [ "$PASS" = "conf_fixconf" ]; then
+	read_conf_file
+
+	if [ "$OLD_RSDKDIR$OLD_CCFLAGS" != "$RSDKDIR$CCFLAGS" ]; then
+		CLEAN_ROOTS=1
+	fi
+
+	init_configs
+	fix_conf_file
+	make_clean > /dev/null
+fi
+
+if [ "$PASS" = "conf_check" ]; then
+	DOTCONFIG=.config.tmp
+	get_board_dir
+	get_model_dir
+	get_profile_dir
+	get_board_target
+	if [ "$OLD_BOARDDIR$OLD_MODELDIR$OLD_PROFILEDIR$OLD_BDTARGET" != "$BOARDDIR$MODELDIR$PROFILEDIR$BDTARGET" ]
+	then
+		exit 1
+	fi
+
+	exit 0
+fi
+
+if [ "$PASS" = "conf_btload" ]; then
+	get_btload_dir
+	load_conf_btload
+	make -C $BTLOADDIR -s menuconfig
+fi
+
+if [ "$PASS" = "conf_linux" ]; then
+	get_linux_dir
+	get_model_arch
+	save_conf_top
+
+	load_conf_linux > /dev/null
+
+	replace_line CONFIG_LINUXDIR= "CONFIG_LINUXDIR=$LINUXDIR" .config
+	replace_line OLD_LINUXDIR= "OLD_LINUXDIR=\"$LINUXDIR\"" ./.oldconfig
+	make -C $LINUXDIR -s menuconfig
+fi
+
+if [ "$PASS" = "conf_users" ]; then
+	get_model_arch
+	save_conf_top
+
+	load_conf_users > /dev/null
+	make -C $USERSDIR -s menuconfig
+fi
+
+if [ "$PASS" = "conf_bzbox" ]; then
+	load_conf_bzbox > /dev/null
+	make -C $BZBOXDIR -s menuconfig
+fi
+
+if [ "$PASS" = "conf_load" ]; then
+
+	read_conf_file
+	if [ ! -e "target" ]; then
+		init_configs
+		save_conf_top
+	fi
+
+	rm -f $LINUXDIR/.config*
+	rm -f $USERSDIR/.config*
+	rm -f $BZBOXDIR/.config*
+	rm -f $LINUXDIR/include/config/auto.conf*
+	rm -f $BTLOADDIR/.config*
+
+	load_conf_arch > /dev/null
+	load_conf_linux > /dev/null
+	load_conf_users > /dev/null
+	load_conf_bzbox > /dev/null
+	load_conf_btload > /dev/null
+
+	fix_conf_file
+	make_clean > /dev/null
+
+fi
+
+if [ "$PASS" = "conf_save" ]; then
+
+	read_conf_file
+#	save_conf_arch
+
+	cp -f $LINUXDIR/.config "$DFTCFGDIR/config.linux-$LINUXVER.${BDTARGET}"
+	cp -f $USERSDIR/.config "$DFTCFGDIR/config.users.${BDTARGET}"
+	cp -f $BZBOXDIR/.config "$DFTCFGDIR/config.busybox.${BDTARGET}"
+	if [ $BTLOAD != "NONE" ]; then
+		cp -f $BTLOADDIR/.config "$DFTCFGDIR/config.bootloader.${BDTARGET}"
+	fi
+
+	fix_conf_file
+
+fi
+
+if [ "$PASS" = "reconfig" ]; then
+	read_conf_file
+	init_configs
+	save_conf_top
+	CLEAN_ROOTS=1
+	rm -f $LINUXDIR/.config $LINUXDIR/.config.old
+	rm -f $LINUXDIR/include/config/auto.conf
+	rm -f $USERSDIR/.config*
+	rm -f $BZBOXDIR/.config $BZBOXDIR/.config.old
+	rm -f $BTLOADDIR/.config $BTLOADDIR/.config.old
+
+	load_conf_linux
+	load_conf_users
+	load_conf_bzbox
+	load_conf_btload
+
+	fix_conf_file
+	make_clean > /dev/null
+fi
+
+#############################################################################
+exit 0

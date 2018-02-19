@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Yafei Meng (yafei_meng@realsil.com.cn)
+# Jun. 02, 2015
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_onvif) += ipcam/onvif
+
+# dependency
+onvif: peacock octopus rts_opt_cam json-c librtsnm

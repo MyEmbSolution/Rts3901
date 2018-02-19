@@ -1,0 +1,7 @@
+nod /dev/console 666 0 0 c 5 1
+nod /dev/dbg_iomem 666 0 0 c 120 0
+nod /dev/usb_phy_mdio 666 0 0 c 121 0
+nod /dev/efuse 666 0 0 c 122 0
+nod /dev/hconf 666 0 0 c 123 0
+nod /dev/ram0 666 0 0 b 1 0
+nod /dev/android_uvc 666 0 0 c 243 0

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/ffm_player.c
+stdint.h
+-
+pthread.h
+-
+sys/time.h
+-
+unistd.h
+-
+libavformat/avformat.h
+-
+libavformat/avio.h
+-
+libavdevice/avdevice.h
+-
+libavutil/opt.h
+-
+libavutil/dict.h
+-
+libswresample/swresample.h
+-
+speaker.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/speaker.h
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/speaker.h
+stdint.h
+-
+stdio.h
+-
+

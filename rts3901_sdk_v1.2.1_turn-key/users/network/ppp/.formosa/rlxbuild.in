@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Jim Cao (jim_cao@realsil.com.cn)
+# July. 21, 2015
+#
+
+pkg_$(CONFIG_PACKAGE_ppp) += network/ppp
+
+
+

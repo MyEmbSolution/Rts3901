@@ -1,0 +1,35 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2009
+#
+
+#
+# MIPS CPU
+#
+choice
+	prompt "Selected cpu core"
+	depends on ARCH_CPU_MIPS
+
+config ARCH_CPU_MIPS24K
+	bool "mips24k"
+	depends on ARCH_SUPPORT_MIPS24K
+
+config ARCH_CPU_MIPS34K
+	bool "mips34k"
+	depends on ARCH_SUPPORT_MIPS34K
+
+config ARCH_CPU_MIPS74K
+	bool "mips74k"
+	depends on ARCH_SUPPORT_MIPS74K
+
+config ARCH_CPU_MIPS1004K
+	bool "mips1004k"
+	depends on ARCH_SUPPORT_MIPS1004K
+
+config ARCH_CPU_MIPS1074K
+	bool "mips1074k"
+	depends on ARCH_SUPPORT_MIPS1074K
+
+endchoice

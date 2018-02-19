@@ -1,0 +1,9 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Micky Ching (micky_ching@realsil.com.cn)
+# Sep. 12, 2014
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_scripts) += ipcam/scripts

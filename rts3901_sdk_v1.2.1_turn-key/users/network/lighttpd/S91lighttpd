@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mkdir -p /var/log/lighttpd
+mkdir -p /var/cache/lighttpd/compress
+
+mips-linux-lighttpd -f /etc/lighttpd/lighttpd.conf -m /usr/lib/lighttpd

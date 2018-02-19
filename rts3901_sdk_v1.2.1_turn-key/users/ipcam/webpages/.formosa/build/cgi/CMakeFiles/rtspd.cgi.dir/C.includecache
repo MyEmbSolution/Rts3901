@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../cgi/include/error_code.h
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/webpages/cgi/rtspd.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+sys/un.h
+-
+errno.h
+-
+unistd.h
+-
+signal.h
+-
+error_code.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/webpages/cgi/error_code.h
+

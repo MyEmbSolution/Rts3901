@@ -1,0 +1,2 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus_plugin/rts_opt_cam/.formosa/build/CMakeFiles/opt_cam.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus_plugin/rts_opt_cam/.formosa/build/CMakeFiles/rtscam.dir

@@ -1,0 +1,1 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/networkmanager/rts_nm_wps/.formosa/build/CMakeFiles/nm_wps.dir

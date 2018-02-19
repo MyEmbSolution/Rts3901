@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Nie(tony_nie@realsil.com.cn)
+# May. 22, 2015
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_parrot) += ipcam/parrot
+
+# dependency
+parrot: ffmpeg json-c alsa-lib octopus aplayer hconf tutk aplayer librtsisp rts_opt_cam peacock rtstream

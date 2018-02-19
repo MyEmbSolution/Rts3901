@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Micky Ching <micky_ching@realsil.com.cn>
+# 2015-01-19
+#
+
+pkg_$(CONFIG_PACKAGE_neuralyzer) += ipcam/neuralyzer
+
+# dependency
+neuralyzer: libmtd

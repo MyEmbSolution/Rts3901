@@ -1,0 +1,115 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Wei WANG (wei_wang@realsil.com.cn)
+# Jul. 17, 2016
+#
+
+menu "RTS Core Libraries"
+
+config PACKAGE_h1_encoder
+	tristate "h1 H264 encoder"
+	select PACKAGE_librtsisp
+	default n
+	help
+	  H264 encoder, for h264 stream
+
+choice
+	prompt "H264 encoder notification way"
+	depends on PACKAGE_h1_encoder
+config H264_IRQ
+	bool "irq"
+config H264_POLLING
+	bool "polling"
+endchoice
+
+config PACKAGE_librtsisp
+	tristate "librtsisp"
+	select PACKAGE_rtscamlib
+	select PACKAGE_librtscamkit
+	select PACKAGE_librtsv4l2
+	select PACKAGE_modules_video
+	select VIDEO_RTS_SOC
+	select VIDEO_HX280_ENC
+	select RTS_MJPEG_ENC
+	default n
+	help
+	  Realtek isp lib
+
+choice
+	prompt "MJPEG encoder notification way"
+	depends on PACKAGE_librtsisp
+config MJPEGENC_IRQ
+	bool "irq"
+config MJPEGENC_POLLING
+	bool "polling"
+endchoice
+
+config PACKAGE_rtstream
+	tristate "rtstream"
+	select PACKAGE_librtsisp
+	select PACKAGE_h1_encoder
+	default n
+	help
+	  Realtek Stream Lib
+
+config PACKAGE_rtscamlib
+	tristate "rts camera lib"
+	default n
+	help
+
+if PACKAGE_rtscamlib
+	source rtscore/librtscam/Kconfig
+endif
+
+config PACKAGE_rtsuvclib
+	tristate "rts uvc lib"
+	default n
+	help
+
+if PACKAGE_rtsuvclib
+         source rtscore/librtsuvc/Kconfig
+endif
+
+config PACKAGE_librtsnm
+	tristate "librtsnm"
+	default n
+	help
+	  rts network manager library which provides low
+	  level driver(lld) to access hardware and provide
+	  logic control layer(lcl) to abstract function
+
+if (PACKAGE_librtsnm)
+	config FEATURE_IPV6
+		bool "Enable IPv6 support"
+		default n
+		help
+		  add ipv6 interface support for webpages cgi, nm_cfg
+		  and nm_init. For webpages cgi, if this feature is
+		  not selected, it will return cgi code marking not
+		  supported
+endif
+
+config PACKAGE_librtsio
+	bool "librtsio"
+	default n
+
+config PACKAGE_3rdparty
+	tristate "3rdparty"
+	default n
+	help
+	  Binary libraries from 3td party
+
+config PACKAGE_sample
+	tristate "sample"
+	select PACKAGE_librtsio
+	select PACKAGE_rtstream
+	default n
+	help
+	  sample for rtscore
+
+if PACKAGE_3rdparty
+source rtscore/3rdparty/Kconfig
+endif
+
+endmenu

@@ -1,0 +1,107 @@
+#!/usr/bin/perl
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 07, 2008
+#
+# The Right Thing
+#
+
+my @CONFIG = ();
+my %HASH = ();
+my $config = '';
+my $appconfig_h = '';
+my $appconfig_i = '';
+my $key, $val;
+
+
+##
+## 
+##
+if (@ARGV != 1) {
+  print "usage: $0 DIR_ROOT", "\n";
+  exit -1;
+}
+
+$DIR_ROOT = $ARGV[0];
+
+##
+## list config files
+##
+system("mkdir -p $DIR_ROOT/tmpfs/include");
+system("mkdir -p $DIR_ROOT/tmpfs/lib");
+
+$appconfig_h = $DIR_ROOT . '/tmpfs/include/appconfig.h';
+$appconfig_i = $DIR_ROOT . '/tmpfs/appconfig.in';
+push @CONFIG, $DIR_ROOT . '/users/.config';
+
+open(PIPE, $DIR_ROOT . '/.config') || die $_;
+while (<PIPE>) {
+    if (m|CONFIG_LINUXDIR=(.*)|) {
+        push @CONFIG, $DIR_ROOT . "/$1/.config";
+    }
+
+    if (m|CONFIG_BZBOXDIR=(.*)|) {
+        push @CONFIG, $DIR_ROOT . "/$1/.config";
+    }
+}
+close(PIPE);
+
+##
+##
+##
+$error = 0;
+foreach $config (@CONFIG) {
+    if (!-e $config) {
+	$error = 1;
+	last;
+    }
+}
+
+if ($error == 1) {
+    print "INFO: hdrconfig: missing config, skipping", "\n";
+    exit 0;
+}
+
+##
+## generate config header file
+##
+print "GENERATING appconfig.h", "\n";
+
+open(DOTH, '>', $appconfig_h) || die $_;
+open(DOTI, '>', $appconfig_i) || die $_;
+
+print DOTH "/* DO NOT EDIT, GENERATED AUTOMATICALLY */", "\n";
+print DOTH "#ifndef _APPCONFIG_H_", "\n";
+print DOTH "#define _APPCONFIG_H_", "\n";
+print DOTH "\n";
+
+foreach $config (@CONFIG) {
+  open(PIPE, $config) || die $_;
+  while (<PIPE>) {
+    chomp;
+    if (m|^([^=]+)=(.*)|) {
+      $key = $1;
+      $val = $2;
+
+      if ($HASH{$key} == 1) {
+        print "ERROR: duplicate key $key", "\n";
+      }
+      $HASH{$key} = 1;
+
+      $val = 1 if (length($val)==1 and $val =~ m|[yY]|);
+      print DOTI "$key=y", "\n";
+      print DOTH "#define $key $val", "\n";
+    }
+  }
+  close(PIPE);
+}
+
+print DOTH "\n";
+print DOTH "#endif", "\n";
+
+close(DOTI);
+close(DOTH);
+
+exit 0;

@@ -1,0 +1,2 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/camfinder/.formosa/build/bin/cam_finder
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/camfinder/.formosa/build/etc/rcS.d/S94camfinder

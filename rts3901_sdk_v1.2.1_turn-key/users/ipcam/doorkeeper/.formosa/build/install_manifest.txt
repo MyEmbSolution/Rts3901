@@ -1,0 +1,12 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/bin/doorkeeper
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/bin/event_monitor
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/bin/subscribe_sample
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/bin/ipc_client
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/lib/libdoorkeepermsg.so
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/lib/libexplugin.so
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/include/alarm_event.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/include/alarm_ipc_message.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/include/alarm_action.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/etc/conf/alarm.json
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/etc/conf/ftp.json
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/etc/rcS.d/S94doorkeeper

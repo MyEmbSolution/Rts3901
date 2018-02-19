@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/networkmanager/rts_nm_cfg/nm_cfg.c
+stdio.h
+-
+string.h
+-
+stdio.h
+-
+unistd.h
+-
+arpa/inet.h
+-
+fcntl.h
+-
+errno.h
+-
+stdlib.h
+-
+rtsnm.h
+-
+rts_hconf.h
+-
+nm_cfg.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/networkmanager/rts_nm_cfg/nm_cfg.h
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/networkmanager/rts_nm_cfg/nm_cfg.h
+

@@ -1,0 +1,16 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/test/test_rtsisp/CMakeFiles/dump_fw.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/test/test_rtsisp/CMakeFiles/load_fw.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/rtsisp/CMakeFiles/rtsisp.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/rtsisp/CMakeFiles/rtsisp_static.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/rtsjpeg/CMakeFiles/rtsjpeg.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/rtsjpeg/CMakeFiles/rtsjpeg_static.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/rtsosd/CMakeFiles/rtsosd.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/rtsosd/CMakeFiles/rtsosd_static.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/rtsutils/CMakeFiles/rtsutils.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/rtsutils/CMakeFiles/rtsutils_static.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/test/test_rtsisp/CMakeFiles/test_isp_reg.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/test/test_rtsisp/CMakeFiles/test_lib_isp.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/test/test_rtsisp/CMakeFiles/test_lib_mask.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/test/test_rtsisp/CMakeFiles/test_lib_md.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/test/test_rtsosd/CMakeFiles/test_lib_osd.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/.formosa/build/test/test_rtsutils/CMakeFiles/test_lib_utils.dir

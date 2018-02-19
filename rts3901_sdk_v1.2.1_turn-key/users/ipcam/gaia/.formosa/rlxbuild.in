@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Yafei Meng (yafei_meng@realsil.com.cn)
+# Jun. 26, 2015
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_gaia) += ipcam/gaia
+
+# dependency
+gaia: rts_opt_cam rtstream libsysconf

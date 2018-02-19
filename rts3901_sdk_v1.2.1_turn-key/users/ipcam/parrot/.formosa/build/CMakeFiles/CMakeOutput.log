@@ -1,0 +1,272 @@
+The target system is: Linux - 1 - 
+The host system is: Linux - 3.19.0-25-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-gcc 
+Build flags: -Os;-fstrict-aliasing;-fstrict-overflow;-I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/2.8.12.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-g++ 
+Build flags: -Os;-fstrict-aliasing;-fstrict-overflow;-I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include
+Id flags: 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/2.8.12.2/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1708433791/fast"
+make[3]: Entering directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1708433791.dir/build.make CMakeFiles/cmTryCompileExec1708433791.dir/build
+make[4]: Entering directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1708433791.dir/testCCompiler.c.o
+/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-gcc   -Os -fstrict-aliasing -fstrict-overflow -I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include     -o CMakeFiles/cmTryCompileExec1708433791.dir/testCCompiler.c.o   -c /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTryCompileExec1708433791
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1708433791.dir/link.txt --verbose=1
+/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-gcc  -Os -fstrict-aliasing -fstrict-overflow -I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include     -L/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/lib CMakeFiles/cmTryCompileExec1708433791.dir/testCCompiler.c.o  -o cmTryCompileExec1708433791 -rdynamic 
+make[4]: Leaving directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4285528073/fast"
+make[3]: Entering directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4285528073.dir/build.make CMakeFiles/cmTryCompileExec4285528073.dir/build
+make[4]: Entering directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4285528073.dir/CMakeCCompilerABI.c.o
+/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-gcc   -Os -fstrict-aliasing -fstrict-overflow -I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include     -o CMakeFiles/cmTryCompileExec4285528073.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c
+Linking C executable cmTryCompileExec4285528073
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4285528073.dir/link.txt --verbose=1
+/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-gcc  -Os -fstrict-aliasing -fstrict-overflow -I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include    -v CMakeFiles/cmTryCompileExec4285528073.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec4285528073 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//bin/mips-linux-xgcc
+COLLECT_LTO_WRAPPER=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/lto-wrapper
+Target: mips-linux-uclibc
+Configured with: Realtek SDK Builder release 4.8
+Thread model: posix
+gcc version 4.8.5 20150209 (prerelease) (Realtek RSDK-4.8.5p1 Build 2278) 
+COMPILER_PATH=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/bin/
+LIBRARY_PATH=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/
+COLLECT_GCC_OPTIONS='-fuse-tls' '-msoft-float' '-fuse-uls' '-EL' '-march=5281' '-Os' '-fstrict-aliasing' '-fstrict-overflow' '-I' '/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include' '-v' '-o' 'cmTryCompileExec4285528073' '-rdynamic' '-mllsc' '-mplt' '-mno-shared' '-mabi=32'
+ /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/collect2 --sysroot=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc --build-id --eh-frame-hdr -EL -export-dynamic -dynamic-linker /lib/ld-uClibc.so.1 -melf32ltsmip -o cmTryCompileExec4285528073 /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crt1.o /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crti.o /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/crtbegin.o -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5 -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib CMakeFiles/cmTryCompileExec4285528073.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/crtend.o /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crtn.o
+make[4]: Leaving directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(rsdk-linux-ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec4285528073/fast"]
+  ignore line: [make[3]: Entering directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec4285528073.dir/build.make CMakeFiles/cmTryCompileExec4285528073.dir/build]
+  ignore line: [make[4]: Entering directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building C object CMakeFiles/cmTryCompileExec4285528073.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-gcc   -Os -fstrict-aliasing -fstrict-overflow -I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include     -o CMakeFiles/cmTryCompileExec4285528073.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-2.8/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTryCompileExec4285528073]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4285528073.dir/link.txt --verbose=1]
+  ignore line: [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-gcc  -Os -fstrict-aliasing -fstrict-overflow -I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include    -v CMakeFiles/cmTryCompileExec4285528073.dir/CMakeCCompilerABI.c.o  -o cmTryCompileExec4285528073 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//bin/mips-linux-xgcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/lto-wrapper]
+  ignore line: [Target: mips-linux-uclibc]
+  ignore line: [Configured with: Realtek SDK Builder release 4.8]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.8.5 20150209 (prerelease) (Realtek RSDK-4.8.5p1 Build 2278) ]
+  ignore line: [COMPILER_PATH=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/bin/]
+  ignore line: [LIBRARY_PATH=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-fuse-tls' '-msoft-float' '-fuse-uls' '-EL' '-march=5281' '-Os' '-fstrict-aliasing' '-fstrict-overflow' '-I' '/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include' '-v' '-o' 'cmTryCompileExec4285528073' '-rdynamic' '-mllsc' '-mplt' '-mno-shared' '-mabi=32']
+  link line: [ /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/collect2 --sysroot=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc --build-id --eh-frame-hdr -EL -export-dynamic -dynamic-linker /lib/ld-uClibc.so.1 -melf32ltsmip -o cmTryCompileExec4285528073 /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crt1.o /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crti.o /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/crtbegin.o -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5 -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib CMakeFiles/cmTryCompileExec4285528073.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/crtend.o /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crtn.o]
+    arg [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/collect2] ==> ignore
+    arg [--sysroot=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-EL] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-uClibc.so.1] ==> ignore
+    arg [-melf32ltsmip] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec4285528073] ==> ignore
+    arg [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crt1.o] ==> ignore
+    arg [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crti.o] ==> ignore
+    arg [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/crtbegin.o] ==> ignore
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib]
+    arg [CMakeFiles/cmTryCompileExec4285528073.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/crtend.o] ==> ignore
+    arg [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crtn.o] ==> ignore
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/lib/gcc/mips-linux-uclibc/4.8.5/5281/el]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/lib/5281/el]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/lib/5281/el]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/usr/lib/5281/el]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/lib/gcc/mips-linux-uclibc/4.8.5]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/lib/gcc]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/lib]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/lib]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/usr/lib]
+  implicit libs: [c]
+  implicit dirs: [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/lib/gcc/mips-linux-uclibc/4.8.5/5281/el;/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/lib/5281/el;/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/usr/lib/5281/el;/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/lib/gcc/mips-linux-uclibc/4.8.5;/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/lib/gcc;/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/lib;/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/usr/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec971818667/fast"
+make[3]: Entering directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec971818667.dir/build.make CMakeFiles/cmTryCompileExec971818667.dir/build
+make[4]: Entering directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec971818667.dir/testCXXCompiler.cxx.o
+/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-g++    -Os -fstrict-aliasing -fstrict-overflow -I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include     -o CMakeFiles/cmTryCompileExec971818667.dir/testCXXCompiler.cxx.o -c /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTryCompileExec971818667
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec971818667.dir/link.txt --verbose=1
+/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-g++   -Os -fstrict-aliasing -fstrict-overflow -I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include     -L/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/lib CMakeFiles/cmTryCompileExec971818667.dir/testCXXCompiler.cxx.o  -o cmTryCompileExec971818667 -rdynamic 
+make[4]: Leaving directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1975607437/fast"
+make[3]: Entering directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1975607437.dir/build.make CMakeFiles/cmTryCompileExec1975607437.dir/build
+make[4]: Entering directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1975607437.dir/CMakeCXXCompilerABI.cpp.o
+/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-g++    -Os -fstrict-aliasing -fstrict-overflow -I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include     -o CMakeFiles/cmTryCompileExec1975607437.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTryCompileExec1975607437
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1975607437.dir/link.txt --verbose=1
+/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-g++   -Os -fstrict-aliasing -fstrict-overflow -I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include    -v CMakeFiles/cmTryCompileExec1975607437.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1975607437 -rdynamic  
+Using built-in specs.
+COLLECT_GCC=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//bin/mips-linux-xg++
+COLLECT_LTO_WRAPPER=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/lto-wrapper
+Target: mips-linux-uclibc
+Configured with: Realtek SDK Builder release 4.8
+Thread model: posix
+gcc version 4.8.5 20150209 (prerelease) (Realtek RSDK-4.8.5p1 Build 2278) 
+COMPILER_PATH=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/bin/
+LIBRARY_PATH=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/
+COLLECT_GCC_OPTIONS='-fuse-tls' '-msoft-float' '-fuse-uls' '-EL' '-march=5281' '-Os' '-fstrict-aliasing' '-fstrict-overflow' '-I' '/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include' '-v' '-o' 'cmTryCompileExec1975607437' '-rdynamic' '-shared-libgcc' '-mllsc' '-mplt' '-mno-shared' '-mabi=32'
+ /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/collect2 --sysroot=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc --build-id --eh-frame-hdr -EL -export-dynamic -dynamic-linker /lib/ld-uClibc.so.1 -melf32ltsmip -o cmTryCompileExec1975607437 /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crt1.o /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crti.o /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/crtbegin.o -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5 -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib CMakeFiles/cmTryCompileExec1975607437.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/crtend.o /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crtn.o
+make[4]: Leaving directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+make[3]: Leaving directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(rsdk-linux-ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:/usr/bin/make "cmTryCompileExec1975607437/fast"]
+  ignore line: [make[3]: Entering directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTryCompileExec1975607437.dir/build.make CMakeFiles/cmTryCompileExec1975607437.dir/build]
+  ignore line: [make[4]: Entering directory `/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/cmake -E cmake_progress_report /home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/CMakeTmp/CMakeFiles 1]
+  ignore line: [Building CXX object CMakeFiles/cmTryCompileExec1975607437.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-g++    -Os -fstrict-aliasing -fstrict-overflow -I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include     -o CMakeFiles/cmTryCompileExec1975607437.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-2.8/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTryCompileExec1975607437]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1975607437.dir/link.txt --verbose=1]
+  ignore line: [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-g++   -Os -fstrict-aliasing -fstrict-overflow -I/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include    -v CMakeFiles/cmTryCompileExec1975607437.dir/CMakeCXXCompilerABI.cpp.o  -o cmTryCompileExec1975607437 -rdynamic  ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//bin/mips-linux-xg++]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/lto-wrapper]
+  ignore line: [Target: mips-linux-uclibc]
+  ignore line: [Configured with: Realtek SDK Builder release 4.8]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 4.8.5 20150209 (prerelease) (Realtek RSDK-4.8.5p1 Build 2278) ]
+  ignore line: [COMPILER_PATH=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/bin/]
+  ignore line: [LIBRARY_PATH=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/:/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-fuse-tls' '-msoft-float' '-fuse-uls' '-EL' '-march=5281' '-Os' '-fstrict-aliasing' '-fstrict-overflow' '-I' '/home/tony_nie/ipcam/4dpocket/release/.build/build/target/tmpfs/include' '-v' '-o' 'cmTryCompileExec1975607437' '-rdynamic' '-shared-libgcc' '-mllsc' '-mplt' '-mno-shared' '-mabi=32']
+  link line: [ /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/collect2 --sysroot=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc --build-id --eh-frame-hdr -EL -export-dynamic -dynamic-linker /lib/ld-uClibc.so.1 -melf32ltsmip -o cmTryCompileExec1975607437 /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crt1.o /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crti.o /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/crtbegin.o -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5 -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib -L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib CMakeFiles/cmTryCompileExec1975607437.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/crtend.o /home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crtn.o]
+    arg [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../libexec/gcc/mips-linux-uclibc/4.8.5/collect2] ==> ignore
+    arg [--sysroot=/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-EL] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-uClibc.so.1] ==> ignore
+    arg [-melf32ltsmip] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTryCompileExec1975607437] ==> ignore
+    arg [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crt1.o] ==> ignore
+    arg [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crti.o] ==> ignore
+    arg [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/crtbegin.o] ==> ignore
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib]
+    arg [-L/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib] ==> dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib]
+    arg [CMakeFiles/cmTryCompileExec1975607437.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el/crtend.o] ==> ignore
+    arg [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/crtn.o] ==> ignore
+  remove lib [gcc_s]
+  remove lib [gcc]
+  remove lib [gcc_s]
+  remove lib [gcc]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/5281/el] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/lib/gcc/mips-linux-uclibc/4.8.5/5281/el]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib/5281/el] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/lib/5281/el]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib/5281/el] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/lib/5281/el]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib/5281/el] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/usr/lib/5281/el]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/lib/gcc/mips-linux-uclibc/4.8.5]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/lib/gcc]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/../lib/gcc/mips-linux-uclibc/4.8.5/../../../../mips-linux-uclibc/lib] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/lib]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/lib] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/lib]
+  collapse library dir [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408//mips-linux-uclibc/usr/lib] ==> [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/usr/lib]
+  implicit libs: [stdc++;m;c]
+  implicit dirs: [/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/lib/gcc/mips-linux-uclibc/4.8.5/5281/el;/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/lib/5281/el;/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/usr/lib/5281/el;/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/lib/gcc/mips-linux-uclibc/4.8.5;/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/lib/gcc;/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/lib;/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/mips-linux-uclibc/usr/lib]
+  implicit fwks: []
+
+

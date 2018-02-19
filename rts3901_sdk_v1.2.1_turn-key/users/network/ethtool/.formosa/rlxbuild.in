@@ -1,0 +1,8 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Wei WANG (wei_wang@realsil.com.cn)
+# Dec. 18, 2014
+#
+
+pkg_$(CONFIG_PACKAGE_ethtool) += network/ethtool

@@ -1,0 +1,9 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Lei WANG (lei_wang@realsil.com.cn)
+# May. 28, 2015
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_linuxtest_testusb_device) += ipcam/linux_test/testusb/testusb_device

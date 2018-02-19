@@ -1,0 +1,8 @@
+menu "Module Drivers"
+
+source "drivers/audio/Kconfig"
+source "drivers/sdhc/Kconfig"
+source "drivers/video/Kconfig"
+source "drivers/wifi/Kconfig"
+
+endmenu

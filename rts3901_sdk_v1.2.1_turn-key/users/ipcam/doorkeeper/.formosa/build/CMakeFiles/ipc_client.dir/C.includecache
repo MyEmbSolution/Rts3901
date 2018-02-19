@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/include/alarm_ipc_message.h
+alarm_ipc_server.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/include/alarm_ipc_server.h
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/include/alarm_ipc_server.h
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/ipc_client_main.c
+sys/socket.h
+-
+netinet/in.h
+-
+sys/select.h
+-
+sys/un.h
+-
+errno.h
+-
+include/alarm_ipc_message.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/include/alarm_ipc_message.h
+

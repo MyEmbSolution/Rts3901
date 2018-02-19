@@ -1,0 +1,16 @@
+CFLAGS += -Wall -g -I.
+
+TARGET_PARROT = parrot
+
+all: $(TARGET_PARROT)
+
+$(TARGET_PARROT):parrot.c video.c
+	$(CC) $(CFLAGS) -o $@ $^ $(LDLIBS)
+
+unit_test:
+	[ ! -d test ] || $(MAKE) -C test
+
+
+clean:
+	rm -rf $(TARGET_PARROT)  *.o
+	$(MAKE) -C test clean

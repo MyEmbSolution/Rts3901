@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Camera</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row full-fill">
+        <div class="col-md-2 col-xs-3 submenu" role="navigation">
+          <div class="submenu_entry" id="stream">
+            <div class="submenu_icon submenu_icon_stream_on" id="submenu_icon_stream"></div>
+            <div class="submenu_text submenu_text_on" id="submenu_text_stream">Stream Setting</div>
+            <div class="submenu_arrow submenu_arrow_on" id="submenu_arrow_stream">&#9658;</div>
+          </div>
+          <div class="submenu_entry" id="isp">
+            <div class="submenu_icon submenu_icon_isp_off" id="submenu_icon_isp"></div>
+            <div class="submenu_text submenu_text_off" id="submenu_text_isp">ISP Setting</div>
+            <div class="submenu_arrow submenu_arrow_off" id="submenu_arrow_isp">&#9658;</div>
+          </div>
+          <div class="submenu_entry" id="osd">
+            <div class="submenu_icon submenu_icon_osd_off" id="submenu_icon_osd"></div>
+            <div class="submenu_text submenu_text_off" id="submenu_text_osd">OSD Setting</div>
+            <div class="submenu_arrow submenu_arrow_off" id="submenu_arrow_osd">&#9658;</div>
+          </div>
+          <div class="submenu_entry" id="mask">
+            <div class="submenu_icon submenu_icon_mask_off" id="submenu_icon_mask"></div>
+            <div class="submenu_text submenu_text_off" id="submenu_text_mask">Privacy Mask</div>
+            <div class="submenu_arrow submenu_arrow_off" id="submenu_arrow_mask">&#9658;</div>
+          </div>
+          <div class="submenu_entry" id="audio">
+            <div class="submenu_icon submenu_icon_audio_off" id="submenu_icon_audio"></div>
+            <div class="submenu_text submenu_text_off" id="submenu_text_audio">Audio Setting</div>
+            <div class="submenu_arrow submenu_arrow_off" id="submenu_arrow_audio">&#9658;</div>
+          </div>
+        </div>
+        <div class="col-md-10 col-xs-9 main-content" id="main_content"></div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script>submenu.init("camera", "stream");</script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2009
+#
+
+#
+# ARM CPU
+#
+choice
+	prompt "Selected cpu core"
+	depends on ARCH_CPU_ARM || ARCH_CPU_ARM64
+
+config ARCH_CPU_ARMA5
+	bool "cortex-a5"
+	depends on ARCH_SUPPORT_ARMA5
+
+config ARCH_CPU_ARMA7
+	bool "cortex-a7"
+	depends on ARCH_SUPPORT_ARMA7
+
+config ARCH_CPU_ARMA9
+	bool "cortex-a9"
+	depends on ARCH_SUPPORT_ARMA9
+
+config ARCH_CPU_ARMA12
+	bool "cortex-a12"
+	depends on ARCH_SUPPORT_ARMA12
+
+config ARCH_CPU_ARMA15
+	bool "cortex-a15"
+	depends on ARCH_SUPPORT_ARMA15
+
+config ARCH_CPU_ARMA17
+	bool "cortex-a17"
+	depends on ARCH_SUPPORT_ARMA17
+
+config ARCH_CPU_ARMA53
+	bool "cortex-a53"
+	depends on ARCH_SUPPORT_ARMA53
+
+config ARCH_CPU_ARMA57
+	bool "cortex-a57"
+	depends on ARCH_SUPPORT_ARMA57
+
+endchoice

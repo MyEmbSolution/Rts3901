@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../include/rts_sigs.h
+signal.h
+-
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/test/my_kill.c
+stdio.h
+-
+stdlib.h
+-
+stdint.h
+-
+sys/types.h
+-
+signal.h
+-
+rts_sigs.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/test/rts_sigs.h
+

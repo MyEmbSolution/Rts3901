@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ ! -f "/bin/nm_wps" ]; then
+	echo "nm_wps is not configured in user applications"
+else
+	nm_wps -v 4 -D
+fi

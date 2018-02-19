@@ -1,0 +1,6 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/CMakeFiles/doorkeeper.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/CMakeFiles/doorkeepermsg.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/CMakeFiles/event_monitor.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/CMakeFiles/explugin.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/CMakeFiles/ipc_client.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/.formosa/build/CMakeFiles/subscribe_sample.dir

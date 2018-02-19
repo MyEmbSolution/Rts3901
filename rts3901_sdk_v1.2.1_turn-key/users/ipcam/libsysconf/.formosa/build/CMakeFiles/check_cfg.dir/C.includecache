@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libsysconf/check_cfg.c
+errno.h
+-
+sysconf.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libsysconf/sysconf.h
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libsysconf/sysconf.h
+json-c/json.h
+-
+

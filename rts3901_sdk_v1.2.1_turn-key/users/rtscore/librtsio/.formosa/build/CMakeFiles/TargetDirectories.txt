@@ -1,0 +1,4 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/example/CMakeFiles/io_example.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/CMakeFiles/rtsio.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/CMakeFiles/rtsio_static.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/example/CMakeFiles/testptz.dir

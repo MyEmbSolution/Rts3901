@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/rtstream/media/audio/common/rtsamixer/rtsamixer.c
+stdio.h
+-
+stdlib.h
+-
+stdint.h
+-
+alsa/asoundlib.h
+-
+rtscamkit.h
+-
+

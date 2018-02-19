@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Wei WANG (wei_wang@realsil.com.cn)
+# Oct. 31, 2014
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_peacock) += ipcam/peacock
+
+# dependency
+peacock: ffmpeg json-c alsa-lib libauth libsysconf librtsisp librtsaec rtstream

@@ -1,0 +1,4 @@
+#!/bin/sh
+#
+/bin/mDNSResponderPosix -n -t _http._tcp. -p 80 -b &
+

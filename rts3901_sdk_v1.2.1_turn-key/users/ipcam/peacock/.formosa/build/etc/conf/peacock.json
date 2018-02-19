@@ -1,0 +1,40 @@
+{ "generic":{
+		"max_rtsp_connections":"16",
+		"max_http_connections":"16",
+		"http_port":"43791",
+		"rtsp_port":"43794",
+		"rtsp_auth":"disable",
+		"ffmpath":"/var/tmp",
+		"record_path":"/media/sdcard",
+	},
+
+	"profiles":[
+		{
+			"name":"profile1",
+			"video":"/dev/video51", "pack_format":"shm", "video_size":"1280x720", "framerate":"25", "pixel_format":"nv12", "ffm_video":"video51.ffm", "ffm_buf_second":"5", "codec_video":"h264", "v4l2_bufs":"3", "keyframe":"25", "bitrate":"1048576", "intra_qp_delta":"-12", "h264_flag":"0", "h264_sliceSize":"0", "h264_seiMessages":"0", "h264_videoFullRange":"0", "h264_constrainedIntraPrediction":"0", "h264_disableDeblockingFilter":"0", "h264_enableCabac":"1", "h264_cabacInitIdc":"0", "h264_transform8x8Mode":"2", "h264_quarterPixelMv":"2", "h264_roi1DeltaQp":"0", "h264_roi2DeltaQp":"0", "h264_adaptiveRoi":"0", "h264_pictureRc":"1", "h264_pictureSkip":"0", "h264_qpHdr":"-1", "h264_qpMin":"10", "h264_qpMax":"51", "h264_hrd":"0", "h264_hrdCpbSize":"0", "h264_fixedIntraQp":"0", "h264_mbQpAdjustment":"0", "h264_longTermPicRate":"15", "h264_mbQpAutoBoost":"0", "h264_gdr":"0", "h264_level":"h264_level_4", "h264_rs_rc_en":"1",
+			"h264_cvbr_en":"0", "h264_cvbr_max_bitrate":"2000000", "h264_cvbr_min_bitrate":"512000", "h264_cvbr_image_qualiyt":"4", "p_wnd_size":"15", "cvbr_diff_n":"15",
+			"audio":"hw:0,0", "ffm_audio":"pcmC0D0c.shm", "codec_audio":"pcm_mulaw", "capture_volume":"127", "playback_volume":"127", "in_sample_rate":"16000", "in_channels":"2", "in_sample_format":"pcm_s16le", "bitrate_audio":"48000", "aec_en":"0", "ns_en":"0", "aec_spk_delay":"0", "ns_level":"15",
+			"type":"live",
+		},
+		{
+			"name":"profile2",
+			"video":"/dev/video53", "pack_format":"shm", "video_size":"640x480", "framerate":"25", "pixel_format":"nv12", "ffm_video":"video52.ffm", "ffm_buf_second":"5", "codec_video":"h264", "v4l2_bufs":"3", "keyframe":"25", "bitrate":"262144", "intra_qp_delta":"-12", "h264_flag":"0", "h264_sliceSize":"0", "h264_seiMessages":"0", "h264_videoFullRange":"0", "h264_constrainedIntraPrediction":"0", "h264_disableDeblockingFilter":"0", "h264_enableCabac":"1", "h264_cabacInitIdc":"0", "h264_transform8x8Mode":"0", "h264_quarterPixelMv":"2", "h264_roi1DeltaQp":"0", "h264_roi2DeltaQp":"0", "h264_adaptiveRoi":"0", "h264_pictureRc":"1", "h264_pictureSkip":"0", "h264_qpHdr":"-1", "h264_qpMin":"10", "h264_qpMax":"51", "h264_hrd":"0", "h264_hrdCpbSize":"0", "h264_fixedIntraQp":"0", "h264_mbQpAdjustment":"0", "h264_longTermPicRate":"15", "h264_mbQpAutoBoost":"0", "h264_gdr":"0", "h264_level":"h264_level_4_1", "h264_rs_rc_en":"0",
+			"h264_cvbr_en":"0", "h264_cvbr_max_bitrate":"1000000", "h264_cvbr_min_bitrate":"512000", "h264_cvbr_image_qualiyt":"4", "p_wnd_size":"15", "cvbr_diff_n":"15",
+			"audio":"hw:0,0", "ffm_audio":"pcmC0D0c.shm", "codec_audio":"pcm_mulaw", "capture_volume":"127", "playback_volume":"127", "in_sample_rate":"16000", "in_channels":"2", "in_sample_format":"pcm_s16le", "bitrate_audio":"48000", "aec_en":"0", "ns_en":"0", "aec_spk_delay":"0", "ns_level":"15",
+			"type":"live",
+		},
+		{
+			"name":"profile3",
+			"video":"/dev/video54", "pack_format":"shm", "video_size":"320x240", "framerate":"25", "pixel_format":"nv12", "ffm_video":"video53.ffm", "ffm_buf_second":"5", "codec_video":"h264", "v4l2_bufs":"3", "keyframe":"25", "bitrate":"262144", "intra_qp_delta":"-12", "h264_flag":"0", "h264_sliceSize":"0", "h264_seiMessages":"0", "h264_videoFullRange":"0", "h264_constrainedIntraPrediction":"0", "h264_disableDeblockingFilter":"0", "h264_enableCabac":"0", "h264_cabacInitIdc":"0", "h264_transform8x8Mode":"0", "h264_quarterPixelMv":"2", "h264_roi1DeltaQp":"0", "h264_roi2DeltaQp":"0", "h264_adaptiveRoi":"0", "h264_pictureRc":"1", "h264_pictureSkip":"0", "h264_qpHdr":"-1", "h264_qpMin":"10", "h264_qpMax":"51", "h264_hrd":"0", "h264_hrdCpbSize":"0", "h264_fixedIntraQp":"0", "h264_mbQpAdjustment":"0", "h264_longTermPicRate":"15", "h264_mbQpAutoBoost":"0", "h264_gdr":"0", "h264_level":"h264_level_4_2", "h264_rs_rc_en":"0",
+			"h264_cvbr_en":"0", "h264_cvbr_max_bitrate":"512000", "h264_cvbr_min_bitrate":"256000", "h264_cvbr_image_qualiyt":"4", "p_wnd_size":"15", "cvbr_diff_n":"15",
+			"audio":"hw:0,0", "ffm_audio":"pcmC0D0c.shm", "codec_audio":"pcm_mulaw", "capture_volume":"127", "playback_volume":"127", "in_sample_rate":"16000", "in_channels":"2", "in_sample_format":"pcm_s16le", "bitrate_audio":"48000", "aec_en":"0", "ns_en":"0", "aec_spk_delay":"0", "ns_level":"15",
+			"type":"live",
+		},
+		{
+			"name":"profile4",
+			"video":"/dev/video52", "video_size":"1280x720", "framerate":"2", "pixel_format":"nv12", "ffm_video":"video54.ffm", "codec_video":"mjpeg", "v4l2_bufs":"1",
+			"type":"snapshot",
+		},
+	],
+
+}

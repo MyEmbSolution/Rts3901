@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alarm</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row full-fill">
+        <div class="col-md-2 col-xs-3 submenu" role="navigation">
+          <div class="submenu_entry" id="motion">
+            <div class="submenu_icon submenu_icon_motion_on" id="submenu_icon_motion"></div>
+            <div class="submenu_text submenu_text_on" id="submenu_text_motion">Motion Detection</div>
+            <div class="submenu_arrow submenu_arrow_on" id="submenu_arrow_motion">&#9658;</div>
+          </div>
+          <div class="submenu_entry" id="sd">
+            <div class="submenu_icon submenu_icon_sd_off" id="submenu_icon_sd"></div>
+            <div class="submenu_text submenu_text_off" id="submenu_text_sd">SD Management</div>
+            <div class="submenu_arrow submenu_arrow_off" id="submenu_arrow_sd">&#9658;</div>
+          </div>
+          <div class="submenu_entry" id="schedule">
+            <div class="submenu_icon submenu_icon_schedule_off" id="submenu_icon_schedule"></div>
+            <div class="submenu_text submenu_text_off" id="submenu_text_schedule">Alarm Management</div>
+            <div class="submenu_arrow submenu_arrow_off" id="submenu_arrow_schedule">&#9658;</div>
+          </div>
+          <div class="submenu_entry" id="ftp" style="display: none">
+            <div class="submenu_icon submenu_icon_ftp_off" id="submenu_icon_ftp"></div>
+            <div class="submenu_text submenu_text_off" id="submenu_text_ftp">FTP Setting</div>
+            <div class="submenu_arrow submenu_arrow_off" id="submenu_arrow_ftp">&#9658;</div>
+          </div>
+        </div>
+        <div class="col-md-10 col-xs-9 main-content" id="main_content">
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script>submenu.init("alarm", "motion");</script>
+  </body>
+</html>

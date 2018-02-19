@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../cgi/include/error_code.h
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/webpages/cgi/uploadDemo.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+fcntl.h
+-
+unistd.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+error_code.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/webpages/cgi/error_code.h
+

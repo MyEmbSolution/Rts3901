@@ -1,0 +1,11 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/lib/librtsio.a
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/include/rts_io_adc.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/include/rts_io_errno.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/include/rts_io_i2c.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/include/rts_io_gpio.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/include/rts_io_ptz.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/lib/librtsio.so.0.1.1
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/lib/librtsio.so.0
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/lib/librtsio.so
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/bin/io_example
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/.formosa/build/bin/testptz

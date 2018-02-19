@@ -1,0 +1,264 @@
+#
+# For a description of the syntax of this configuration file,
+# see scripts/kbuild/config-language.txt.
+#
+
+mainmenu "Bootloader Configuration"
+
+#menu "Chip Selection"
+
+choice
+	prompt "Chip Selection"
+	default BOARD_RTS3901
+	help 
+	  select chip type
+
+#config BOARD_RLE0745
+#	bool "RLE0745"
+#	help
+#	  Enable option for RLE0745
+
+config BOARD_RTS3901
+	bool "RTS3901"
+	help
+	  Enable option for RTS3901
+
+#config BOARD_RTS3903
+#	bool "RTS3903"
+#	help
+#	  Enable option for RTS3903
+
+endchoice
+
+#endmenu
+
+#menu "Hardware Type"
+
+choice
+	prompt "Hardware Type"
+	default TARGET_ASIC
+	help
+	  select IC or FPGA
+
+config TARGET_ASIC
+	bool "ASIC"
+	help
+	  Enable options for Asic.
+
+#config TARGET_FPGA
+#	bool "FPGA"
+#	help
+#	  Enable options for FPGA.
+
+endchoice
+
+#endmenu
+
+choice
+	prompt "flash partition definition"
+	default PARTITION_IN_BSP
+	help
+	  flash partition definition selection
+
+config PARTITION_IN_BSP
+	bool "refer to bsp directory"
+	help
+	  partition.ini file defined in bsp directory
+
+config PARTITION_IN_UBOOT
+	bool "refer to local directory"
+	help 
+	  partition.ini file defined in uboot directory
+
+endchoice
+#menu 'DDR selection'
+
+choice
+	prompt "DDR type"
+	default DDR3_2GBIT_DEMOBOARD_GENERAL
+	help
+	  DDR type selection
+
+#config DDR_H5TQ2G
+#	bool "DDR3 H5TQ2G(Hynix 256MB)"
+#	depends on TARGET_FPGA || BOARD_RTS3901
+#	help
+#	  Enable option for DDR H5TQ2G
+#
+config DDR_W975116KG
+	bool "DDR2 MCM(Winbond 64MB)"
+	depends on TARGET_ASIC
+	help
+	  Enable option for DDR W975116KG
+#
+#config DDR_W631GG6KB
+#	bool "DDR3 W631GG6KB(Winbond 128MB)"
+#	depends on TARGET_ASIC && BOARD_RTS3901
+#	help
+#	  Enable option for DDR W31GG6KB
+#
+#config DDR_W632GG6KB
+#	bool "DDR3 W632GG6KB(Winbond 256MB)"
+#	depends on TARGET_ASIC && BOARD_RTS3901
+#	help
+#	  Enable option for DDR W632GG6KB
+#
+#config DDR_NT5CC64M16IP
+#	bool "DDR3 NT5CC64M16IP(Nanya 128MB)"
+#	depends on TARGET_ASIC && BOARD_RTS3901
+#	help
+#	  Enable option for DDR NT5CC64M16IP
+#
+#config DDR_NT5CC128M16IP
+#	bool "DDR3 NT5CC128M16IP(Nanya 256MB)"
+#	depends on TARGET_ASIC && BOARD_RTS3901
+#	help
+#	  Enable option for DDR NT5CC128M16IP
+#
+#config DDR_M15F1G1664A
+#	bool "DDR3 M15F1G1664A(ESMT 128MB)"
+#	depends on TARGET_ASIC && BOARD_RTS3901
+#	help
+#	  Enable option for DDR M15F1G1664A
+#
+#
+#config DDR_M15F2G16128A
+#	bool "DDR3 M15F2G16128A(ESMT 256MB)"
+#	depends on TARGET_ASIC && BOARD_RTS3901
+#	help
+#	  Enable option for DDR M15F2G16128A
+#
+config DDR3_ESMT_1GBIT
+	bool "DDR3 MCM(ESMT 128MB)"
+	depends on TARGET_ASIC
+	help
+	  Ebable option for MCM 1Gbit DDR3
+
+config DDR3_2GBIT_DEMOBOARD_GENERAL
+	bool "2Gbit DDR3 DemoBOARD general"
+	depends on TARGET_ASIC
+	help
+	  Enable option for 2Gbit DDR on demo board
+
+config DDR3_1GBIT_DEMOBOARD_GENERAL
+	bool "1Gbit DDR3 DemoBOARD general"
+	depends on TARGET_ASIC
+	help
+	  Enable option for 1Gbit DDR on demo board
+
+config DDR3_2GBIT_QABOARD_V11
+	bool "2Gbit DDR3 QABoard V1.1"
+	depends on TARGET_ASIC
+	help
+	  Enable option for 2Gbit DDR on QA Board V1.1
+
+config CONFIG_DDR_H5TQ2G
+	bool "DDR3 H5TQ2G(Hynix 256MB)"
+	depends on TARGET_FPGA
+	help
+	  Enable option for DDR H5TQ2G
+
+endchoice
+
+choice
+	prompt "DDR speed"
+	default DDR_1066
+	depends on TARGET_ASIC
+	help
+	  select ddr clock
+
+config DDR_800
+	bool "800"
+	depends on DDR_W975116KG
+	help
+	  select ddr dqs clock to 800/2.
+
+config DDR_1066
+	bool "1066"
+	help
+	  select ddr dqs clock to 1066/2.
+
+config DDR_1333
+	bool "1333"
+	depends on DDR3_1GBIT_DEMOBOARD_GENERAL || DDR3_2GBIT_DEMOBOARD_GENERAL 
+	help
+	  select ddr dqs clock to 1333/2
+
+#config DDR_1600
+#	bool "1600"
+#	help
+#	  select ddr dqs clock to 1600/2
+
+endchoice
+
+choice
+	prompt "DDR ODT on/off"
+	default ODT_ON
+	depends on TARGET_ASIC
+	help
+	  select ddr odt on or off
+
+config ODT_ON
+	bool "ODT ON"
+	help
+	  set ddr odt on
+
+config ODT_OFF
+	bool "ODT OFF"
+	depends on DDR_800 || DDR_1066
+	help
+	  set ddr odt off
+endchoice
+
+choice
+	prompt "cpu clock setting"
+	default CPU_500M
+	depends on TARGET_ASIC
+	help
+	  set cpu clock frequency
+
+#config CPU_600M
+#	bool "600MHz"
+#	help
+#	  set cpu clock to 600MHz
+
+config CPU_500M
+	bool "500MHz"
+	help
+	  set cpu clock to 500MHz
+
+config CPU_400M
+	bool "400MHz"
+	help
+	  set cpu clock to 400MHz
+
+config CPU_333M
+	bool "333MHz"
+	help
+	  set cpu clock to 333MHz
+
+config CPU_300M
+	bool "300MHz"
+	help
+	  set cpu clock to 300MHz
+
+config CPU_250M
+	bool "250MHz"
+	help
+	  set cpu clock to 250MHz
+
+config CPU_240M
+	bool "240MHz"
+	help
+	  set cpu clock to 300MHz
+
+config CPU_200M
+	bool "200MHz"
+	help
+	  set cpu clock to 200MHz
+
+
+endchoice
+#endmenu
+
+

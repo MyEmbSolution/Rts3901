@@ -1,0 +1,42 @@
+menu "DesignWare USB_OTG support"
+config DWC_OTG
+	tristate "DWC_OTG support"
+#	depends on SOC_RT305X
+	---help---
+	  This driver supports Ralink DWC_OTG
+
+choice
+	prompt "USB Operation Mode"
+	depends on DWC_OTG
+	default DWC_OTG_HOST_ONLY
+
+config DWC_OTG_HOST_ONLY
+	bool "HOST ONLY MODE"
+	depends on DWC_OTG
+
+config DWC_OTG_DEVICE_ONLY
+	bool "DEVICE ONLY MODE"
+	depends on DWC_OTG
+	select USB_GADGET_DUALSPEED	
+
+endchoice
+
+# Selected by UDC drivers that support high-speed operation.
+config USB_GADGET_DUALSPEED
+	bool
+
+# Selected by UDC drivers that support super-speed opperation
+config USB_GADGET_SUPERSPEED
+	bool
+	depends on USB_GADGET_DUALSPEED
+	
+config DWC_OTG_DEBUG
+	bool "Enable debug mode"
+	depends on DWC_OTG
+
+config DWC_OTG_DEBUG_VERBOSE
+	bool "Enable debug verbose mode"
+	depends on DWC_OTG
+
+endmenu
+

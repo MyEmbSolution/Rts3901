@@ -1,0 +1,8 @@
+menu "sdhc driver"
+
+config PACKAGE_modules_mmc
+	tristate "Realtek IPCAM SD/MMC Host Controller support"
+	help
+	 Support Realtek Ipcam SD/MMC card interface.
+
+endmenu

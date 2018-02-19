@@ -1,0 +1,10 @@
+LDLIBS = -L$(DIR_TMPFS)/lib
+LDLIBS += -pthread -lavdevice -lavformat -lavfilter -lavcodec -lasound -lswresample -lswscale -lavutil -lm
+LDLIBS += -ljson-c -lIOTCAPIs -lAVAPIs -lrtscam -loctopus -lapmsg -lpemsg -laacenc -ljson-c -lh1encoder -lhconf
+CFLAGS += -I$(DIR_TMPFS)/include -shared-libgcc
+CC=rsdk-linux-gcc
+
+export LDLIBS
+export CC
+export CFLAGS
+include .makefile.in

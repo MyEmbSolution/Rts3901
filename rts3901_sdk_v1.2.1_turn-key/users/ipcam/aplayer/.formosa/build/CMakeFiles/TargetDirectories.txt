@@ -1,0 +1,3 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/aplayer/.formosa/build/CMakeFiles/aplayer.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/aplayer/.formosa/build/CMakeFiles/aplayer_test.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/aplayer/.formosa/build/CMakeFiles/areceiver.dir

@@ -1,0 +1,6 @@
+#
+# RLX Linux BSP
+#
+platform-y		+= bsp/
+cflags-y		+= -I$(srctree)/arch/rlx/bsp
+load-y			= 0xffffffff80010000

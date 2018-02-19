@@ -1,0 +1,8 @@
+# Realtek Semiconductor Corp.
+#
+# Jim Cao (jim_cao@realsil.com.cn)
+# July. 6, 2015
+#
+# build target
+
+pkg_$(CONFIG_PACKAGE_dbgutils_eth_looptest) += ipcam/dbgutils/eth_looptest

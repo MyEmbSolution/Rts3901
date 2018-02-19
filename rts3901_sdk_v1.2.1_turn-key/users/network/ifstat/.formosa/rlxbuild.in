@@ -1,0 +1,8 @@
+# Realtek Semiconductor Corp.
+#
+# Jim Cao (jim_cao@realsil.com.cn)
+# July. 9, 2015
+#
+# build target
+
+pkg_$(CONFIG_PACKAGE_ifstat) += network/ifstat

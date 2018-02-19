@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Hurray niu (hurray_niu@realsil.com.cn)
+# May. 19, 2015
+#
+
+pkg_$(CONFIG_PACKAGE_nm_wps) += ipcam/networkmanager/rts_nm_wps
+
+#dependency
+rts_nm_wps: libsysconf librtsnm

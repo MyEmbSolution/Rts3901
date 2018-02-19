@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../include/neuralyzer.h
+sys/types.h
+-
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/neuralyzer/neuralyzer.c
+neuralyzer.h
+-
+unistd.h
+-
+stdio.h
+-
+

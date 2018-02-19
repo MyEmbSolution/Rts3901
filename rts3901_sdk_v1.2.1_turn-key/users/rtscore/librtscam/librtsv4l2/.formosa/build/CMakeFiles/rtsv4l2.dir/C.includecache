@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtsv4l2/rtsv4l2.c
+stdio.h
+-
+stdlib.h
+-
+stdint.h
+-
+unistd.h
+-
+sys/ioctl.h
+-
+sys/mman.h
+-
+errno.h
+-
+string.h
+-
+poll.h
+-
+strings.h
+-
+rtscamkit.h
+-
+rtsv4l2.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtsv4l2/rtsv4l2.h
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtsv4l2/rtsv4l2.h
+stdint.h
+-
+linux/videodev2.h
+-
+fcntl.h
+-
+

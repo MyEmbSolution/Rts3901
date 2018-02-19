@@ -1,0 +1,9 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Wind Han (wind_han@realsil.com.cn)
+# Mar. 14, 2016
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_3rdparty_librtsaec) += rtscore/3rdparty/librtsaec

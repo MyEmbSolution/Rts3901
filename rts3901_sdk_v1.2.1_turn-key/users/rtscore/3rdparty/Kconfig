@@ -1,0 +1,15 @@
+config PACKAGE_3rdparty_libaacenc
+	tristate "libaacenc"
+	default n
+
+config PACKAGE_3rdparty_tutk
+	tristate "TUTK"
+	default n
+
+config PACKAGE_3rdparty_librtsaec
+	tristate "librtsaec"
+	default n
+
+config PACKAGE_3rdparty_librtsmp3
+	tristate "librtsmp3"
+	default n

@@ -1,0 +1,133 @@
+#
+# Automatically generated make config: don't edit
+# RLX Linux MCONF
+#
+
+#
+# Base system
+#
+CONFIG_PACKAGE_busybox=y
+# CONFIG_PACKAGE_example is not set
+CONFIG_PACKAGE_scripts=y
+CONFIG_PACKAGE_scripts_automount=y
+CONFIG_PACKAGE_scripts_udhcpc=y
+
+#
+# Libraries
+#
+# CONFIG_PACKAGE_binutils is not set
+# CONFIG_PACKAGE_elfutils is not set
+# CONFIG_PACKAGE_libaio is not set
+# CONFIG_PACKAGE_libdwarf is not set
+# CONFIG_PACKAGE_gettext is not set
+# CONFIG_PACKAGE_libiconv is not set
+CONFIG_PACKAGE_openssl=y
+# CONFIG_PACKAGE_libpng is not set
+# CONFIG_PACKAGE_libusb is not set
+CONFIG_PACKAGE_zlib=y
+CONFIG_PACKAGE_lzo=y
+CONFIG_PACKAGE_libuuid=y
+# CONFIG_PACKAGE_libpopt is not set
+CONFIG_PACKAGE_jsonc=y
+CONFIG_PACKAGE_alsalib=y
+CONFIG_PACKAGE_pcre=y
+# CONFIG_PACKAGE_cunit is not set
+CONFIG_PACKAGE_libsysconf=y
+# CONFIG_PACKAGE_opencore_amr is not set
+CONFIG_PACKAGE_libauth=y
+CONFIG_PACKAGE_3rdparty=y
+CONFIG_PACKAGE_3rdparty_libaacenc=y
+# CONFIG_PACKAGE_3rdparty_tutk is not set
+
+#
+# Network applications
+#
+CONFIG_PACKAGE_lighttpd=y
+# CONFIG_PACKAGE_iptables is not set
+# CONFIG_PACKAGE_tcpdump is not set
+# CONFIG_PACKAGE_libpcap is not set
+# CONFIG_PACKAGE_iproute2 is not set
+# CONFIG_PACKAGE_samba is not set
+# CONFIG_PACKAGE_ppp is not set
+# CONFIG_PACKAGE_ethtool is not set
+# CONFIG_PACKAGE_ifstat is not set
+CONFIG_PACKAGE_wpa_supplicant_hostapd=y
+CONFIG_PACKAGE_hostapd=y
+CONFIG_PACKAGE_supplicant=y
+# CONFIG_PACKAGE_super_link is not set
+# CONFIG_PACKAGE_dnrd is not set
+CONFIG_PACKAGE_networkmanager=y
+CONFIG_PACKAGE_nm_init=y
+CONFIG_PACKAGE_nm_cfg=y
+CONFIG_Enable_set_ethaddr=y
+CONFIG_PACKAGE_nm_wps=y
+CONFIG_WPS_LED_NUM=9
+
+#
+# Darkside Applications
+#
+# CONFIG_PACKAGE_gdbserver is not set
+# CONFIG_PACKAGE_ltrace is not set
+# CONFIG_PACKAGE_oprofile is not set
+# CONFIG_PACKAGE_strace is not set
+# CONFIG_PACKAGE_systemtap is not set
+CONFIG_PACKAGE_dbgutils=y
+CONFIG_PACKAGE_dbgutils_iomem=y
+# CONFIG_dbgutils_test_iodma is not set
+# CONFIG_PACKAGE_dbgutils_efuse_mfg is not set
+# CONFIG_PACKAGE_dbgutils_eth_looptest is not set
+# CONFIG_PACKAGE_dbgutils_uphymdio is not set
+CONFIG_PACKAGE_dbgutils_veridisk=y
+CONFIG_PACKAGE_dbgutils_dbgisp=y
+# CONFIG_PACKAGE_dbgutils_sgctrl is not set
+# CONFIG_PACKAGE_dbgutils_ptz is not set
+# CONFIG_PACKAGE_dbgutils_wavetool is not set
+# CONFIG_PACKAGE_dbgutils_fephy is not set
+# CONFIG_PACKAGE_dbgutils_monitor is not set
+
+#
+# Utils
+#
+# CONFIG_PACKAGE_adb is not set
+CONFIG_PACKAGE_neuralyzer=y
+# CONFIG_PACKAGE_isptuning is not set
+# CONFIG_PACKAGE_iwlib is not set
+CONFIG_PACKAGE_lrzsz=y
+# CONFIG_PACKAGE_prelink is not set
+# CONFIG_PACKAGE_usbutils is not set
+CONFIG_PACKAGE_mtdutils=y
+CONFIG_PACKAGE_alsautils=y
+CONFIG_PACKAGE_ntpclient=y
+# CONFIG_PACKAGE_ft2_test is not set
+CONFIG_PACKAGE_hconf=y
+# CONFIG_PACKAGE_linuxtest is not set
+
+#
+# Benchmarks
+#
+# CONFIG_PACKAGE_iperf is not set
+# CONFIG_PACKAGE_iozone is not set
+# CONFIG_PACKAGE_fio is not set
+
+#
+# IPCam packages
+#
+CONFIG_PACKAGE_ffmpeg=y
+CONFIG_PACKAGE_peacock=y
+# CONFIG_PACKAGE_parrot is not set
+# CONFIG_PACKAGE_aplayer is not set
+CONFIG_PACKAGE_octopus=y
+CONFIG_PACKAGE_octopus_plugin=y
+CONFIG_OCTOPUS_PLUGIN_CAM=y
+CONFIG_OCTOPUS_PLUGIN_NM=y
+#CONFIG_OCTOPUS_PLUGIN_IO=y
+# CONFIG_OCTOPUS_PLUGIN_UVC is not set
+CONFIG_PACKAGE_h1_encoder=y
+CONFIG_H264_IRQ=y
+# CONFIG_H264_POLLING is not set
+CONFIG_PACKAGE_webpages=y
+CONFIG_PACKAGE_librtsisp=y
+CONFIG_PACKAGE_rtstream=y
+# CONFIG_PACKAGE_onvif is not set
+CONFIG_PACKAGE_gaia=y
+CONFIG_PACKAGE_librtsio=y

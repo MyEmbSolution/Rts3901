@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Factory Reset</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid main-content-bg">
+      <div class="row">
+        <div class="col-md-offset-1 col-xs-offset-1 col-md-10 col-xs-10">
+          <h3>Factory Reset</h3>
+          <p><input id="reserveTime" type="checkbox">Reserve Time</p>
+          <p><input id="reserveNetwork" type="checkbox">Reserve Network</p>
+          <button class="btn btn-primary btn-sm" id="btn_reset">Reset</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="waitModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="text-info" id="modalLabel">Device will reboot to take effect.</h4>
+          </div>
+          <div class="modal-body">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-danger active" id="rebootProgress" role="progressbar" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/admin_reset.js"></script>
+  </body>
+</html>

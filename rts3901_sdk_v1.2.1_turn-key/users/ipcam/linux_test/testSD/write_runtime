@@ -1,0 +1,15 @@
+[write_runtime]
+
+filename=/dev/mmcblk0p1
+
+runtime=${TESTTIME}
+
+size=100g
+
+direct=1
+
+rw=write
+
+fallocate=none
+
+continue_on_error=none

@@ -1,0 +1,11 @@
+# Realtek Semiconductor Corp.
+#
+# hurray_niu (huray_niu@realsil.com.cn)
+# Aug. 21, 2014
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_wpa_supplicant_hostapd) += network/hostapd
+
+# dependency
+hostapd: openssl

@@ -1,0 +1,15 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/bin/init_camera
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/bin/sync_osd_time
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/conf/osd.json
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/conf/isp.json
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/rcS.d/S93init_camera
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/double_biggest.bin
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/double_big.bin
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/double_med.bin
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/double_small.bin
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/chi.bin
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/eng.bin
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/single_biggest.bin
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/single_big.bin
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/single_med.bin
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/etc/single_small.bin

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alarm Schedule</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-switch.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid main-content-bg">
+      <div class="row">
+        <div class="col-md-offset-1 col-xs-offset-1 col-md-10 col-xs-10">
+          <h3>Event List</h3>
+          <table class="table table-striped" id="eventList">
+            <thead><tr><th>Name</th><th>Event Type</th><th>Event Schedule</th><th>Action</th><th>Enable</th><th></th><th></th></tr></thead><tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-1 col-xs-offset-1 col-md-10 col-xs-10"  style="text-align: right;">
+          <button class="btn btn-default btn-sm" id="btn_add">Add</button>
+        </div>
+      </div>
+
+	<div class="modal fade" id="setModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" data-backdrop="static" data-keyboard="false">
+	<div class="modal-content" id = "setRule">
+	<div class="modal-body">
+	<div class="alert" id="responseWarn" role="alert"></div>
+	<div class="tableContainer tableContainer1">
+  		<div class="tableRow">
+			<div class="tableCell">
+				<div class="tableContainer scheduleContainer">
+					<div class="tableRow">
+						<div class="tableCell scheduleCell">Name</div>
+						<div class="tableCell"><input id="scheduleCell" type="text" placeholder="Realtek 2016"></div>
+					</div>
+				</div>
+			</div>
+			<div class="tableCell">
+				<div class="tableContainer scheduleContainer">
+					<div class="tableRow">
+						<div class="tableCell scheduleCell">Enable</div>
+						<div class="tableCell"><input id="scheduleMdEnable" type="checkbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div >
+
+	<div class="tableContainer">
+         	<div class="tableRow">
+         		<div class="tableCell scheduleCell">Event</div>
+         		<div class="tableCell"> <select name="event"> <option value="MD">Motion Detection</option>  <option value="SCHEDULE">Schedule</option></select></div>
+         		<!--<div class="tableCell scheduleWindow"><input id="Window1" type="checkbox" checked></div>
+         		<div class="tableCell">Window 1</div>
+         		<div class="tableCell scheduleWindow"><input id="Window2" type="checkbox" checked></div>
+         		<div class="tableCell">Window 2</div>
+         		<div class="tableCell scheduleWindow"><input id="Window3" type="checkbox" checked></div>
+         		<div class="tableCell">Window 3</div>-->
+         	</div>
+       </div>
+
+       <div class="tableContainer">
+       <div class="tableRow">
+       <div class="tableCell">
+         	<div class="tableContainer scheduleContainer tableContainer3">
+         		<div class="tableRow">
+         			<div class="tableCell scheduleCell" id="scheduleAction">Action</div>
+         			<div class="tableCell">
+         				<div class="tableContainer">
+         					<div class="tableRow">
+         						<div class="tableCell scheduleCheckbox"><input id="saveStreamTo" type="checkbox"></div>
+         						<div class="tableCell">Save Stream To</div>
+         						<div class="tableCell"> <select name="saveStreamTo"> <!--<option value="E-mail">E-mail</option>--> <option value="SD">SD</option> </select></div>
+         					</div>
+         					<div class="tableRow">
+         						<div class="tableCell"><input id="sendSnapshotTo" type="checkbox"></div>
+         						<div class="tableCell">Send Snapshot To</div>
+         						<div class="tableCell"> <select name="sendSnapshotTo"> <!--<option value="E-mail">E-mail</option>--><option value="SD">SD</option> </select></div>
+         					</div>
+         					<!--<div class="tableRow">
+         						<div class="tableCell"><input id="activateDigitalOutput" type="checkbox"></div>
+         						<div class="tableCell">Activate Digital Output</div>
+         					</div>
+         					<div class="tableRow">
+         						<div class="tableCell"><input id="sendToEmail" type="checkbox"></div>
+         						<div class="tableCell">Send to E-mail</div>
+         					</div>-->
+         				</div>
+         			</div>
+         		</div>
+         	</div>
+	</div>
+	<!--<div class="tableCell">
+         	<div class="tableContainer scheduleContainer">
+         		<div class="tableRow">
+         			<div class="tableCell scheduleCell" id="scheduleStorage">Email</div>
+         			<div class="tableCell">
+         				<div class="tableContainer">
+         					<div class="tableRow">
+         						<div class="tableCell">Sender</div>
+         						<div class="tableCell"><input id="senderText"></div>
+         					</div>
+         					<div class="tableRow">
+         						<div class="tableCell">To</div>
+         						<div class="tableCell"><input id="toText"></div>
+         					</div>
+         					<div class="tableRow">
+         						<div class="tableCell">CC</div>
+         						<div class="tableCell"><input id="CCText"></div>
+         					</div>
+         					<div class="tableRow">
+         						<div class="tableCell">Sender's Name</div>
+         						<div class="tableCell"><input id="senderNameText"></div>
+         					</div>
+         					<div class="tableRow">
+         						<div class="tableCell">Subject</div>
+         						<div class="tableCell"><input id="subjectText"></div>
+         					</div>
+         				</div>
+         			</div>
+         		</div>
+         	</div>
+       </div>-->
+       </div>
+	</div>
+
+	<div class="tableContainer tableContainer3">
+		<div class="tableRow">
+			<div class="tableCell" id="eventSchedule">Event Schedule</div>
+			<div class="tableCell"><input type="radio"  name="scheduleType" id="typeAlways" value="always" />Always</div>
+			<div class="tableCell"><input type="radio"  name="scheduleType" id="typeSchedule" value="schedule" />Schedule</div>
+			<div class="tableCell" id="scheduleRecurrence"><input type="radio" id="recurrencePattern" style="display:none" checked name="scheduleTypePattern" value="recurrence pattern" /></div>
+		</div>
+	</div>
+
+	<div id="scheduleTable">
+	<div class="tableContainer">
+		<div class="tableRow">
+			<div class="tableCell"><canvas id="myCanvas"></canvas></div>
+			<div class="tableCell">
+				<div class="tableContainer">
+					<div class="tableRow">
+						<div class="tableCell"><button class="btn btn-primary btn-sm" id="btn_selectall" >Select All</button></div>
+					</div>
+					<div class="tableRow">
+						<div class="tableCell"><button class="btn btn-primary btn-sm" id="btn_clearall">Clear All</button></div>
+					</div>
+					<div class="tableRow">
+						<div class="tableCell"><button class="btn btn-primary btn-sm" id="btn_undoall">Undo All</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="tableContainer">
+		<div class="tableRow">
+			<div class="tableCell"><input id="scheduleColor" type="text" disabled="disabled"></div>
+			<div class="tableCell">Event Schedule</div>
+			<div class="tableCell"><input id="notScheduleColor" type="text" disabled="disabled"></div>
+			<div class="tableCell">Not Schedule</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="tableContainer scheduleRow">
+         	<div class="tableRow">
+         		<div class="tableCell"><button class="btn btn-primary btn-sm" id="btn_cancel" >Cancel</button><button class="btn btn-primary btn-sm" id="btn_apply" >Apply</button></div>
+         	</div>
+       </div>
+
+ 	</div>
+      	</div>
+      	</div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/alarm_schedule.js"></script>
+  </body>
+</html>

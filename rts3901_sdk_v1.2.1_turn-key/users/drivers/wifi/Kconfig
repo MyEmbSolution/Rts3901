@@ -1,0 +1,70 @@
+menu "wifi driver"
+
+config PACKAGE_rtl8188cus
+	tristate "Realtek RTL8188C USB WiFi"
+	default n
+	help
+	  realtek rtl8188c usb wifi card driver
+
+config PACKAGE_rtl8188eus
+	tristate "Realtek RTL8188E USB WiFi"
+	default n
+	help
+	  realtek rtl8188e usb wifi card driver
+
+config PACKAGE_rtl8188fu
+	tristate "Realtek RTL8188F USB WiFi"
+	default n
+	help
+	  realtek rtl8188f usb wifi card driver
+
+config PACKAGE_rtl8189es
+	tristate "Realtek RTL8189E SDIO WiFi"
+	default n
+	help
+	  realtek rtl8189e sdio wifi card driver
+
+config PACKAGE_rtl8192eus
+	tristate "Realtek RTL8192E USB WiFi"
+	default n
+	help
+	  realtek rtl8192e usb wifi card driver
+
+config PACKAGE_rtl8192es
+	tristate "Realtek RTL8192E SDIO WiFi"
+	default n
+	help
+	  realtek rtl8192e sdio wifi card driver
+
+config PACKAGE_rtl8812au
+	tristate "Realtek RTL8812A USB WiFi"
+	default n
+	help
+	  realtek rtl8812a usb wifi card driver
+
+config PACKAGE_rtl8821au
+	tristate "Realtek RTL8821A USB WiFi"
+	default n
+	help
+	  realtek rtl8821a usb wifi card driver
+
+config PACKAGE_rtl8821as
+	tristate "Realtek RTL8821A SDIO WiFi"
+	default n
+	help
+	  realtek rtl8821a sdio wifi card driver
+
+config RTW_SUPER_LINK
+	bool "Enable Realtek WiFi Super Link"
+	depends on PACKAGE_rtl8188cus || PACKAGE_rtl8188eus || PACKAGE_rtl8192eus
+	default n
+
+config RTW_CONCURRENT_MODE
+	bool "Enable Realtek WiFi Concurrent Mode"
+	depends on PACKAGE_rtl8188eus || PACKAGE_rtl8188fu || PACKAGE_rtl8189es || \
+		PACKAGE_rtl8192es || PACKAGE_rtl8192eus || PACKAGE_rtl8821as || \
+		PACKAGE_rtl8821au || PACKAGE_rtl8812au
+	default n
+	help
+	  realtek WiFi softap coexists with station mode
+endmenu

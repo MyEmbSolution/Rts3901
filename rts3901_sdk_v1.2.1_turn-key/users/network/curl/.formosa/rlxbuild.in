@@ -1,0 +1,11 @@
+# Realtek Semiconductor Corp.
+#
+# Elvis Chen (elvis_chen@realtek.com)
+# JAN. 25, 2015
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_curl) += network/curl
+
+# dependency
+curl: openssl

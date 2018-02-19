@@ -1,0 +1,10 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/CMakeFiles/alsad.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/CMakeFiles/del_sdcard_files.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/CMakeFiles/ffm_player.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/CMakeFiles/lark.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/CMakeFiles/peacock.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/CMakeFiles/pemsg.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/CMakeFiles/record_widget.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/CMakeFiles/rtspd.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/CMakeFiles/sample.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/CMakeFiles/snapshot_widget.dir

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libauth/auth_func.c
+pthread.h
+-
+sys/stat.h
+-
+sys/sem.h
+-
+sys/types.h
+-
+sys/ipc.h
+-
+fcntl.h
+-
+syslog.h
+-
+auth_func.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libauth/auth_func.h
+stdio.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libauth/stdio.h
+errno.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libauth/errno.h
+unistd.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libauth/unistd.h
+stdbool.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libauth/stdbool.h
+

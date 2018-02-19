@@ -1,0 +1,10 @@
+# Realtek Semiconductor Corp.
+#
+# hurray_niu (huray_niu@realsil.com.cn)
+# Mar. 11, 2015
+#
+# build target
+pkg_$(CONFIG_PACKAGE_webpages) += ipcam/webpages
+
+#dependency
+webpages: hostapd octopus rts_opt_cam neuralyzer libmtd doorkeeper librtsio librtsnm

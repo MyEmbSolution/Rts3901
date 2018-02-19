@@ -1,0 +1,9 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Wei WANG (wei_wang@realsil.com.cn)
+# Dec. 17, 2014
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_linuxtest_hidgadget) += ipcam/linux_test/hidgadget

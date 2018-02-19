@@ -1,0 +1,10 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus/.formosa/build/include/utils.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus/.formosa/build/include/ipcam_errorbase.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus/.formosa/build/include/internal.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus/.formosa/build/include/octopus.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus/.formosa/build/include/uvcvideo.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus/.formosa/build/include/hw_control.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus/.formosa/build/include/list.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus/.formosa/build/bin/octopus
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus/.formosa/build/lib/liboctopus.so
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus/.formosa/build/lib/liboctopus.a

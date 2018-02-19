@@ -1,0 +1,23 @@
+[write_verify]
+filename=/media/sdcard/write_verify_test.dat
+size=100M
+
+;random write
+rw=randwrite
+
+;bypass the cache
+direct=1
+
+;thread number
+numjobs=1
+
+;the proportion of read and write
+;read 20%
+;rwmixread=20
+
+;ioengine=libaio
+fallocate=none
+do_verify=1
+verify=md5
+verify_dump=1
+continue_on_error=none

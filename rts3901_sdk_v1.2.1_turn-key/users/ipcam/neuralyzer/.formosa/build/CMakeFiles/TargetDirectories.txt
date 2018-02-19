@@ -1,0 +1,3 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/neuralyzer/.formosa/build/CMakeFiles/neucleanup.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/neuralyzer/.formosa/build/CMakeFiles/neuralyzer.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/neuralyzer/.formosa/build/CMakeFiles/neuralyzer-bin.dir

@@ -1,0 +1,8 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Jim Cao (tonywu@realtek.com)
+# July. 22, 2016
+#
+
+pkg_$(CONFIG_PACKAGE_modules_mmc) += drivers/sdhc

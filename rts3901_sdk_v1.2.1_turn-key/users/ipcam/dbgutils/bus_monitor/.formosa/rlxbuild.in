@@ -1,0 +1,9 @@
+#
+# Realtek Semiconductor Corp.
+#
+# darcy lu(darcy_lu@realsil.com.cn)
+# Jun. 24, 2015
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_dbgutils_monitor) += ipcam/dbgutils/bus_monitor

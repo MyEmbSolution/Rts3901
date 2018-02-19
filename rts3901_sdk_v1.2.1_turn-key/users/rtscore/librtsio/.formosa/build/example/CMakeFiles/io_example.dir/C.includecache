@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../include/rts_io_adc.h
+
+../../include/rts_io_gpio.h
+
+../../include/rts_io_i2c.h
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/example/io_example.c
+stdio.h
+-
+sys/types.h
+-
+unistd.h
+-
+stdint.h
+-
+assert.h
+-
+errno.h
+-
+stdlib.h
+-
+string.h
+-
+getopt.h
+-
+rts_io_i2c.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/example/rts_io_i2c.h
+rts_io_gpio.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/example/rts_io_gpio.h
+rts_io_adc.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsio/example/rts_io_adc.h
+

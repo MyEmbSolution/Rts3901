@@ -1,0 +1,5 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/hconf/.formosa/build/bin/hconf
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/hconf/.formosa/build/lib/libhconf.a
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/hconf/.formosa/build/include/rts_hconf.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/hconf/.formosa/build/include/uapi/rts_hconf.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/hconf/.formosa/build/etc/hconf.ini

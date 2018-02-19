@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Network DDNS</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-switch.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid main-content-bg">
+      <div class="row">
+        <div class="col-md-offset-1 col-xs-offset-1 col-md-6 col-xs-10">
+          <h3>DDNS Setting</h3>
+          <table class="table table-striped column2">
+            <thead><tr><th>Enable</th><th><input id="ddns_enable" type="checkbox"></th></tr></thead>
+            <tbody>
+              <tr><th>DDNS Type</th><td><select id="ddns_type"><option value="0">f3322.org</option></select></td></tr>
+              <tr><th>Domain</th><td><input id="ddns_domain"></td></tr>
+              <tr><th>Username</th><td><input id="ddns_username"></td></tr>
+              <tr><th>Password</th><td><div class="input-password"><input type="password" id="ddns_password"><div class="image-eye-off eye_ctrl">&nbsp</div></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-1 col-xs-offset-1 col-md-6 col-xs-10"  style="text-align: right;">
+          <button id="ddns_save" class="btn btn-primary btn-sm">Save</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/network_ddns.js"></script>
+  </body>
+</html>

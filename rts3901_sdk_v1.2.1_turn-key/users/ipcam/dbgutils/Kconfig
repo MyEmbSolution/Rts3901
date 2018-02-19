@@ -1,0 +1,75 @@
+config PACKAGE_dbgutils_iomem
+	tristate "iomem"
+	default n
+	help
+	  iomem
+
+config dbgutils_test_iodma
+	tristate "iodma"
+	depends on PACKAGE_dbgutils_iomem
+	default n
+	help
+	  iodma, dma test tool
+
+config PACKAGE_dbgutils_efuse_mfg
+	bool "efuse mfg"
+	default n
+	help
+	  efuse manufacturer tools
+
+config PACKAGE_dbgutils_eth_looptest
+	bool "ethernet loopback test"
+	default n
+	help
+	  Ethernet loopback test utility works when ethernet
+	  TX and RX are short-circuited. Packet lose/bit error
+	  with long distance transmission can be found.
+
+config PACKAGE_dbgutils_uphymdio
+	tristate "usb phy mdio"
+	default n
+	help
+	  usb phy mdio
+
+config PACKAGE_dbgutils_veridisk
+	tristate "verify disk"
+	default n
+	help
+	  verify disk
+
+config PACKAGE_dbgutils_dbgisp
+	tristate "debug isp"
+	default n
+	select PACKAGE_h1_encoder
+	help
+	  debug isp
+
+config PACKAGE_dbgutils_sgctrl
+	tristate "scsi commands"
+	default n
+	help
+	  scsi commands
+
+config PACKAGE_dbgutils_ptz
+	tristate "PTZ"
+	default n
+	help
+	  PTZ
+
+config PACKAGE_dbgutils_wavetool
+	tristate "wavetool"
+	default n
+	help
+	  Ethernet IOL test tool
+
+config PACKAGE_dbgutils_fephy
+	tristate "fephy"
+	default n
+	help
+	  Ethernet PHY read&write tool
+
+config PACKAGE_dbgutils_monitor
+	tristate "bus monitor"
+	default n
+	help
+	  performance monitor initial tool

@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../include/rtsavapi.h
+rtstream.h
+-
+
+../../include/rtsavdef.h
+
+../../include/rtsavunit.h
+stdint.h
+-
+rtsavapi.h
+-
+
+../../include/rtstream.h
+stdint.h
+-
+rtsavdef.h
+-
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/rtstream/example/example_custom_unit.c
+stdio.h
+-
+stdlib.h
+-
+stdint.h
+-
+unistd.h
+-
+string.h
+-
+assert.h
+-
+signal.h
+-
+rtscamkit.h
+-
+rtsavunit.h
+-
+

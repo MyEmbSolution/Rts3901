@@ -1,0 +1,2 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-ar cr librtsio.a  CMakeFiles/rtsio_static.dir/rts_io_i2c.o CMakeFiles/rtsio_static.dir/rts_io_gpio.o CMakeFiles/rtsio_static.dir/rts_io_adc.o CMakeFiles/rtsio_static.dir/rts_io_ptz.o CMakeFiles/rtsio_static.dir/opt_io_ptz.o
+/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-ranlib librtsio.a

@@ -1,0 +1,54 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2008
+#
+
+menu "Darkside Applications"
+
+config PACKAGE_gdbserver
+	tristate "gdbserver"
+	default n
+	select PACKAGE_zlib
+	help
+	  gdbserver
+
+config PACKAGE_python
+	tristate "python"
+	default n
+	select PACKAGE_zlib
+	help
+	  python
+
+config PACKAGE_ltrace
+	tristate "ltrace"
+	default n
+	select PACKAGE_elfutils
+	select PACKAGE_libiconv
+	help
+	  ltrace
+
+config PACKAGE_oprofile
+	tristate "oprofile"
+	default n
+	select PACKAGE_binutils
+	select PACKAGE_libpopt
+	select PACKAGE_zlib
+	help
+	  oprofile 0.9.8
+
+config PACKAGE_strace
+	tristate "strace"
+	default n
+	help
+	  strace 4.7
+
+config PACKAGE_systemtap
+	tristate "systemtap"
+	default n
+	select PACKAGE_elfutils
+	help
+	  systemtap
+
+endmenu

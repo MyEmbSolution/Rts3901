@@ -1,0 +1,23 @@
+#Infomation about how to test testSD
+#By shanjian_fei
+
+Tools:veridisk,busybox(md5sum,seq,sleep,expr,vi,diff,touch,dd,sync,grep,chmod,cat)
+
+hotplug test:
+
+	exec: hotplug.sh
+
+	ps: if 'permission denied', chmod 777 /bin/hotplug.sh
+
+
+execption test:
+	exec: execption.sh [n]
+	ps: if 'permission denied', chmod 777 /bin/exceptiontest.sh.[n] test's numbers
+
+stress test:
+	exec:
+		burntest.sh
+		burntest.sh [n]  -----n is integer----- burntest.sh 2
+		burntest.sh time [n]  -----n is integer----- burntest.sh time 1000
+		burntest.sh size [n] filenumber [n]  -----n is integer----- burntest.sh size 1g filenumber 16
+	ps: if 'permission denied', chmod 777 /bin/burntest.sh.[n] test's numbers.

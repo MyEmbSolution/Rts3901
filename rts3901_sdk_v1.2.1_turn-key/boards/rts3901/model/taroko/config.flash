@@ -1,0 +1,46 @@
+#
+# Flash Mapping
+#
+comment "Flash Mapping"
+
+config SOC_FLASH_MAPPING_ENABLE
+	bool "Enable flash mapping"
+
+if SOC_FLASH_MAPPING_ENABLE
+
+config SOC_FLASH_SIZE
+	hex "Total flash size"
+	default "0x1000000"
+
+config SOC_FLASH_SECTOR_SIZE
+	hex "Flash sector size"
+	default "0x10000"
+
+config SOC_UBOOT_BLK_CNT
+        int "Block count of U-Boot in flash"
+	range 0 8
+        default 4
+
+config SOC_MCU_FW_BLK_CNT
+        int "Block count of MCU fw in flash"
+	range 0 4
+        default 2
+
+config SOC_HW_CONFIG_BLK_CNT
+        int "Block count of hardware config in flash"
+	range 0 2
+        default 1
+
+config SOC_SW_CONFIG_BLK_CNT
+        int "Block count of software config in flash"
+	range 0 16
+        default 8
+
+if !SOC_ROOTFS_RAMFS
+config SOC_KERNEL_BLK_CNT
+        int "Block count of Linux kernel in flash"
+	range 0 128
+        default 32
+endif
+
+endif

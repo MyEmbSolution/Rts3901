@@ -1,0 +1,9 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Wei WANG (wei_wang@realsil.com.cn)
+# Mar. 18, 2015
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_3rdparty_libaacenc) += rtscore/3rdparty/libaacenc

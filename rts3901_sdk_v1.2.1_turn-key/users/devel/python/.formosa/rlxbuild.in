@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# tristan_fei (tristan_fei@realsil.com.cn)
+# Dec. 21, 2015
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_python) += devel/python
+
+# dependency
+python: zlib

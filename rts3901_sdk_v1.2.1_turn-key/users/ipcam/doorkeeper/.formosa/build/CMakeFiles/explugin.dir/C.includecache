@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/include/alarm_action.h
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/libdkplugin.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+time.h
+-
+unistd.h
+-
+sys/types.h
+-
+sys/stat.h
+-
+pthread.h
+-
+dirent.h
+-
+fcntl.h
+-
+include/alarm_action.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/include/alarm_action.h
+

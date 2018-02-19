@@ -1,0 +1,1 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/parrot/.formosa/build/CMakeFiles/parrot.dir

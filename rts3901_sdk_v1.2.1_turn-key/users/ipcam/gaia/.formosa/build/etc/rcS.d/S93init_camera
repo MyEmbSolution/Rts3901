@@ -1,0 +1,4 @@
+#!/bin/sh
+
+init_camera -t 2 &
+sync_osd_time &

@@ -1,0 +1,13 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Nie(tony_nie@realsil.com.cn)
+# Jul. 03, 2015
+#
+
+# build target
+pkg_$(CONFIG_OCTOPUS_PLUGIN_UVC) += ipcam/octopus_plugin/rts_opt_uvc
+
+# dependency
+rts_opt_uvc: octopus peacock
+

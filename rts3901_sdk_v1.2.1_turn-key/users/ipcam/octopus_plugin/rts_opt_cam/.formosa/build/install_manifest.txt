@@ -1,0 +1,8 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus_plugin/rts_opt_cam/.formosa/build/include/svr_cam_utils.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus_plugin/rts_opt_cam/.formosa/build/include/rts_cam.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus_plugin/rts_opt_cam/.formosa/build/include/rts_cam_utils.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus_plugin/rts_opt_cam/.formosa/build/include/svr_cam_osd_utils.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus_plugin/rts_opt_cam/.formosa/build/include/cli_cam.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus_plugin/rts_opt_cam/.formosa/build/etc/rcS.d/S92octopus-cam
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus_plugin/rts_opt_cam/.formosa/build/lib/librtscam.so
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/octopus_plugin/rts_opt_cam/.formosa/build/lib/libopt_cam.so

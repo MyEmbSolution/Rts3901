@@ -1,0 +1,2 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/hconf/.formosa/build/CMakeFiles/hconf.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/hconf/.formosa/build/CMakeFiles/hconf-bin.dir

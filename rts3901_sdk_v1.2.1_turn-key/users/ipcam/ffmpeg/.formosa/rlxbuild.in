@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Jan. 10, 2011
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_ffmpeg) += ipcam/ffmpeg
+
+#dependency
+ffmpeg:h1_encoder libaacenc librtsisp opencore-amr alsa-lib librtsmp3 rtstream

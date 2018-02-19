@@ -1,0 +1,277 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Wei WANG (wei_wang@realsil.com.cn)
+# Aug. 4, 2014
+#
+
+menu "IPCam packages"
+
+config PACKAGE_ffmpeg
+	tristate "ffmpeg"
+	default n
+	select PACKAGE_3rdparty
+	select PACKAGE_3rdparty_libaacenc
+	select PACKAGE_3rdparty_librtsmp3
+	select PACKAGE_alsalib
+	select PACKAGE_librtsisp
+	select PACKAGE_opencore_amr
+	help
+	  ffmpeg
+
+config PACKAGE_peacock
+	tristate "peacock"
+	select PACKAGE_ffmpeg
+	select PACKAGE_libauth
+	select PACKAGE_librtsisp
+	select PACKAGE_3rdparty_librtsaec
+	select PACKAGE_rtstream
+	default n
+	help
+	  peacock, for streaming server
+
+config PACKAGE_doorkeeper
+        tristate "doorkeeper"
+        default n
+	help
+	  doorkeeper, do action after got event(MD,Audio detection)
+
+
+config PACKAGE_parrot
+	tristate "parrot"
+	default n
+	select PACKAGE_ffmpeg
+	select PACKAGE_peacock
+	select PACKAGE_octopus
+	select PACKAGE_3rdparty
+	select PACKAGE_3rdparty_tutk
+	select PACKAGE_aplayer
+	select PACKAGE_rtstream
+	select PACKAGE_hconf
+	help
+	  P2P streaming server
+
+config PACKAGE_parrot_unit_test
+	tristate "parrot unit test"
+	default n
+	depends on PACKAGE_parrot
+	select PACKAGE_ffmpeg
+	select PACKAGE_peacock
+	select PACKAGE_octopus
+	select PACKAGE_3rdparty
+	select PACKAGE_3rdparty_tutk
+	select PACKAGE_aplayer
+	select PACKAGE_hconf
+	select PACKAGE_rtstream
+	help
+	  parrot unit test
+
+config PACKAGE_aplayer
+	tristate "aplayer"
+	select PACKAGE_ffmpeg
+	select PACKAGE_rtstream
+	default n
+
+config PACKAGE_octopus
+	tristate "octopus"
+	default n
+	help
+          octopus, manager of camera, network and IO
+
+config PACKAGE_octopus_plugin
+	tristate "octopus plugin"
+	depends on PACKAGE_octopus
+	default n
+
+if PACKAGE_octopus_plugin
+	source ipcam/octopus_plugin/Kconfig
+endif
+
+config PACKAGE_webpages
+	tristate "webpages"
+	select PACKAGE_octopus
+	select PACKAGE_octopus_plugin
+	select OCTOPUS_PLUGIN_CAM
+	select OCTOPUS_PLUGIN_IO
+	select PACKAGE_neuralyzer
+	select PACKAGE_librtsio
+	select PACKAGE_librtsnm
+	default n
+	help
+	  webpages
+
+config PACKAGE_onvif
+	tristate "onvif"
+	select PACKAGE_octopus
+	default n
+	help
+	  open network video interface forum
+
+config PACKAGE_gaia
+	tristate "gaia"
+	select PACKAGE_octopus
+	select PACKAGE_octopus_plugin
+	select OCTOPUS_PLUGIN_CAM
+	select PACKAGE_rtstream
+	default n
+	help
+	  init camera settings
+
+config PACKAGE_uvcd
+	tristate "uvcd"
+	select PACKAGE_h1_encoder
+	select PACKAGE_OCTOPUS_PLUGIN_CAM
+	default n
+	help
+	  support uvc preview
+
+choice
+        prompt "uvc version"
+        depends on PACKAGE_uvcd
+config UVC_10
+        bool "UVC1.0"
+config UVC_15
+        bool "UVC1.5 H264"
+endchoice
+
+config MJPEG_V4L2_FILE_NUM
+	depends on PACKAGE_uvcd
+	int "MJPEG_V4L2_FILE_NUM(51-55)"
+        range 51 55
+        default "55"
+
+comment "libraries"
+config PACKAGE_libsysconf
+	tristate "sysconf"
+	default n
+	select PACKAGE_jsonc
+	select PACKAGE_cunit
+	help
+	 library for conf file
+
+config PACKAGE_libsysconf_unit_test
+	tristate "sysconf_unit_test"
+	default n
+	depends on PACKAGE_libsysconf
+	select PACKAGE_cunit
+	select PACKAGE_jsonc
+	help
+
+config PACKAGE_libauth
+	tristate "libauth"
+	default n
+	help
+
+comment "utils"
+config PACKAGE_neuralyzer
+        tristate "neuralyzer"
+        default n
+	help
+	  Image update tool
+
+config PACKAGE_isptuning
+	tristate "isptuning"
+	select PACKAGE_librtsisp
+	default n
+	help
+	  ISP tuning tool
+
+if PACKAGE_isptuning
+	source ipcam/isp_tuning/Kconfig
+endif
+
+config PACKAGE_hconf
+	tristate "hconf"
+	default n
+
+config PACKAGE_ft2_test
+	tristate "ft2 test"
+	default n
+	help
+	  soc ipcam ft2 test
+
+config PACKAGE_linuxtest
+	tristate "linux test"
+	default n
+	help
+	  linux test case
+
+if PACKAGE_linuxtest
+source ipcam/linux_test/Kconfig
+endif
+
+config PACKAGE_dbgutils
+	tristate "dbgutils"
+	default n
+	help
+	  Utils for debug
+
+if PACKAGE_dbgutils
+source ipcam/dbgutils/Kconfig
+endif
+
+comment "system"
+config PACKAGE_scripts
+	bool "system scripts"
+	default n
+	help
+	  system scripts.
+
+if PACKAGE_scripts
+
+config PACKAGE_scripts_automount
+	bool "mdev automount"
+	default n
+	help
+	  mdev automount scripts.
+
+config PACKAGE_scripts_udhcpc
+	bool "udhcpc script"
+	default n
+	help
+	  udhcpc default scripts
+
+endif
+
+config PACKAGE_preamble
+	tristate "preamble"
+	select PACKAGE_libsysconf
+	default y
+	help
+	  preamble config
+
+comment "network"
+config PACKAGE_super_link
+	tristate "super_link"
+	default n
+
+config PACKAGE_networkmanager
+	tristate "networkmanager"
+	select PACKAGE_libsysconf
+	select PACKAGE_hconf
+	default n
+
+config PACKAGE_camfinder
+	tristate "camfinder"
+	select PACKAGE_libsysconf
+	select PACKAGE_libauth
+	default n
+
+if PACKAGE_camfinder
+choice
+  prompt "Select target camfinder"
+
+config PACKAGE_realsil
+  bool "realsil"
+
+config PACKAGE_pixord
+  bool "pixord"
+
+endchoice
+endif
+
+if PACKAGE_networkmanager
+	source ipcam/networkmanager/Kconfig
+endif
+
+endmenu

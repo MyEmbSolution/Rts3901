@@ -1,0 +1,4 @@
+#!/bin/sh
+
+doorkeeper -v 0x08 &
+event_monitor &

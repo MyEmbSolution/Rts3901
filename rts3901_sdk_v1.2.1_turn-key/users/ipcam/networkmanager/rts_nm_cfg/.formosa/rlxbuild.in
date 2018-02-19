@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Hurray niu (hurray_niu@realsil.com.cn)
+# May. 19, 2015
+#
+
+pkg_$(CONFIG_PACKAGE_nm_cfg) += ipcam/networkmanager/rts_nm_cfg
+
+#dependency
+rts_nm_cfg: libsysconf hconf librtsnm

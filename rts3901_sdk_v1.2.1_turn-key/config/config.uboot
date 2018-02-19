@@ -1,0 +1,51 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Wei WANG (wei_wang@realsil.com.cn)
+# May. 25, 2015
+#
+
+menu "Config uboot settings"
+
+choice
+	prompt "DDR type"
+	default DDR_H5TQ2G
+
+config DDR_W975116KG
+	bool "DDR2 W975116KG(Winbond 64MB)"
+
+config DDR_H5TQ2G
+	bool "DDR3 H5TQ2G(Hynix 256MB)"
+
+config DDR_NT5CC128M16IP
+	bool "DDR3 NT5CC128M16IP(Nanya 256MB)"
+
+config DDR_W632GG6KB
+	bool "DDR3 W632GG6KB(Winbond 256MB)"
+
+config DDR_W631GG6KB
+	bool "DDR3 W631GG6KB(Winbond 128MB)"
+
+config DDR_M15F2G16128A
+	bool "DDR3 M15F2G16128A(ESMT 256MB)"
+
+config DDR_NT5CC64M16IP
+	bool "DDR3 NT5CC64M16IP(Nanya 128MB)"
+
+config DDR_M15F1G1664A
+	bool "DDR3 M15F1G1664A(ESMT 128MB)"
+
+config DDR3_2GBIT_GENERAL
+	bool "2Gbit DDR3 DemoBOARD general"
+
+config DDR3_1GBIT_GENERAL
+	bool "1Gbit DDR3 DemoBOARD general"
+
+config DDR3_2GBIT_QABOARD_V11
+	bool "2Gbit DDR3 QABoard V1.1"
+
+config DDR3_1GBIT_DEMOKIT
+	bool "1Gbit DDR3 DemoKit"
+endchoice
+
+endmenu

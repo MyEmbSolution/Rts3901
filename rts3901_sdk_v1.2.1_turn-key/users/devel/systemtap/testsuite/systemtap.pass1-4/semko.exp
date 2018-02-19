@@ -1,0 +1,36 @@
+set self semko
+foreach runtime [get_runtime_list] {
+    foreach file [lsort [glob -nocomplain $srcdir/$self/*.stp]] {
+	set test $self/[file tail $file]
+	if {$runtime != ""} {
+	    switch $test {
+		semko/utrace.stp {
+		    # These tests require a system without utrace-like
+		    # functionality. Since dyninst supports
+		    # utrace-like functionality, mark this test as
+		    # 'untested'.
+		    untested $test; continue }
+	    }
+
+	    verbose -log "Running $file ($runtime)"
+	    set rc [stap_run_batch $file --runtime=$runtime]
+	    lappend test "($runtime)"
+	} else {
+	    switch $test {
+		semko/utrace.stp {
+		    # These tests require a system without utrace.
+		    if {[utrace_p]} { untested $test; continue } }
+	    }
+	    
+	    verbose -log "Running $file"
+	    set rc [stap_run_batch $file]
+	}
+	if {$rc < 0} {
+	    # crashed
+	    fail $test
+	} else {
+	    setup_xfail *-*-*
+	    if {$rc == 0} { pass $test } else { fail $test }
+	}
+    }
+}

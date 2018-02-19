@@ -1,0 +1,5 @@
+config RTSPD_INC
+	bool "include mini RTSP Server"
+	default n
+	help
+		Include mini RTSP Server will kill peacock & rtspd at startup.

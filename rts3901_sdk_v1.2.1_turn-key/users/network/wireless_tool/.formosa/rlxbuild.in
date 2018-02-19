@@ -1,0 +1,8 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Hurray niu (hurray_niu@realsil.com.cn)
+# Jan. 19, 2015
+#
+
+pkg_$(CONFIG_PACKAGE_wireless_tool) += network/wireless_tool

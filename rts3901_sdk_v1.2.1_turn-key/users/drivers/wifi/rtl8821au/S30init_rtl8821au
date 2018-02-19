@@ -1,0 +1,5 @@
+#!/bin/sh
+#this is automatically generated
+
+
+insmod /usr/lib/modules/8821au.ko

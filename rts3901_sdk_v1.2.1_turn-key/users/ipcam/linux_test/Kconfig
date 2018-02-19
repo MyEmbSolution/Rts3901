@@ -1,0 +1,91 @@
+config PACKAGE_linuxtest_testi2c
+	tristate "testi2c"
+	default n
+	help
+	  i2c designware master eeprom burning program
+
+config PACKAGE_linuxtest_testSD
+	tristate "testSD"
+	default n
+	select PACKAGE_fio
+	select PACKAGE_dbgutils_veridisk
+	help
+	  SDCard hotplug,exception,stress test.
+
+config PACKAGE_linuxtest_testusb
+        tristate "testusb"
+        default n
+        help
+           usb host and device transfer test
+
+if PACKAGE_linuxtest_testusb
+
+config PACKAGE_linuxtest_testusb_device
+	tristate "testusb_device"
+	default n
+	help
+	  to test usb device of ipcam
+
+config PACKAGE_linuxtest_testusb_host
+	tristate "testusb_host"
+	default n
+	help
+	  to test usb host of ipcam
+
+endif #PACKAGE_linuxtest_testusb
+
+config PACKAGE_linuxtest_testuvc
+        tristate "testuvc"
+        default n
+        help
+           uvc gadget driver test
+
+config PACKAGE_linuxtest_testnm
+        tristate "testnm"
+        default n
+        select PACKAGE_cunit
+        help
+           realsil ipcam network manager library cunit test
+
+config PACKAGE_linuxtest_hidgadget
+        tristate "hidgadget"
+        default n
+        help
+           hid gadget driver test
+
+config PACKAGE_linuxtest_testwd
+        tristate "testwd"
+        default n
+        help
+           uvc gadget driver test
+
+config PACKAGE_linuxtest_testvideo
+        tristate "testvideo"
+        default n
+        help
+          video(isp/h264) test
+
+config PACKAGE_linuxtest_testrtc
+        tristate "testrtc"
+        default n
+        help
+          rtc test
+
+config PACKAGE_linuxtest_testcipher
+	tristate "testcipher"
+	default n
+	help
+	  cipher test
+
+config PACKAGE_linuxtest_testaudio
+	tristate "testaudio"
+	default n
+	help
+	  audio test
+
+config PACKAGE_linuxtest_testisp
+        tristate "testisp"
+        default n
+        help
+          isp cmd test
+

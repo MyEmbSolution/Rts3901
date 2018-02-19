@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Miranda Wu(miranda_wu@realsil.com.cn)
+# Nov. 30, 2015
+#
+
+pkg_$(CONFIG_PACKAGE_miniupnpd) += network/miniupnpd
+
+#dependency
+miniupnpd:libsysconf librtsnm

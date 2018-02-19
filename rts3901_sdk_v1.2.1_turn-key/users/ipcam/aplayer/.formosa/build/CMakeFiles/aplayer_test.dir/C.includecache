@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/aplayer/aplayer.h
+stdint.h
+-
+stdio.h
+-
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/aplayer/aplayer_test.c
+stdio.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+string.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+sys/time.h
+-
+sys/fcntl.h
+-
+sys/types.h
+-
+sys/ipc.h
+-
+sys/file.h
+-
+sys/stat.h
+-
+signal.h
+-
+time.h
+-
+aplayer.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/aplayer/aplayer.h
+

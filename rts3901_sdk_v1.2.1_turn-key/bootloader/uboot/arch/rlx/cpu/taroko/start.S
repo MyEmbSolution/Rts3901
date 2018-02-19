@@ -1,0 +1,383 @@
+/*
+ *  Startup Code for MIPS32 CPU-core
+ *
+ *  Copyright (c) 2003	Wolfgang Denk <wd@denx.de>
+ *
+ * SPDX-License-Identifier:	GPL-2.0+
+ */
+
+#include <asm-offsets.h>
+#include <config.h>
+#include <asm/regdef.h>
+#include <asm/rlxregs.h>
+#include <asm/mips.h>
+
+	.set noreorder
+
+	.globl _start
+	.text
+_start:
+	/* U-boot entry point */
+	b	reset
+	 nop
+
+#ifndef ASIC_TEST_CPU
+	.org 0x10
+
+	.org 0x100
+	/* TLB refill */
+1:	b	1b
+	 nop
+
+	.org 0x180
+	/* General exception */
+1:	b	1b
+	 nop
+
+	.org 0x480
+	/* EJTAG debug exception */
+1:	b	1b
+	 nop
+#else
+	.org 0x80
+	/* General exception */
+	b	gen_exception
+	 nop
+
+#ifdef INTERRUPT_TEST_TIMER
+	.org 0x400
+	/* Interrupt vectors for 8~15 */
+	/* 8. AES */
+1:	b	1b
+	 nop
+	/* 9.SDIO */
+1:	b	1b
+	 nop
+	/* 10. Ethernet */
+1:	b	1b
+	 nop
+	/* 11. USB */
+1:	b	1b
+	 nop
+	/* 12. H264 */
+1:	b	1b
+	 nop
+	/* 13. DW8051, ISP, JEPG */
+1:	b	1b
+	 nop
+	/* 14. MIC, SPK, I2S */
+1:	b	1b
+	 nop
+	/* 15. Timer */
+	b	timer_interrupt
+	 nop
+#endif
+#endif
+	.align 4
+
+
+reset:
+
+	/* Clear watch registers */
+	mtc0	zero, CP0_WATCHLO
+	mtc0	zero, CP0_WATCHHI
+
+	/* WP(Watch Pending), SW0/1 should be cleared */
+	mtc0	zero, CP0_CAUSE
+
+	mfc0	t0, CP0_STATUS
+#ifndef ASIC_TEST_CPU
+	or	t0, ST0_CU0 | ST0_BEV
+#else
+	/* move the interrupt vectors to ddr */
+	or	t0, ST0_CU0
+	and	t0, ~ST0_BEV
+#endif
+	mtc0	t0, CP0_STATUS
+	nop
+
+	/* Init Timer */
+	mtc0	zero, CP0_COUNT
+	mtc0	zero, CP0_COMPARE
+
+	/* Initialize $gp */
+	bal	1f
+	 nop
+	.word	_gp
+1:
+	lw	gp, 0(ra)
+
+#ifdef CONFIG_SMP
+	/* Only core0 need to initialize external memory.
+	 */
+	mfc0	v1, CP0_PRID
+	li	v0, 0x30000
+	and	v1, v0
+	bnez	v1, 1f
+	 nop
+#endif
+
+#ifndef ASIC_TEST_CPU
+#ifndef CONFIG_RAM_VERSION
+	/* Initialize any external memory */
+	la	t9, bsp_boot_init_plat
+	jalr	t9
+	 nop
+#endif
+#endif
+
+#ifdef CONFIG_SMP
+	/* Copy coren code to dram
+	*/
+	la	t9, text_copy
+	jalr	t9
+	 nop
+1:
+	/* setup smp and cache coherence state */
+	la	t9, smp_setup
+	jalr	t9
+	 nop
+
+	/*
+	 * setup bootup jump address, the uboot start address,
+	 * for other cores
+	 */
+        la      t9, bsp_boot_secondary
+        jalr    t9
+        nop
+#endif
+
+	/* Set up temporary stack */
+	li	sp, CONFIG_SYS_SDRAM_BASE + CONFIG_SYS_INIT_SP_OFFSET
+
+/* TEST code should after sp setting code */
+#ifdef ASIC_TEST_CPU
+/* Because sp will set again here, so DMEM_TEST can not move to board dir */
+#ifdef DMEM_TEST
+dmem_test:
+	mfc0	t0, CP0_STATUS
+	or	t0, ST0_CU3
+	mtc0	t0, CP0_STATUS
+	 nop
+
+	/*set DMEM0 from 0x0000~0x3fff*/
+	li	t0, 0x18910000
+	mtc3	t0, $4
+	addu	t0, 0x3fff
+	mtc3	t0, $5
+
+	/* enbale dmem */
+	li	t0, 0
+	mtc0	zero, $20
+	or	t0, 0x400
+	mtc0	t0, $20
+	nop
+
+	li	sp, 0x98914000
+#endif
+	la	t9, asic_test_cpu
+	jalr	t9
+	 nop
+#endif
+#ifdef CONFIG_OLD_TEST
+	la	t9, old_test
+	jalr	t9
+	 nop
+#endif
+#ifdef CONFIG_TARGET_ASIC
+#ifndef CONFIG_RAM_VERSION
+	la	t9, spic_ctrl
+	jalr	t9
+	 nop
+#endif
+#endif
+
+	la	t9, board_init_f
+	jr	t9
+	 nop
+
+#ifdef CONFIG_RAM_VERSION
+	.globl	set_sp
+	.ent	set_sp
+set_sp:
+	move	sp, a0			# set new stack pointer
+
+	move	s0, a1			# save gd in s0
+
+	move	s2, a2			# save destination address in s2
+
+	/*
+	 * Clear BSS
+	 *
+	 * GOT is now relocated. Thus __bss_start and __bss_end can be
+	 * accessed directly via $gp.
+	 */
+	la	t1, __bss_start		# t1 <-- __bss_start
+	la	t2, __bss_end		# t2 <-- __bss_end
+
+1:
+	sw	zero, 0(t1)
+	blt	t1, t2, 1b
+	 addi	t1, 4
+
+	move	a0, s0			# a0 <-- gd
+
+	 move	a1, s2
+
+	la	t9, board_init_r
+	jr	t9
+	nop
+	.end	set_sp
+#endif
+/*
+ * void relocate_code (addr_sp, gd, addr_moni)
+ *
+ * This "function" does not return, instead it continues in RAM
+ * after relocating the monitor code.
+ *
+ * a0 = addr_sp
+ * a1 = gd
+ * a2 = destination address
+ */
+	.globl	relocate_code
+	.ent	relocate_code
+relocate_code:
+#ifndef _MEM_TEST3_
+	move	sp, a0			# set new stack pointer
+
+	move	s0, a1			# save gd in s0
+#endif
+	move	s2, a2			# save destination address in s2
+
+	li	t0, CONFIG_SYS_MONITOR_BASE
+	sub	s1, s2, t0		# s1 <-- relocation offset
+
+	la	t3, in_ram
+	lw	t2, -12(t3)		# t2 <-- __image_copy_end
+	move	t1, a2
+
+	add	gp, s1			# adjust gp
+
+	/*
+	 * t0 = source address
+	 * t1 = target address
+	 * t2 = source end address
+	 */
+1:
+	lw	t3, 0(t0)
+	sw	t3, 0(t1)
+	addu	t0, 4
+	blt	t0, t2, 1b
+	 addu	t1, 4
+
+#ifndef _MEM_TEST3_
+	/* If caches were enabled, we would have to flush them here. */
+	sub	a1, t1, s2		# a1 <-- size
+	la	t9, flush_cache
+	jalr	t9
+	 move	a0, s2			# a0 <-- destination address
+#endif
+
+	/* Jump to where we've relocated ourselves */
+	addi	t0, s2, in_ram - _start
+	jr	t0
+	 nop
+
+	.word	__rel_dyn_end
+	.word	__rel_dyn_start
+	.word	__image_copy_end
+	.word	_GLOBAL_OFFSET_TABLE_
+	.word	num_got_entries
+
+in_ram:
+	li	v0, 0xb8030014
+	li	v1, 0x1
+	sw	v1, 0(v0)
+	/*
+	 * Now we want to update GOT.
+	 *
+	 * GOT[0] is reserved. GOT[1] is also reserved for the dynamic object
+	 * generated by GNU ld. Skip these reserved entries from relocation.
+	 */
+	lw	t3, -4(t0)		# t3 <-- num_got_entries
+	lw	t8, -8(t0)		# t8 <-- _GLOBAL_OFFSET_TABLE_
+	add	t8, s1			# t8 now holds relocated _G_O_T_
+	addi	t8, t8, 8		# skipping first two entries
+	li	t2, 2
+1:
+	lw	t1, 0(t8)
+	beqz	t1, 2f
+	 add	t1, s1
+	sw	t1, 0(t8)
+2:
+	addi	t2, 1
+	blt	t2, t3, 1b
+	 addi	t8, 4
+
+	/* Update dynamic relocations */
+	lw	t1, -16(t0)		# t1 <-- __rel_dyn_start
+	lw	t2, -20(t0)		# t2 <-- __rel_dyn_end
+
+	b	2f			# skip first reserved entry
+	 addi	t1, 8
+
+1:
+	lw	t8, -4(t1)		# t8 <-- relocation info
+
+	li	t3, 3
+	bne	t8, t3, 2f		# skip non R_MIPS_REL32 entries
+	 nop
+
+	lw	t3, -8(t1)		# t3 <-- location to fix up in FLASH
+
+	lw	t8, 0(t3)		# t8 <-- original pointer
+	add	t8, s1			# t8 <-- adjusted pointer
+
+	add	t3, s1			# t3 <-- location to fix up in RAM
+	sw	t8, 0(t3)
+
+2:
+	blt	t1, t2, 1b
+	 addi	t1, 8			# each rel.dyn entry is 8 bytes
+
+	/*
+	 * Clear BSS
+	 *
+	 * GOT is now relocated. Thus __bss_start and __bss_end can be
+	 * accessed directly via $gp.
+	 */
+	la	t1, __bss_start		# t1 <-- __bss_start
+	la	t2, __bss_end		# t2 <-- __bss_end
+
+1:
+	sw	zero, 0(t1)
+	blt	t1, t2, 1b
+	 addi	t1, 4
+
+	move	a0, s0			# a0 <-- gd
+	la	t9, board_init_r
+	jr	t9
+	 move	a1, s2
+
+	.end	relocate_code
+
+#ifdef CONFIG_SMP
+.globl text_copy
+	.set noreorder
+	.ent text_copy
+text_copy:
+	li	t0, CORENLOOP
+	la	t1, coren
+	la	t2, coren_end
+cp_loop1:
+	lw	a0, 0(t1)
+	sw	a0, 0(t0)
+	addi	t0, 0x4
+	addi	t1, 0x4
+	ble	t1, t2, cp_loop1
+	 nop
+return1:
+	jr	ra
+	 nop
+	.end text_copy
+#endif

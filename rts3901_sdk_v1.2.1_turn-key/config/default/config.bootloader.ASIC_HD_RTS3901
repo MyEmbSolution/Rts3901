@@ -1,0 +1,24 @@
+#
+# Automatically generated make config: don't edit
+# Bootloader Configuration
+#
+CONFIG_BOARD_RTS3901=y
+CONFIG_TARGET_ASIC=y
+CONFIG_PARTITION_IN_BSP=y
+# CONFIG_PARTITION_IN_UBOOT is not set
+CONFIG_DDR_W975116KG=y
+# CONFIG_DDR3_2GBIT_DEMOBOARD_GENERAL is not set
+# CONFIG_DDR3_1GBIT_DEMOBOARD_GENERAL is not set
+# CONFIG_DDR3_2GBIT_QABOARD_V11 is not set
+CONFIG_DDR_800=y
+# CONFIG_DDR_1066 is not set
+# CONFIG_DDR_1600 is not set
+# CONFIG_ODT_ON is not set
+CONFIG_ODT_OFF=y
+CONFIG_CPU_500M=y
+# CONFIG_CPU_400M is not set
+# CONFIG_CPU_333M is not set
+# CONFIG_CPU_300M is not set
+# CONFIG_CPU_250M is not set
+# CONFIG_CPU_240M is not set
+# CONFIG_CPU_200M is not set

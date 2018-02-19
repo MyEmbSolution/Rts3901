@@ -1,0 +1,6 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/h1_encoder/.formosa/build/lib/libh1encoder.so.1.0.1
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/h1_encoder/.formosa/build/lib/libh1encoder.so.1
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/h1_encoder/.formosa/build/lib/libh1encoder.so
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/h1_encoder/.formosa/build/lib/libh1encoder.a
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/h1_encoder/.formosa/build/include/h264encapi.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/h1_encoder/.formosa/build/include/basetype.h

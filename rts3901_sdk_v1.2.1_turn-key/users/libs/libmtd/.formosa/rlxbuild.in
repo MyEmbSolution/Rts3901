@@ -1,0 +1,8 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Wei WANG <wei_wang@realsil.com.cn>
+# 2015-12-09
+#
+
+pkg_$(CONFIG_PACKAGE_libmtd) += libs/libmtd

@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/preamble/preamble.c
+string.h
+-
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+sysconf.h
+-
+signal.h
+-
+errno.h
+-
+fcntl.h
+-
+sys/ioctl.h
+-
+net/if.h
+-
+rts_hconf.h
+-
+preamble.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/preamble/preamble.h
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/preamble/preamble.h
+

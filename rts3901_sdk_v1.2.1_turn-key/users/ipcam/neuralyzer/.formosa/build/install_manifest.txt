@@ -1,0 +1,4 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/neuralyzer/.formosa/build/lib/libneuralyzer.so
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/neuralyzer/.formosa/build/bin/neuralyzer
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/neuralyzer/.formosa/build/bin/neucleanup
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/neuralyzer/.formosa/build/include/neuralyzer.h

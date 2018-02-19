@@ -1,0 +1,46 @@
+menu "video driver"
+
+config PACKAGE_modules_video
+	tristate "Realtek Camera Support"
+	help
+	  Rts Soc Camera subsystem.
+
+if PACKAGE_modules_video
+
+config VIDEO_RTS_SOC
+	tristate "Realtek soc camera device driver"
+	---help---
+	  This is a camera driver for Realtek Soc Camera
+
+choice
+	prompt "Select mcu fw in ddr or flash"
+	depends on VIDEO_RTS_SOC
+	---help---
+	  This option defines the location where the MCU fw code locate
+
+config RTS_MCU_FW_IN_DDR
+	bool "DDR"
+
+config RTS_MCU_FW_CUSTOM
+	bool "CUSTOM"
+
+endchoice
+
+config VIDEO_HX280_ENC
+	tristate "Realtek H264 encoder device driver base on Hantro's HX280"
+	---help---
+	  This is a H264 Encode device driver base on Hantro's HX280
+
+config RTS_MJPEG_ENC
+	tristate "Realtek mjpeg encoder device driver"
+	---help---
+	  This is a Realtek Mjpeg Encoder device driver
+
+config RTS_RTSTREAM_INFO
+	tristate "Realtek rtstream info driver"
+	---help---
+	  This driver help rtstream
+
+endif
+
+endmenu

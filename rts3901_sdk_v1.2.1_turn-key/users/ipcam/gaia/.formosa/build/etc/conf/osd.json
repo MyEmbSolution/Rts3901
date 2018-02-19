@@ -1,0 +1,164 @@
+{
+    "osd_configs": [
+        {
+            "dev_name": "/dev/video51",
+            "osd": {
+                "number": 1,
+                "count_of_supported_font_type": 2,
+                "time_am_pm_enable": 1,
+                "date_display_enable": 1,
+                "time_display_enable": 1,
+                "blocks": [
+                    {
+                        "index": 0,
+                        "encoding_method": "utf8",
+                        "enable": 0,
+                        "pos_left": 10,
+                        "pos_right": 1200,
+                        "pos_top": 100,
+                        "pos_bottom": 180,
+                        "flick_enable": 0,
+                        "flick_speed": 20,
+                        "fg_transparent_enable": 1,
+                        "fg_transparency": 0,
+                        "fg_color": "ffffff",
+                        "bg_enable": 0,
+                        "bg_color": "808080",
+			"stroke_enable": 1,
+			"stroke_direct": 0,
+			"stroke_extent": 128,
+                        "each_line_wrap_enable": 1,
+                        "each_line_wrap_num": 20,
+                        "osd_string": "",
+                        "osd_font_size": 24,
+                        "osd_width": 17,
+                        "osd_height": 33,
+                        "osd_rotate_mode": 0,
+                        "osd_up_shift": 2,
+                        "osd_left_shift": 2
+                    }
+                ]
+            }
+        },
+        {
+            "dev_name": "/dev/video52",
+            "osd": {
+                "number": 1,
+                "count_of_supported_font_type": 2,
+                "time_am_pm_enable": 1,
+                "date_display_enable": 1,
+                "time_display_enable": 1,
+                "blocks": [
+                    {
+                        "index": 0,
+                        "encoding_method": "utf8",
+                        "enable": 0,
+                        "pos_left": 10,
+                        "pos_right": 600,
+                        "pos_top": 100,
+                        "pos_bottom": 180,
+                        "flick_enable": 0,
+                        "flick_speed": 20,
+                        "fg_transparent_enable": 1,
+                        "fg_transparency": 0,
+                        "fg_color": "ffffff",
+                        "bg_enable": 0,
+                        "bg_color": "808080",
+			"stroke_enable": 1,
+			"stroke_direct": 0,
+			"stroke_extent": 128,
+                        "each_line_wrap_enable": 1,
+                        "each_line_wrap_num": 20,
+                        "osd_string": "",
+                        "osd_font_size": 18,
+                        "osd_width": 12,
+                        "osd_height": 24,
+                        "osd_rotate_mode": 0,
+                        "osd_up_shift": 2,
+                        "osd_left_shift": 2
+                    }
+                ]
+            }
+        },
+        {
+            "dev_name": "/dev/video53",
+            "osd": {
+                "number": 3,
+                "count_of_supported_font_type": 2,
+                "time_am_pm_enable": 1,
+                "date_display_enable": 1,
+                "time_display_enable": 1,
+                "blocks": [
+                    {
+                        "index": 0,
+                        "encoding_method": "utf8",
+                        "enable": 0,
+                        "pos_left": 0,
+                        "pos_right": 200,
+                        "pos_top": 100,
+                        "pos_bottom": 160,
+                        "flick_enable": 0,
+                        "flick_speed": 20,
+                        "fg_transparent_enable": 1,
+                        "fg_transparency": 0,
+                        "fg_color": "ffffff",
+                        "bg_enable": 0,
+                        "bg_color": "808080",
+			"stroke_enable": 1,
+			"stroke_direct": 0,
+			"stroke_extent": 128,
+                        "each_line_wrap_enable": 1,
+                        "each_line_wrap_num": 20,
+                        "osd_string": "",
+                        "osd_font_size": 14,
+                        "osd_width": 10,
+                        "osd_height": 19,
+                        "osd_rotate_mode": 0,
+                        "osd_up_shift": 2,
+                        "osd_left_shift": 2
+                   }
+                ]
+            }
+        },
+        {
+            "dev_name": "/dev/video54",
+            "osd": {
+                "number": 3,
+                "count_of_supported_font_type": 2,
+                "time_am_pm_enable": 1,
+                "date_display_enable": 1,
+                "time_display_enable": 1,
+                "blocks": [
+                    {
+                        "index": 0,
+                        "encoding_method": "utf8",
+                        "enable": 0,
+                        "pos_left": 0,
+                        "pos_right": 200,
+                        "pos_top": 60,
+                        "pos_bottom": 110,
+                        "flick_enable": 0,
+                        "flick_speed": 20,
+                        "fg_transparent_enable": 1,
+                        "fg_transparency": 0,
+                        "fg_color": "ffffff",
+                        "bg_enable": 0,
+                        "bg_color": "808080",
+			"stroke_enable": 1,
+			"stroke_direct": 0,
+			"stroke_extent": 128,
+                        "each_line_wrap_enable": 1,
+                        "each_line_wrap_num": 20,
+                        "osd_string": "",
+                        "osd_font_size": 11,
+                        "osd_width": 7,
+                        "osd_height": 14,
+                        "osd_rotate_mode": 0,
+                        "osd_up_shift": 2,
+                        "osd_left_shift": 2
+                   }
+                ]
+            }
+        }
+    ]
+}

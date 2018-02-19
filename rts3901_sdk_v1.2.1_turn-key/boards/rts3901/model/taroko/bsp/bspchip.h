@@ -1,0 +1,360 @@
+/*
+ * Realtek Semiconductor Corp.
+ *
+ * bsp/bspchip.h:
+ *   bsp chip address and IRQ mapping file
+ *
+ * Copyright (C) 2006-2012 Tony Wu (tonywu@realtek.com)
+ */
+
+#ifndef _BSPCHIP_H_
+#define _BSPCHIP_H_
+
+/*
+ * Register access macro
+ */
+#define REG32(reg)		(*(volatile unsigned int   *)(reg))
+#define REG16(reg)		(*(volatile unsigned short *)(reg))
+#define REG08(reg)		(*(volatile unsigned char  *)(reg))
+
+/*
+ * IRQ Controller
+ */
+#define BSP_IRQ_CPU_BASE	0
+#define BSP_IRQ_CPU_NUM		8
+
+#define BSP_IRQ_LOPI_BASE	(BSP_IRQ_CPU_BASE + BSP_IRQ_CPU_NUM)
+#define BSP_IRQ_LOPI_NUM	8
+
+/*
+ * FREQ
+ */
+#define BSP_PLL_FREQ		25000000		/* 25 MHz */
+#define BSP_CPU_FREQ		(2 * BSP_PLL_FREQ)
+
+/*
+ * IRQ Mapping
+ *
+ * If there is GIC, IRQs are routed through GIC via software
+ * If not, IRQs are hardwired via ICTL
+ */
+#ifndef CONFIG_IRQ_GIC
+#define BSP_IRQ_DMA			(BSP_IRQ_CPU_BASE + 4) /* DMA controller */
+#define BSP_IRQ_SPI			(BSP_IRQ_CPU_BASE + 5) /* DDR & SPI controller */
+#define BSP_IRQ_OTHERS			(BSP_IRQ_CPU_BASE + 6) /* XB2/I2C host */
+#define BSP_IRQ_USBDEV			(BSP_IRQ_CPU_BASE + 7) /* USB device */
+#define BSP_IRQ_ENCPY			(BSP_IRQ_LOPI_BASE + 0) /* AES&DES&3DES*/
+#define BSP_IRQ_SD			(BSP_IRQ_LOPI_BASE + 1) /* SD controller */
+#define BSP_IRQ_ETHERNET		(BSP_IRQ_LOPI_BASE + 2) /* ethernet */
+#define BSP_IRQ_USBHOST			(BSP_IRQ_LOPI_BASE + 3) /* USB host */
+#define BSP_IRQ_H264			(BSP_IRQ_LOPI_BASE + 4) /* H264 controller */
+#define BSP_IRQ_MCU8051			(BSP_IRQ_LOPI_BASE + 5) /* DW8051&ISP&JPEG */
+#define BSP_IRQ_I2S			(BSP_IRQ_LOPI_BASE + 6) /* MIC&SPK&I2S */
+#define BSP_IRQ_COPMARE			(BSP_IRQ_LOPI_BASE + 7) /* timer */
+#endif
+
+/*
+ * Clock
+ */
+#define SYSBASE_VA			0xb8860000
+#define SYSBASE_REG(x)			((void __iomem *)(x) + SYSBASE_VA)
+
+#define CLK_CHANGE			SYSBASE_REG(0x1000)
+#define H264_CLK_CHANGE			14
+#define I2C_CLK_CHANGE			13
+#define UART_CLK_CHANGE			12
+#define SDIO_CLK_CHANGE			10
+#define CIPHER_CLK_CHANGE		9
+#define I2S_CLK_CHANGE			8
+#define BUS_CLK_CHANGE			7
+#define XB2_CLK_CHANGE			6
+#define CPU_CLK_CHANGE			5
+#define DRAM_CLK_CHANGE			4
+
+#define FORCE_REG_RESET_FWC		SYSBASE_REG(0x04)
+#define FORCE_REG_ASYNC_RESET		SYSBASE_REG(0X08)
+
+#define UART_CLK_LP_EN			SYSBASE_REG(0x1004)
+#define MCU_CLK_EN			SYSBASE_REG(0x1008)
+#define DRAM_OCP_BUS_CLK_CFG_REG	SYSBASE_REG(0x100C)
+#define CPU_CLK_CFG_REG			SYSBASE_REG(0x1010)
+#define XB2_CLK_CFG_REG			SYSBASE_REG(0x1014)
+#define BUS_CLK_CFG_REG			SYSBASE_REG(0x1018)
+#define I2S_CLK_CFG_REG			SYSBASE_REG(0x101C)
+#define CIPHER_CLK_CFG_REG		SYSBASE_REG(0x1020)
+#define ETHERNET_CLK_CFG_REG		SYSBASE_REG(0x1024)
+#define UART_CLK_CFG_REG		SYSBASE_REG(0x1028)
+#define I2C_CLK_CFG_REG			SYSBASE_REG(0x102C)
+#define H264_CLK_CFG_REG		SYSBASE_REG(0x1030)
+#define RC_CLK_CFG			SYSBASE_REG(0x1034)
+#define RC_OSC_POW_CFG			SYSBASE_REG(0x1038)
+#define RTC32K_DIV_CFG0			SYSBASE_REG(0x103C)
+#define RTC32K_DIV_CFG1			SYSBASE_REG(0x1040)
+#define RTC32K_DIV_CFG2			SYSBASE_REG(0x1044)
+#define RTC_CLK_CFG			SYSBASE_REG(0x1048)
+#define USBPHY_CLK_CFG			SYSBASE_REG(0x104C)
+#define JPEG_CLK_CFG_REG		SYSBASE_REG(0x1050)
+
+#define CLK_ENABLE			0x100
+#define CLOCK_SELECT_USB_PLL_2		0x0
+#define CLOCK_SELECT_USB_PLL_3		0x1
+#define CLOCK_SELECT_USB_PLL_5		0x2
+#define CLOCK_SELECT_USB_PLL_7		0x3
+#define CLOCK_SELECT_PLL0_2		0x4
+#define CLOCK_SELECT_PLL0_3		0x5
+#define CLOCK_SELECT_PLL0_5		0x6
+#define CLOCK_SELECT_PLL0_7		0x7
+#define CLOCK_SELECT_PLL1_2		0x8
+#define CLOCK_SELECT_PLL1_3		0x9
+#define CLOCK_SELECT_PLL1_5		0xA
+#define CLOCK_SELECT_PLL1_7		0xB
+#define CLOCK_SELECT_PLL2_2		0xC
+#define CLOCK_SELECT_PLL2_3		0xD
+#define CLOCK_SELECT_PLL2_5		0xE
+#define CLOCK_SELECT_PLL2_7		0xF
+#define CLOCK_SELECT_PLL3_2		0x10
+#define CLOCK_SELECT_PLL3_3		0x11
+#define CLOCK_SELECT_PLL3_5		0x12
+#define CLOCK_SELECT_PLL3_7		0x13
+#define CLOCK_SELECT_PLL4_2		0x14
+#define CLOCK_SELECT_PLL4_3		0x15
+#define CLOCK_SELECT_PLL4_5		0x16
+#define CLOCK_SELECT_PLL4_7		0x17
+#define CLOCK_SELECT_PLL5_2		0x18
+#define CLOCK_SELECT_PLL5_3		0x19
+#define CLOCK_SELECT_PLL5_5		0x1A
+#define CLOCK_SELECT_PLL5_7		0x1B
+#define CLOCK_SELECT_DIV2		(0x1<<5)
+#define CLOCK_SELECT_DIV4		(0x2<<5)
+#define CLOCK_SELECT_DIV8		(0x3<<5)
+#define CLOCK_SELECT_DIV16		(0x4<<5)
+#define CLOCK_SELECT_DIV32		(0x5<<5)
+#define CLOCK_SELECT_DIV64		(0x6<<5)
+#define CLOCK_SELECT_DIV128		(0x7<<5)
+
+/* ETHERNET_CLK_CFG_REG */
+#define CLK_EN_ETN_250M			(1 << 17)
+#define ETH_EPHY_RST_N			(1 << 14)
+#define ETH_EPHY_ADDR			(1 << 9)
+
+/* USBPHY_CLK_CFG_REG */
+#define USBPHY_HOST_CLK_EN		(1 << 1)
+#define USBPHY_DEV_CLK_EN		(1 << 0)
+
+/* pll clk reg */
+#define BSP_CLK_PLL0_BASE		SYSBASE_REG(0x4100)
+#define BSP_CLK_PLL1_BASE		SYSBASE_REG(0x4200)
+#define BSP_CLK_PLL2_BASE		SYSBASE_REG(0x4300)
+#define BSP_CLK_PLL3_BASE		SYSBASE_REG(0x4400)
+#define BSP_CLK_PLL4_BASE		SYSBASE_REG(0x4500)
+
+/*XB2*/
+#define XB2_VA				0xB8870000
+#define	XB2BASE_REG(x) 			((x) + XB2_VA)
+#define	UART_TX_EN_REG			XB2BASE_REG(0x54)
+#define UART0_TX_EN			0x01
+#define UART1_TX_EN			(0x01<<8)
+#define UART2_TX_EN			(0x01<<16)
+
+/*
+ * DWAPB Timer
+ */
+#define BSP_TIMER0_FREQ		(BSP_PLL_FREQ)
+#define BSP_TIMER0_VADDR	0xb8810000UL
+#define BSP_TIMER0_TLCR		(BSP_TIMER0_VADDR + 0x00)
+#define BSP_TIMER0_TCVR		(BSP_TIMER0_VADDR + 0x04)
+#define BSP_TIMER0_TCR		(BSP_TIMER0_VADDR + 0x08)
+#define BSP_TIMER0_EOI		(BSP_TIMER0_VADDR + 0x0c)
+
+/*
+ * LS GMAC
+ */
+#define BSP_GMAC_MAPBASE        0x1b007000UL
+#define BSP_GMAC_MAPSIZE        0x00000300UL
+
+/*
+ * PS DWAPB UART
+ */
+#define BSP_UART0_VADDR		0xb8810000UL
+#define BSP_UART0_BAUD		57600
+#define BSP_UART0_FREQ		24000000
+#define BSP_UART0_USR		(BSP_UART0_VADDR + 0x7c)
+#define BSP_UART0_FCR		(BSP_UART0_VADDR + 0x08)
+#define BSP_UART0_PADDR		0x18810000UL
+#define BSP_UART0_PSIZE		0x100
+
+#define BSP_UART1_VADDR		0xb8810100UL
+#define BSP_UART1_BAUD		57600
+#define BSP_UART1_FREQ		24000000
+#define BSP_UART1_USR		(BSP_UART1_VADDR + 0x7c)
+#define BSP_UART1_FCR		(BSP_UART1_VADDR + 0x08)
+#define BSP_UART1_PADDR		0x18810100UL
+#define BSP_UART1_PSIZE		0x100
+
+#define BSP_UART2_VADDR		0xb8810200UL
+#define BSP_UART2_BAUD		57600
+#define BSP_UART2_FREQ		24000000
+#define BSP_UART2_USR		(BSP_UART2_VADDR + 0x7c)
+#define BSP_UART2_FCR		(BSP_UART2_VADDR + 0x08)
+#define BSP_UART2_PADDR		0x18810200UL
+#define BSP_UART2_PSIZE		0x100
+/*
+ * PWM
+ */
+#define BSP_PWM_PADDR	0x18820000UL
+#define BSP_PWM_PSIZE	0x10000
+
+/*
+ * RTC
+ */
+#define BSP_RTC_PADDR	0x18850000UL
+#define BSP_RTC_PSIZE	0x1000
+
+/*
+ * Watchdog
+ */
+#define BSP_WATCHDOG_PADDR	0x18862000UL
+#define BSP_WATCHDOG_PSIZE	0x1000
+
+/*
+ * PS Miscellaneous
+ */
+#define BSP_I2C0_VADDR		0xb8880000UL
+#define BSP_I2C0_PADDR		0x18880000UL
+#define BSP_I2C0_PSIZE		0x10000UL
+#define BSP_I2S0_VADDR		0xb850000UL
+#define BSP_I2C1_VADDR		0xb888100UL
+#define BSP_GPIO_PADDR		0x18800000UL
+#define BSP_GPIO_PSIZE		0x10000UL
+#define BSP_GPIO_VADDR		0xb8800000UL
+#define BSP_RTC0_VADDR		0xb8850000UL
+#define BSP_FORCE_RESET_PADDR	0x18860000UL
+#define BSP_FORCE_RESET_PSIZE	0x00001000UL
+#define BSP_EFUSE_PADDR		0x18865000UL
+#define BSP_EFUSE_PSIZE		0x00001000UL
+#define BSP_ADC_PADDR		0x18840000UL
+#define BSP_ADC_PSIZE		0x00001000UL
+#define BSP_THERMAL_PADDR	0x18864000UL
+#define BSP_THERMAL_PSIZE	0x0000100UL
+/*
+ * DMA
+ */
+#define BSP_DMA_PADDR		0x18020000UL
+#define BSP_DMA_PSIZE		0x00000100UL
+
+/*
+ * SPIC
+ */
+#define BSP_SPIC_VADDR		0xb8030000UL
+#define BSP_SPIC_PADDR		0x18030000UL
+#define BSP_SPIC_PSIZE		0x00010000UL
+
+/*
+ * USB
+ */
+#define BSP_EHCI_PADDR		0x18100000UL
+#define BSP_EHCI_PSIZE		0x00001000UL
+#define BSP_OHCI_PADDR		0x18180000UL
+#define BSP_OHCI_PSIZE		0x00001000UL
+#define BSP_USB_PHY_PADDR	0x18140000UL
+#define BSP_USB_PHY_PSIZE	0x00001000UL
+#define BSP_USB_DEV_PHY_PADDR	0x18240000UL
+#define BSP_USB_DEV_PHY_PSIZE	0x00001000UL
+
+/*
+ * ISP
+ */
+#define BSP_ISP_PADDR		0x18040000UL
+#define BSP_ISP_PSIZE		0x00010000UL
+
+#define BSP_ISP_JPEG_PADDR	0x1805e000UL
+#define BSP_ISP_JPEG_PSIZE	0x00002000UL
+
+/*
+ * SD Controller
+ */
+#define BSP_SD_PADDR		0x18300000UL
+#define BSP_SD_PSIZE		0x00100000UL
+
+/*
+ * AUDIO
+ */
+#define BSP_AUDIO_PADDR		0x18500000UL
+#define BSP_AUDIO_PSIZE		0x00000064UL
+#define BSP_DAI_PADDR		0x18500064UL
+#define BSP_DAI_PSIZE		0x0000000CUL
+#define BSP_CODEC_PADDR		0x18500070UL
+#define BSP_CODEC_PSIZE		0x00000064UL
+#define BSP_DAIP_PADDR		0x185000D4UL
+#define BSP_DAIP_PSIZE		0x00000004UL
+
+/*
+ *Ethernet
+ */
+#define BSP_ETHERNET_PADDR	0x18400000UL
+#define BSP_ETHERNET_PSIZE	0x00100000UL
+
+/*
+ * DWC_OTG
+ */
+#define BSP_DWC_OTG_BASE	0x18200000UL
+#define BSP_DWC_OTG_SIZE	0x00040000UL
+
+/*
+ *H264
+ */
+#define BSP_H264_PADDR		0x18060000UL
+#define BSP_H264_PSIZE		0x00020000UL
+
+/*
+ * CRYPTO
+ */
+#define BSP_CRYPTO_PADDR	0x18600000UL
+#define BSP_CRYPTO_PSIZE	0x00000070UL
+
+/*
+ * XB2
+ */
+#define BSP_XB2_PADDR		0x18870000UL
+#define BSP_XB2_PSIZE		0x00000064UL
+
+/*
+ * SPI FLASH
+ */
+#define BSP_SPI_FLASH_PADDR	0x1c000000UL
+
+/*
+ * Arbiter controller
+ */
+#define BSP_ARBITER_VADDR	0xB80820A0
+#define BSP_ARBITER_XB0_CTRL0	(BSP_ARBITER_VADDR + 0)
+#define BSP_ARBITER_XB0_CTRL1	(BSP_ARBITER_VADDR + 0x04)
+#define BSP_ARBITER_XB0_CTRL2	(BSP_ARBITER_VADDR + 0x08)
+#define BSP_ARBITER_XB0_CTRL3	(BSP_ARBITER_VADDR + 0x0c)
+#define BSP_ARBITER_XB1_CTRL0	(BSP_ARBITER_VADDR + 0x10)
+#define BSP_ARBITER_XB1_CTRL1	(BSP_ARBITER_VADDR + 0x14)
+
+/*
+ * Sysctl misc register
+ */
+#define BSP_SYSCTL_MISC_VADDR	0xB886F000
+#define BSP_HW_ID_REG		(BSP_SYSCTL_MISC_VADDR + 0x10)
+#define BSP_TS_DBG_REG		0xB8864024
+
+#define AUDIO_RESVD_MEM_OFFSET	(0)
+#define AUDIO_RESVD_MEM_SIZE	(1 * 1024 * 1024)
+#define ISP_RESVD_MEM_OFFSET	(AUDIO_RESVD_MEM_OFFSET + AUDIO_RESVD_MEM_SIZE)
+
+#define xb2flush()				\
+	__asm__ __volatile__(			\
+		".set	push\n\t"		\
+		".set	noreorder\n\t"		\
+		"sync\n\t"			\
+		"lw	$0,%0\n\t"		\
+		"nop\n\t"			\
+		".set	pop"			\
+		: /* no output */		\
+		: "m" (*(int *)CKSEG1ADDR(0x18800000)) \
+		: "memory")
+
+#endif   /* _BSPCHIP_H */

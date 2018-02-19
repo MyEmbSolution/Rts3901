@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Ming Qian (ming_qian@realsil.com.cn)
+# Dec. 04, 2014
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_linuxtest_testisp) += utils/linux_test/testisp
+
+# dependency
+testvideo:librtsisp h1_encoder

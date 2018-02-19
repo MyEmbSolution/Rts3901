@@ -1,0 +1,8 @@
+{
+	"ntp_enable":"true",
+	"dst_enable":"false",
+	"ntp_cur_addr":"time.nist.gov",
+	"ntp_server_address":["time.nist.gov","ntp.sjtu.edu.cn"],
+	"ntp_type":"buildin",
+	"ntp_update_interval":"1800"
+}

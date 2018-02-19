@@ -1,0 +1,17 @@
+#!/bin/bash
+
+DnrdPath="/var/nm/dnrd/"
+
+if [ ! -d "$DnrdPath" ]; then
+	mkdir "$DnrdPath"
+fi
+
+mkdir -p /var/nm/ppp
+mkdir -p /var/nm/cron
+
+if [ ! -f "/bin/nm_init" ]; then
+	echo "nm_init is not configured in user applications"
+else
+	nm_init -v 4 -D
+fi
+

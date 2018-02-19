@@ -1,0 +1,10 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Micky Ching <micky_ching@realsil.com.cn>
+# 2015-04-20
+#
+
+pkg_$(CONFIG_PACKAGE_isptuning) += ipcam/isp_tuning
+
+isp_tuning: librtsisp peacock neuralyzer

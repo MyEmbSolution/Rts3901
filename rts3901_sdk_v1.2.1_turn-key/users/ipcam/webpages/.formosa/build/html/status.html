@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Status</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row full-fill">
+        <div class="col-md-2 col-xs-3 submenu" role="navigation">
+          <div class="submenu_entry" id="system">
+            <div class="submenu_icon submenu_icon_system_on" id="submenu_icon_system"></div>
+            <div class="submenu_text submenu_text_on" id="submenu_text_system">System Info</div>
+            <div class="submenu_arrow submenu_arrow_on" id="submenu_arrow_system">&#9658;</div>
+          </div>
+          <div class="submenu_entry" id="wireless">
+            <div class="submenu_icon submenu_icon_wireless_off" id="submenu_icon_wireless"></div>
+            <div class="submenu_text submenu_text_off" id="submenu_text_wireless">Wireless Info</div>
+            <div class="submenu_arrow submenu_arrow_off" id="submenu_arrow_wireless">&#9658;</div>
+          </div>
+          <div class="submenu_entry" id="ethernet">
+            <div class="submenu_icon submenu_icon_ethernet_off" id="submenu_icon_ethernet"></div>
+            <div class="submenu_text submenu_text_off" id="submenu_text_ethernet">TCP/IP Info</div>
+            <div class="submenu_arrow submenu_arrow_off" id="submenu_arrow_ethernet">&#9658;</div>
+          </div>
+        </div>
+        <div class="col-md-10 col-xs-9 main-content" id="main_content">
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script>submenu.init("status", "system");</script>
+  </body>
+</html>

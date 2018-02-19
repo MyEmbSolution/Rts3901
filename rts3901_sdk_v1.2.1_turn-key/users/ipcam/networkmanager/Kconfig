@@ -1,0 +1,35 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Hurray_niu (hurray_niu@realsil.com.cn)
+# July. 7, 2015
+#
+
+config PACKAGE_nm_init
+	tristate "nm_init"
+	default n
+
+config PACKAGE_nm_cfg
+	tristate "nm_cfg"
+	default n
+
+if PACKAGE_nm_cfg
+config Enable_set_ethaddr
+	bool "Enable setting ethernet mac address"
+	default n
+endif
+
+config PACKAGE_nm_wps
+	tristate "nm_wps"
+	default n
+	help
+	  if select PACHAGE_wlan_wps, you should enable GPIO_SYSFS & WLAN_WPS
+	  in kernel setting
+
+if PACKAGE_nm_wps
+	config WPS_LED_NUM
+		int "wps_led_num(1-16)"
+		range 1 16
+		default "9"
+endif
+

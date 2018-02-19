@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# yafei meng <yafei_meng@realsil.com.cn>
+# 2015-06-02
+#
+
+pkg_$(CONFIG_PACKAGE_ntpclient) += utils/ntpclient
+
+#dependency
+ntpclient: json-c libsysconf

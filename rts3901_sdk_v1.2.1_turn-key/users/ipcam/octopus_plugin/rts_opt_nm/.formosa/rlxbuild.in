@@ -1,0 +1,13 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Nie(tony_nie@realsil.com.cn)
+# Jul. 02, 2015
+#
+
+# build target
+pkg_$(CONFIG_OCTOPUS_PLUGIN_NM) += ipcam/octopus_plugin/rts_opt_nm
+
+# dependency
+rts_opt_nm: octopus libsysconf
+

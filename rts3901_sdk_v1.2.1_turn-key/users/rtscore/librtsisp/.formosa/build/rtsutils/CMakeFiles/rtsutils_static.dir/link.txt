@@ -1,0 +1,2 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-ar cr librtsutils.a  CMakeFiles/rtsutils_static.dir/rts_raw.c.o CMakeFiles/rtsutils_static.dir/rts_bmp.c.o
+/home/tony_nie/ipcam/4dpocket/release/.build/build/toolchain/rsdk-4.8.5-5281-EL-3.10-u0.9.33-m32ut-160408/bin/rsdk-linux-ranlib librtsutils.a

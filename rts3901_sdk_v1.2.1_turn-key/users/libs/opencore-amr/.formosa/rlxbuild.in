@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Nie (tony_nie@realsil.com.cn)
+# Jul. 13, 2015
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_opencore_amr) += libs/opencore-amr
+
+# dependency

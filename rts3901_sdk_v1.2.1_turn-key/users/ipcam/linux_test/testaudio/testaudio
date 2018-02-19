@@ -1,0 +1,157 @@
+#! /bin/sh
+
+SDPath="/media/sdcard/"
+AudioPath="/media/sdcard/audiotest/"
+#devices=(0 1)
+#channels=(1 2)
+#rates=(8000 16000 32000 44100 48000)
+#formats=("U8" "S16_LE" "S24_3LE")
+
+helpinfo()
+{
+	echo "testaudio [option]"
+	echo ""
+	echo "-h,   help"
+	echo "-c,   capture"
+	echo "-p,   playback"
+	echo "-v,   volume"
+	echo "-s,   silence"
+}
+
+capture()
+{
+	for device in `seq 0 1`; do
+	for channel in `seq 1 2`; do
+	for rate in `seq 16000 16000 48000`; do
+	for format in `seq 8 8 24`; do
+		AudioFile=${AudioPath}"audiod"${device}"c"${channel}"r"${rate}"f"${format}".wav"
+		if [ ${format} = 8 ]; then
+			format="U8"
+		elif [ ${format} = 16 ]; then
+			format="S16_LE"
+		else
+			format="S24_3LE"
+		fi
+		arecord "-Dhw:0,"${device} -c ${channel} -r ${rate} -f ${format} -d 2 -F 100 ${AudioFile}
+		retc=$?
+		if [ "$retc" -ne "0" ]
+		then
+			echo "capture test fail"
+			return 1
+		fi
+	done
+	done
+	done
+	done
+
+	echo "capture test success"
+	return 0
+}
+
+playback()
+{
+	for device in `seq 0 1`; do
+	for file in `ls /media/sdcard/audiotest/`; do
+		AudioFile=${AudioPath}${file}
+		aplay "-Dhw:0,"${device} ${AudioFile}
+		retc=$?
+		if [ "$retc" -ne "0" ]
+		then
+			echo "playback test fail"
+			return 1
+		fi
+	done
+	done
+
+	echo "playback test success"
+	return 0
+}
+
+volume()
+{
+	for vol in `seq 0 127`; do
+		amixer -c 0 cset numid=1 ${vol}
+		retc=$?
+		if [ "$retc" -ne "0" ]
+		then
+			echo "volume test fail"
+			return 1
+		fi
+		amixer -c 0 cset numid=4 ${vol}
+		retc=$?
+		if [ "$retc" -ne "0" ]
+		then
+			echo "volume test fail"
+			return 1
+		fi
+	done
+
+	echo "volume test success"
+	return 0
+}
+
+silence()
+{
+	for i in `seq 0 1`; do
+		amixer -c 0 cset numid=2 ${i}
+		retc=$?
+		if [ "$retc" -ne "0" ]
+		then
+			echo "silence test fail"
+			return 1
+		fi
+		amixer -c 0 cset numid=5 ${i}
+		retc=$?
+		if [ "$retc" -ne "0" ]
+		then
+			echo "silence test fail"
+			return 1
+		fi
+	done
+
+	echo "silence test success"
+	return 0
+}
+
+if [ ! -d "$SDPath" ]
+then
+	echo "No SDCard"
+	return 1
+fi
+
+if [ ! -d "$AudioPath" ]
+then
+	mkdir "$AudioPath"
+fi
+
+if [ "$1" = "-c" ] # capture
+then
+	capture
+elif [ "$1" = "-p" ] # playback
+then
+	playback
+elif [ "$1" = "-v" ] # volume
+then
+	volume
+elif [ "$1" = "-s" ] # silence
+then
+	silence
+elif [ "$1" = "-h" ] # helpinfo
+then
+	helpinfo
+	return 0
+else
+	echo "Invalid Command"
+	helpinfo
+	return 1
+fi
+
+ret=$?
+if [ "$ret" -ne "0" ]
+then
+	echo "test fail"
+	return 1
+fi
+
+echo "test success"
+return 0

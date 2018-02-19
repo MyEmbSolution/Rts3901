@@ -1,0 +1,9 @@
+#
+# Realtek Semiconductor Corp.
+#
+# yafei_meng(yafei_meng@realsil.com.cn)
+# Sep. 24, 2015
+#
+
+# build target
+pkg_$(CONFIG_OCTOPUS_PLUGIN_CAM_UNIT_TEST) += ipcam/octopus_plugin/rts_opt_cam/rts_cam_unit_test

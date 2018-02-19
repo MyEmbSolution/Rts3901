@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Moses Yuan (moses_yuan@realsil.com.cn)
+# Jul. 13, 2015
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_libauth) += ipcam/libauth
+
+libauth: openssl

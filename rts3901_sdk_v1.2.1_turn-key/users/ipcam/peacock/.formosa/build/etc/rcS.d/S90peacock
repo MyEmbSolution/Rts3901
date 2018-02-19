@@ -1,0 +1,22 @@
+#!/bin/sh
+
+CONF_DIR=/usr/conf
+
+if [ ! -f $CONF_DIR/peacock.json ]; then
+	cp /etc/peacock.json $CONF_DIR/peacock.json
+fi
+
+if [ -f /sys/devices/platform/rts_soc_camera/loadfw ]; then
+	echo 1 > /sys/devices/platform/rts_soc_camera/loadfw
+fi
+
+peacock -p profile1 -v 24&
+peacock -p profile2 -v 24&
+peacock -p profile3 -v 24&
+
+#alsad -c $CONF_DIR/peacock.json -v 24&
+lark -c $CONF_DIR/peacock.json -v 24&
+
+rtspd   -c $CONF_DIR/peacock.json -v 24&
+
+del_sdcard_files "/media/sdcard" &

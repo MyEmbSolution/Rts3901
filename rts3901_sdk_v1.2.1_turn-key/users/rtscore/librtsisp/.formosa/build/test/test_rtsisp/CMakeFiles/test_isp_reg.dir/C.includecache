@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../include/rtsisp.h
+stdint.h
+-
+rtscamkit.h
+-
+rtsisp_def.h
+-
+
+../../include/rtsisp_def.h
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsisp/test/test_rtsisp/rts_test_reg.c
+stdio.h
+-
+stdlib.h
+-
+stdint.h
+-
+rtsisp.h
+-
+

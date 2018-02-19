@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Discovery</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-switch.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid main-content-bg">
+      <div class="row">
+        <div class="col-md-offset-1 col-xs-offset-1 col-md-4 col-xs-4"><h3>Discovery</h3></div>
+        <div class="col-md-6 col-xs-6">
+          <ul class="nav nav-tabs nav-justified" role="tablist">
+            <li role="presentation" class="active"><a href="#tab_Upnp" role="tab" data-toggle="tab"><strong>UPnP</strong></a></li>
+            <li role="presentation"><a href="#tab_Bonjour" role="tab" data-toggle="tab"><strong>Bonjour</strong></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="tab_Upnp">
+            <div class="col-md-offset-1 col-xs-offset-1 col-md-10 col-xs-10">
+              <table class="table table-striped column2">
+                <thead><tr><th>Enable</th><th><input id="upnp_enable" type="checkbox"></th></tr></thead>
+                <tbody>
+                  <tr><th>Friendly Name</th><td><input id="upnp_friendlyName"></td></tr>
+                </tbody>
+              </table>
+              <button id="upnp_save" class="btn btn-primary btn-sm" style="position: absolute;right: 0px;">Save</button>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="tab_Bonjour">
+            <div class="col-md-offset-1 col-xs-offset-1 col-md-10 col-xs-10">
+              <table class="table table-striped column2">
+                <thead><tr><th>Enable</th><th><input id="bonjour_enable" type="checkbox"></th></tr></thead>
+                <tbody>
+                  <tr><th>Hostname</th><td><input id="bonjour_hostname"></td></tr>
+                </tbody>
+              </table>
+              <button id="bonjour_save" class="btn btn-primary btn-sm" style="position: absolute;right: 0px;">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/network_discovery.js"></script>
+  </body>
+</html>

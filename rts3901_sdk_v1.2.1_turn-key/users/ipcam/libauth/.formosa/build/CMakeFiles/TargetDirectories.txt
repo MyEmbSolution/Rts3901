@@ -1,0 +1,3 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libauth/.formosa/build/CMakeFiles/autotest.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libauth/.formosa/build/CMakeFiles/libauth_dynamic.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libauth/.formosa/build/CMakeFiles/libauth_static.dir

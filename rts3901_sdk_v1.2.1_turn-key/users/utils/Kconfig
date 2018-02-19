@@ -1,0 +1,65 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2008
+#
+
+menu "Utils"
+
+config PACKAGE_adb
+	tristate "adb"
+	default n
+
+config PACKAGE_iwlib
+        tristate "iwlib"
+        default n
+	help
+	  Wireless tools
+
+config PACKAGE_lrzsz
+	tristate "lrzsz"
+	default n
+	help
+	  a unix communication package lrzsz
+
+config PACKAGE_prelink
+	tristate "prelink"
+	default n
+	select PACKAGE_elfutils
+	help
+	  Prelink tool
+
+config PACKAGE_usbutils
+        tristate "usbutils"
+        default n
+	select PACKAGE_libusb
+	select PACKAGE_libiconv
+	help
+	  usbutils
+
+config PACKAGE_mtdutils
+        tristate "mtd-utils"
+        default n
+	select PACKAGE_zlib
+	select PACKAGE_lzo
+	select PACKAGE_libuuid
+	help
+	  usbutils
+
+config PACKAGE_alsautils
+	tristate "alsa utils"
+	select PACKAGE_alsalib
+	default n
+	help
+	  alsa utils
+
+config PACKAGE_ntpclient
+	tristate "ntpclient"
+	select PACKAGE_libsysconf
+	select PACKAGE_jsonc
+	default n
+	help
+	  ntpclient
+
+endmenu

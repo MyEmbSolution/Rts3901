@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Elvis Chen (elvis_chen@realtek.com)
+# JAN. 25, 2016
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_doorkeeper) += ipcam/doorkeeper
+
+# dependency
+doorkeeper:json-c rts_opt_cam

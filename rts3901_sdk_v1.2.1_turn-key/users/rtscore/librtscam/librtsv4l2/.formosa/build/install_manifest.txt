@@ -1,0 +1,5 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtsv4l2/.formosa/build/lib/librtsv4l2.so.0.0.2
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtsv4l2/.formosa/build/lib/librtsv4l2.so.0
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtsv4l2/.formosa/build/lib/librtsv4l2.so
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtsv4l2/.formosa/build/lib/librtsv4l2.a
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtsv4l2/.formosa/build/include/rtsv4l2.h

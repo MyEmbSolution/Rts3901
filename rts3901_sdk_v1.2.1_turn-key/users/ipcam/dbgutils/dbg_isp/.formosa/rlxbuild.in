@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Wei WANG (wei_wang@realsil.com.cn)
+# Nov. 24, 2014
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_dbgutils_dbgisp) += ipcam/dbgutils/dbg_isp
+
+# dependency
+dbg_isp: librtsisp h1_encoder

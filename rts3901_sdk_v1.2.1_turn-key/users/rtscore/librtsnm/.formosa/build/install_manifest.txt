@@ -1,0 +1,2 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsnm/.formosa/build/lib/librtsnm.so
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtsnm/.formosa/build/include/rtsnm.h

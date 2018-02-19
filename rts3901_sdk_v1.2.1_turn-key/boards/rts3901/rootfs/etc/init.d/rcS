@@ -1,0 +1,127 @@
+#!/bin/sh
+
+CONF_DIR_JFFS2=/usr/conf
+CONF_DIR_RAMFS=/var/conf
+
+#echo "mounting proc ..."
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+if [ -d /sys/kernel/debug ]; then
+	mount -t debugfs none /sys/kernel/debug
+fi
+
+mount -t ramfs ramfs /var
+mkdir -p /var/tmp
+mkdir -p /var/log
+mkdir -p /var/run
+mkdir -p /var/lock
+mkdir -p /var/nm
+
+mount -t ramfs ramfs /dev
+mkdir -p /dev/shm
+mount -t tmpfs tmpfs /dev/shm
+
+mkdir /dev/pts
+chmod 0755 /dev/pts
+mount -t devpts devpts /dev/pts
+
+/etc/init.d/initdevnod
+
+#preinit script
+if [ -d /etc/preinit ]; then
+	for pi_source_file in /etc/preinit/*; do
+		. $pi_source_file
+	done
+fi
+
+# Set initial date/time
+date -s "2015-10-24 10:24:00"
+
+#echo "start mdev ..."
+mount -t tmpfs -o size=64k,mode=0755 tmpfs /media
+echo /bin/mdev > /proc/sys/kernel/hotplug
+mdev -s
+if [ ! -f "/bin/find" ]; then
+    echo "find tool is not configured in busybox"
+else
+    find /sys/bus/usb/devices -type f -name 'uevent' -maxdepth 3 -follow \
+	| while read dev_event; do
+		echo add > $dev_event;
+	done
+fi
+
+# Mount jffs2 partition
+/etc/init.d/mount_jffs2 $CONF_DIR_JFFS2
+
+# Initialize $CONF_DIR_JFFS2
+if [ -d /etc/conf ] && [ -d $CONF_DIR_JFFS2 ]; then
+    cd /etc/conf
+    for i in *; do
+        if [ ! -f $CONF_DIR_JFFS2/$i ]; then
+            cp /etc/conf/$i $CONF_DIR_JFFS2/
+        fi
+    done
+    unset i
+fi
+
+# Initialize $CONF_DIR_RAMFS
+mkdir -p /var/conf/
+cp -rf $CONF_DIR_JFFS2/* $CONF_DIR_RAMFS/
+
+#set sys_tz
+if [ -x /bin/hwclock ]; then
+	hwclock -ut
+fi
+
+#echo "enabling network devices ..."
+ifconfig lo 127.0.0.1
+#ifconfig eth0 172.21.210.225 netmask 255.255.255.0
+#route add default gw 172.21.210.254
+#httpd -c /etc/httpd.conf -h /home/web
+
+if [ -x /bin/preamble ]; then
+	preamble
+fi
+
+if [ -x /bin/syslogd ]; then
+	syslogd
+fi
+if [ -x /bin/klogd ]; then
+	klogd
+fi
+
+if [ -x /bin/check_cfg ]; then
+	FILES=" alarm isp network set_time ftp osd user_config peacock "
+	for i in $FILES
+	do
+		check_cfg $i
+		broken=$?
+		if [ 255 -eq $broken ]; then
+			echo "$i.json was broken, now reset"
+			cp /etc/conf/$i.json /var/conf
+		fi
+	done
+fi
+
+if [ -x /bin/entropy ]; then
+	entropy -D -v 0x1C
+fi
+
+if [ -d /etc/rcS.d ]; then
+    for i in /etc/rcS.d/*; do
+        if [ -r $i ]; then
+          . $i
+        fi
+    done
+    unset i
+fi
+
+if [ -f /bin/telnetd ]; then
+	telnetd &
+fi
+
+if [ -f $CONF_DIR_JFFS2/ex_init.sh ]; then
+	. $CONF_DIR_JFFS2/ex_init.sh
+fi
+
+cat /etc/motd

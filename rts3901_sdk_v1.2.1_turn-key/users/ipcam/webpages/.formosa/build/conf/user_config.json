@@ -1,0 +1,10 @@
+{
+  "user_info": [
+    {
+      "user_name": "admin",
+      "realm": "realsil",
+      "digest": "a9f95d7eea6c0c4c47b89d11c734a5db",
+      "user_privilege": "admin"
+    }
+  ]
+}

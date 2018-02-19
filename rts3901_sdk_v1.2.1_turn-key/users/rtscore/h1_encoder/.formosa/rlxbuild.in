@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Ming Qian (ming_qian@realsil.com.cn)
+# Aug. 08, 2014
+#
+ 
+# build target
+pkg_$(CONFIG_PACKAGE_h1_encoder) += rtscore/h1_encoder
+
+h1_encoder: librtsisp

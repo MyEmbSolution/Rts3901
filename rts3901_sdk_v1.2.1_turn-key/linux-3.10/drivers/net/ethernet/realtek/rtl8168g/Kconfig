@@ -1,0 +1,18 @@
+#
+# Realtek device configuration
+#
+
+config RTL8168G
+	bool "Realtek RTL-8168G 10/100 Mbps Ethernet Adapter support"
+	select CRC32
+	select NET_CORE
+	select MII
+	select RTS_EFUSE
+	---help---
+	  Support for rtl8168g chipset.
+
+if RTL8168G
+config RTL8168_DMA_TEST
+	bool "Enable rtl8168 RX driect connect TX for DMA test"
+
+endif

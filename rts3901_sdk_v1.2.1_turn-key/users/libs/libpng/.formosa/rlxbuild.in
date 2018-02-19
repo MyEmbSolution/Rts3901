@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Jan. 10, 2011
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_libpng) += libs/libpng
+
+# dependency
+libpng: libz

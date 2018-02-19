@@ -1,0 +1,13 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Nie(tony_nie@realsil.com.cn)
+# Jul. 02, 2015
+#
+
+# build target
+pkg_$(CONFIG_OCTOPUS_PLUGIN_CAM) += ipcam/octopus_plugin/rts_opt_cam
+
+# dependency
+rts_opt_cam: librtsio octopus peacock rtstream libmtd libsysconf json-c
+

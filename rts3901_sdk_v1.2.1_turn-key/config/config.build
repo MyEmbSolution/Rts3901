@@ -1,0 +1,86 @@
+#
+# Realtek Semiconductor Corp.
+#
+# config.build:
+#
+# Optimization configuration, !configuration optimization
+#
+# Copyright 2012  Tony Wu (tonywu@realtek.com)
+#
+
+menu "Config build settings"
+
+choice
+	prompt "Optimization level"
+	default OPT_LEVEL_OS
+
+config OPT_LEVEL_O0
+	bool "-O0"
+
+config OPT_LEVEL_O2
+	bool "-O2"
+
+config OPT_LEVEL_OS
+	bool "-Os"
+
+config OPT_LEVEL_O3
+	bool "-O3"
+
+endchoice
+
+config OPT_SALIASING
+	bool "Enable strict aliasing (-fstrict-aliasing)"
+	default y
+
+config OPT_SOVERFLOW
+	bool "Enable strict overflow (-fstrict-overflow)"
+	default y
+
+config OPT_DEBUG
+	bool "Enable debug symbols (-g)"
+	default n
+
+config CCFLAGS
+	string
+
+comment "Config library strip support"
+
+config OPT_KEEP
+	bool "Keep unused shared library"
+	default n
+	help
+	  This option keeps unused shared library from lstrip.
+	  Unless you are building for debugging, or suffering from
+	  program abnormality due to library removed, this option
+	  should not be turned on.
+
+	  If unsure, say N.
+
+config OPT_NO_LSTRIP
+	bool "Disable symbol stripping support"
+	default n
+	help
+	  This option disables symbol stripping from lstrip.
+	  Unless you are building for debugging, this option
+	  should not be turned on.
+
+	  If unsure, say N.
+
+config OPT_NO_LSHRINK
+	bool "Disable library shrinking support"
+	default n
+	help
+	  This option disables shared library shrinking support.
+	  Unless you are building for debugging, or suffering from
+	  program abnormality due to library shrinking, this option
+	  should not be turned on.
+
+	  If unsure, say N.
+
+config OPT_DEBUG_LSHRINK
+	bool "Debug library shrinking support"
+	default n
+	help
+	  If unsure, say N.
+
+endmenu

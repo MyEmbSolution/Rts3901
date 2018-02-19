@@ -1,0 +1,31 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2009
+#
+
+#
+# RLX CPU
+#
+choice
+	prompt "Selected cpu core"
+	depends on ARCH_CPU_RLX
+
+config ARCH_CPU_RLX4181
+	bool "4181"
+	depends on ARCH_SUPPORT_RLX4181
+
+config ARCH_CPU_RLX4281
+	bool "4281"
+	depends on ARCH_SUPPORT_RLX4281
+
+config ARCH_CPU_RLX5181
+	bool "5181"
+	depends on ARCH_SUPPORT_RLX5181
+
+config ARCH_CPU_RLX5281
+	bool "5281"
+	depends on ARCH_SUPPORT_RLX5281
+
+endchoice

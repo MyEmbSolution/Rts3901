@@ -1,0 +1,131 @@
+#ifndef __SND_SOC_RLX_CODEC_H
+#define __SND_SOC_RLX_CODEC_H
+
+#define RLX_REG_DAC_CFG			0x00
+#define RLX_REG_DAC_PDM_DFG		0x04
+#define RLX_REG_ADC_CFG1		0x08
+#define RLX_REG_ADC_CFG2		0x0C
+#define RLX_REG_AGC_CFG1		0x10
+#define RLX_REG_AGC_CFG2		0x14
+#define RLX_REG_AGC_CFG3		0x18
+#define RLX_REG_AGC_CFG4		0x1C
+#define RLX_REG_AGC_CFG5		0x20
+#define RLX_REG_AGC_CFG6		0x24
+#define RLX_REG_TCON_CFG		0x28
+
+#define RLX_REG_ADDA_ANA_CFG1		0x2C
+#define RLX_REG_ADDA_ANA_CFG2		0x30
+#define RLX_REG_ADDA_ANA_CFG3		0x34
+#define RLX_REG_ADDA_ANA_CFG4		0x38
+#define RLX_REG_ADDA_ANA_CFG5		0x3C
+
+#define RLX_REG_ADDA_OCP_CTL		0x60
+
+/* RLX_REG_DAC_CFG */
+#define RLX_DAAD_LP_EN			26
+#define RLX_DAHPF_EN			25
+#define RLX_DA_GAIN_L			18
+#define RLX_DA_GAIN_R			11
+#define RLX_DA_MUTE_L			10
+#define RLX_DA_MUTE_R			9
+#define RLX_DA_RST_N			1
+#define RLX_DAMOD_RST_N			0
+
+/* RLX_REG_DAC_PDM_DFG */
+#define RLX_SDM_RST_N			6
+
+/* RLX_REG_ADC_CFG1 */
+#define RLX_AD_COMP_GAIN		25
+#define RLX_AD_GAIN_L			18
+#define RLX_AD_GAIN_R			11
+#define RLX_AD_MUTE_L			10
+#define RLX_AD_MUTE_R			9
+#define RLX_DMIC_BOOST_GAIN_L		3
+#define RLX_DMIC_BOOST_GAIN_R		1
+#define RLX_AD_RST_N			0
+
+/* RLX_REG_ADC_CFG2 */
+#define RLX_DMIC_MIX_MUTE_L		11
+#define RLX_DMIC_MIX_MUTE_R		10
+#define RLX_AD_MIX_MUTE_L		1
+#define RLX_AD_MIX_MUTE_R		0
+
+/* RLX_REG_AGC_CFG5 */
+#define RLX_ALC_BK_GAIN_L		19
+#define RLX_ALC_BK_GAIN_R		13
+#define RLX_ALC_FT_BOOST		0
+
+/* RLX_REG_TCON_CFG */
+#define RLX_AUDIO_IP_TCON_RST_N		16
+#define RLX_AUDIO_IP_TCON_EN		15
+#define RLX_ADC_SAMPLE_RATE		11
+#define RLX_DAC_SAMPLE_RATE		5
+#define RLX_DA_CLK_EN			4
+#define RLX_DMIC_CLK_EN			3
+#define RLX_AD_CLK_EN			2
+#define RLX_AD_ANA_CLK_EN		1
+#define RLX_PDM_CLK_EN			0
+
+/* RLX_REG_ADDA_ANA_CFG1 */
+#define RLX_ANA_HP_NORM			8
+#define RLX_ANA_AOUT_NORM		7
+#define RLX_ANA_HP_GAIN_ADJ		4
+#define RLX_ANA_AO_GAIN_ADJ		1
+
+/* RLX_REG_ADDA_ANA_CFG2 */
+#define RLX_ANA_MUX_AOUT_R		27
+#define RLX_ANA_MUX_AOUT_L		25
+#define RLX_ANA_VCM_READY		21
+#define RLX_ANA_POW_INPUTBF		20
+#define RLX_ANA_POW_HPOUT		19
+#define RLX_ANA_POW_VCM			18
+#define RLX_ANA_POW_MBIAS		17
+#define RLX_ANA_POW_DF2SE		16
+#define RLX_ANA_POW_DEPOP_OP		15
+#define RLX_ANA_POW_DEPOP_CORE		14
+#define RLX_ANA_POW_DEPOP_CK		13
+#define RLX_ANA_POW_DEPOP		12
+#define RLX_ANA_POW_DACVREF		11
+#define RLX_ANA_POW_DAC			10
+#define RLX_ANA_POW_AOUT		9
+#define RLX_ANA_POW_ADC			8
+#define RLX_ANA_MUTE_HPOUT_R		7
+#define RLX_ANA_MUTE_HPOUT_L		6
+#define RLX_ANA_MUTE_AOUT_R		5
+#define RLX_ANA_MUTE_AOUT_L		4
+
+/* RLX_REG_ADDA_ANA_CFG3 */
+#define RLX_ANA_AFE_VOL_R		15
+#define RLX_ANA_AFE_VOL_L		12
+#define RLX_ANA_MUX_HPOUT_L		2
+#define RLX_ANA_MUX_HPOUT_R		0
+
+/* RLX_REG_ADDA_OCP_CTL */
+#define RLX_ANA_POW_LDO			0
+
+enum {
+	RLX_CODEC_ANALOG,
+	RLX_CODEC_DIGITAL,
+};
+
+#define RLX_CODEC_RATES		(SNDRV_PCM_RATE_8000 |\
+				 SNDRV_PCM_RATE_11025 |\
+				 SNDRV_PCM_RATE_16000 |\
+				 SNDRV_PCM_RATE_22050 |\
+				 SNDRV_PCM_RATE_32000 |\
+				 SNDRV_PCM_RATE_44100 |\
+				 SNDRV_PCM_RATE_48000 |\
+				 SNDRV_PCM_RATE_KNOT)
+
+#define RLX_CODEC_FORMATS	(SNDRV_PCM_FMTBIT_U8 |\
+				 SNDRV_PCM_FMTBIT_S16_LE |\
+				 SNDRV_PCM_FMTBIT_S24_3LE)
+
+struct rlx_codec_data {
+	struct platform_device *pdev;
+	void __iomem *addr;
+	unsigned long size;
+	u32 base;
+};
+
+#endif

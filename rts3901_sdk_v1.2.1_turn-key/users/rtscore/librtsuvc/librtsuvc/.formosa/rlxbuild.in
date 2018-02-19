@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Ming Qian (ming_qian@realsil.com.cn)
+# JAN. 27, 2016
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_librtsuvc) += rtscore/librtsuvc/librtsuvc
+
+# dependency
+librtsuvc: librtscamkit

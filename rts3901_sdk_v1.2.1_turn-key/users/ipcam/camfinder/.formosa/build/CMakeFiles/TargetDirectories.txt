@@ -1,0 +1,1 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/camfinder/.formosa/build/CMakeFiles/cam_finder.dir

@@ -1,0 +1,14 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/lib/libpemsg.so
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/bin/peacock
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/bin/snapshot_widget
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/bin/del_sdcard_files
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/bin/rtspd
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/bin/record_widget
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/bin/alsad
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/bin/lark
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/bin/start_peacock.sh
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/include/peacock.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/include/pe_message.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/include/lark.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/etc/conf/peacock.json
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/peacock/.formosa/build/etc/rcS.d/S90peacock

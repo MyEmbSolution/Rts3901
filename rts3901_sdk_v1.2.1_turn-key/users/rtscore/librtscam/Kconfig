@@ -1,0 +1,17 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Ming Qian (ming_qian@realsil.com.cn)
+# Mar. 8, 2016
+#
+
+config PACKAGE_librtscamkit
+	tristate "librtscamkit"
+	default n
+	help
+
+config PACKAGE_librtsv4l2
+	tristate "librtsv4l2"
+	default n
+	help
+

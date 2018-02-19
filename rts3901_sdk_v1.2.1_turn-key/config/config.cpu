@@ -1,0 +1,76 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2009
+#
+
+#
+# CPU Features
+#
+menu "Selected CPU feature"
+
+comment "CPU features"
+
+source "config/config.arm"
+source "config/config.mips"
+source "config/config.rlx"
+
+config ARCH_CPU_SMP
+	bool "Enable SMP multicore"
+	default y
+	depends on ARCH_SUPPORT_SMP
+
+config CPU_ENABLE_MIPSMT
+	bool "Enable MIPS MT"
+	default n
+	depends on ARCH_CPU_MIPS34K || ARCH_CPU_MIPS1004K
+
+config CPU_ENABLE_DSP
+	bool "Enable DSP hardware"
+	default n
+	depends on ARCH_CPU_DSP
+
+config CPU_ENABLE_RADIAX
+	bool "Enable RADIAX support"
+	default y
+	depends on ARCH_CPU_RLX5181 || ARCH_CPU_RLX5281
+
+config CPU_ENABLE_FPU
+	bool "Enable FPU hardware"
+	default y
+	depends on ARCH_CPU_FPU
+	help
+	  This option enables FPU hardware support if ARCH_CPU_FPU is set.
+
+	  If unsure, say N here.
+
+config CPU_ENABLE_FPU_EMU
+	bool "Enable FPU emulation"
+	default n
+	depends on !ARCH_CPU_RLX
+	help
+	  This option allows building a kernel with or without the
+	  algorithmics FPU emulator enabled. Turning off this option results
+	  in a kernel which does not catch floating operations exceptions.
+	  Make sure that your toolchain is configured to enable software
+	  floating point emulation in that case.
+
+	  If unsure say N here.
+
+config CPU_ENABLE_TLS
+	bool "Enable TLS support"
+	default y
+	depends on ARCH_CPU_MIPS || ARCH_CPU_RLX
+
+config CPU_ENABLE_WATCH
+	bool "Enable Watchpoint support"
+	default n
+	depends on ARCH_CPU_MIPS
+
+config CPU_ENABLE_WMPU
+	bool "Enable WMPU support"
+	default n
+	depends on ARCH_CPU_RLX4281 || ARCH_CPU_RLX5281
+
+endmenu

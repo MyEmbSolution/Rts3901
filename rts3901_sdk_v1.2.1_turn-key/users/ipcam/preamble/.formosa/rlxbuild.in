@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Miranda Wu (miranda_wu@realsil.com.cn)
+# Jan. 26, 2016
+#
+
+pkg_$(CONFIG_PACKAGE_preamble) += ipcam/preamble
+
+#dependency
+preamble: libsysconf hconf

@@ -1,0 +1,100 @@
+menu "audio driver"
+
+menuconfig PACKAGE_modules_audio
+	tristate "RLX Sound Driver"
+	help
+	  RLX sound driver includes machine driver, platform driver and codec
+	  driver. You can choose intern codec, extern codec or both by the
+	  following configuration.
+
+if PACKAGE_modules_audio
+
+menuconfig SND_SOC_RLX_INTERN_CODEC
+	bool "Intern Codec Supported"
+	default y
+	help
+	  Support intern codec.
+
+if SND_SOC_RLX_INTERN_CODEC
+
+choice
+	prompt "Selected Analog Input SRC"
+
+config SND_SOC_RLX_INTERN_CODEC_AMIC
+	bool "Amic"
+	help
+	  Analog Input SRC -- Amic.
+
+config SND_SOC_RLX_INTERN_CODEC_LINEIN
+	bool "Line-in"
+	help
+	  Analog Input SRC -- Line-in.
+
+endchoice
+
+if SND_SOC_RLX_INTERN_CODEC_AMIC
+
+choice
+	prompt "Selected AMIC POWER"
+
+config SND_SOC_RLX_AMIC_IN_LDO
+	bool "Intern LDO"
+	help
+	  AMIC INTERN POWER.
+
+config SND_SOC_RLX_AMIC_PMU_RTP
+	bool "PMU RTP"
+	help
+	  PMU LDO POWER.
+
+endchoice
+
+if SND_SOC_RLX_AMIC_PMU_RTP
+
+choice
+	prompt "Selected PMU REGULATOR"
+
+config SND_SOC_RLX_AMIC_PMU_RTP_LDO1
+	bool "LDO1"
+	help
+	  RTP LDO1.
+
+endchoice
+
+endif
+
+endif
+
+endif
+
+#TODO: external card codec driver is needed to move
+#      as kernel modules to support external card config
+#menuconfig SND_SOC_RLX_EXTERN_CODEC
+#	bool "Extern Codec Supported"
+#	default n
+#	help
+#	  Support extern codec. You can choose the type of extern codec.
+#
+#if SND_SOC_RLX_EXTERN_CODEC
+#
+#choice
+#	prompt "Selected Extern Codec"
+#
+#config SND_SOC_RLX_RT5651
+#	bool "RT5651"
+#	select SND_SOC_RT5651
+#	help
+#	  Support extern codec -- rt5651.
+#
+#endchoice
+#
+#endif
+
+config SND_SOC_RLX_DEBUG
+	bool "RLX Sound Debug"
+	help
+	  Show rlx sound debug message.
+
+endif
+
+endmenu

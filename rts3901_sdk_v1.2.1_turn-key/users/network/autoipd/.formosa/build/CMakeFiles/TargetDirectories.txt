@@ -1,0 +1,1 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/network/autoipd/.formosa/build/CMakeFiles/autoipd.dir

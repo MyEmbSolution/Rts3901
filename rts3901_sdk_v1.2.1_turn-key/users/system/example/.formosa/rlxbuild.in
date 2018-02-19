@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Jan. 10, 2011
+#
+
+pkg_$(CONFIG_PACKAGE_example) += system/example
+
+# dependency
+example: cunit libmtd

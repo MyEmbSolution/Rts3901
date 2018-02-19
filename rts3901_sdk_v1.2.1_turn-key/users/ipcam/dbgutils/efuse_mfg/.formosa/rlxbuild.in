@@ -1,0 +1,9 @@
+# Realtek Semiconductor Corp.
+#
+# Jim Cao (jim_cao@realsil.com.cn)
+# Jun. 30, 2015
+#
+# build target
+
+pkg_$(CONFIG_PACKAGE_dbgutils_efuse_mfg) += ipcam/dbgutils/efuse_mfg
+

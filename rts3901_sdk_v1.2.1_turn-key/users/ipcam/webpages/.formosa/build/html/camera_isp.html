@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Camera ISP</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-switch.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid main-content-bg">
+      <div class="row full-fill">
+        <div class="col-md-2 col-sm-3 param_menu">
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_flicker"></div>
+              <div class="param_menu_text">Anti-Flicker</div>
+            </div>
+            <div class="param_menu_control"><select id="antiFlicker"></select></div>
+          </div>
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_brightness"></div>
+              <div class="param_menu_text">Brightness</div>
+            </div>
+            <div class="param_menu_control range-style">
+              <input id="brightness" type="range"><span>0</span>
+            </div>
+          </div>
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_saturation"></div>
+              <div class="param_menu_text">Saturation</div>
+            </div>
+            <div class="param_menu_control range-style">
+              <input id="saturation" type="range"><span>0</span>
+            </div>
+          </div>
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_gamma"></div>
+              <div class="param_menu_text">Gamma</div>
+            </div>
+            <div class="param_menu_control range-style">
+              <input id="gamma" type="range"><span>0</span>
+            </div>
+          </div>
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_contrast"></div>
+              <div class="param_menu_text">Contrast</div>
+            </div>
+            <div class="param_menu_control range-style">
+              <input id="contrast" type="range"><span>0</span>
+            </div>
+          </div>
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_sharpness"></div>
+              <div class="param_menu_text">Sharpness</div>
+            </div>
+            <div class="param_menu_control range-style">
+              <input id="sharpness" type="range"><span>0</span>
+            </div>
+          </div>
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_mirror"></div>
+              <div class="param_menu_text">Mirror</div>
+            </div>
+            <div class="param_menu_control">
+              <input id="mirror" type="checkbox"  name="mirror">
+            </div>
+          </div>
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_flip"></div>
+              <div class="param_menu_text">Flip</div>
+            </div>
+            <div class="param_menu_control">
+              <input id="flip" type="checkbox">
+            </div>
+          </div>
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_rotate"></div>
+              <div class="param_menu_text">Rotate</div>
+            </div>
+            <div class="param_menu_control">
+              <select id="rotate">
+                <option value="0">Normal</option>
+                <option value="1">Right</option>
+                <option value="2">Left</option>
+              </select>
+            </div>
+          </div>
+          <div class="param_menu_entry" id="wdrEntry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_wdr"></div>
+              <div class="param_menu_text">WDR Mode</div>
+            </div>
+            <div class="param_menu_control">
+              <select id="wdrMode">
+                <option value="0">OFF</option>
+                <option value="1">Weak</option>
+                <option value="2">Medium</option>
+                <option value="3">Strong</option>
+                <option value="4">Manual</option>
+              </select>
+              <div class="range-style" id="manualWdrLevel" style="display:none;margin-top:15px;">
+                <input id="wdrLevel" type="range"><span>0</span>
+              </div>
+            </div>
+          </div>
+          <div class="param_menu_entry" id="param_menu_entry_ldc" style="display: none;">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_ldc"></div>
+              <div class="param_menu_text">LDC</div>
+            </div>
+            <div class="param_menu_control">
+              <input id="ldc" type="checkbox">
+            </div>
+          </div>
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_3dnr"></div>
+              <div class="param_menu_text">3DNR</div>
+            </div>
+            <div class="param_menu_control">
+              <input id="3dnr" type="checkbox">
+            </div>
+          </div>
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_dehaze"></div>
+              <div class="param_menu_text">Dehaze</div>
+            </div>
+            <div class="param_menu_control">
+              <input id="dehaze" type="checkbox">
+            </div>
+          </div>
+          <div class="param_menu_entry">
+            <div>
+            <div class="param_menu_icon camera_isp_icon_flicker"></div>
+              <div class="param_menu_text">IR Mode</div>
+            </div>
+            <div class="param_menu_control">
+              <input id="ir" type="checkbox">
+            </div>
+          </div>
+          <!--
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_corridormode"></div>
+              <div class="param_menu_text">Corridor Mode</div>
+            </div>
+            <div class="param_menu_control">
+              <input id="corridor" type="checkbox">
+            </div>
+          </div>
+          -->
+          <div class="param_menu_entry">
+            <div>
+              <div class="param_menu_icon camera_isp_icon_awb"></div>
+              <div class="param_menu_text">White Balance</div>
+            </div>
+            <div class="param_menu_control">
+              <input id="autoWhiteBalance" type="checkbox">
+              <div class="range-style" id="manualWhiteBalance" style="display:none;margin-top:15px;">
+                <input id="whiteBalance" type="range"><span>0</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-sm btn-danger" id="btn_reset" style="position:absolute; right: 15px;">Reset</button>
+          </div>
+        </div>
+        <div class="col-md-10 col-sm-9 sub-content">
+          <div class="video" id="video"></div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/camera_isp.js"></script>
+  </body>
+</html>

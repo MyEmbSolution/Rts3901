@@ -1,0 +1,4 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/aplayer/.formosa/build/bin/aplayer
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/aplayer/.formosa/build/bin/areceiver
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/aplayer/.formosa/build/bin/aplayer_test
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/aplayer/.formosa/build/etc/rcS.d/S91aplayer

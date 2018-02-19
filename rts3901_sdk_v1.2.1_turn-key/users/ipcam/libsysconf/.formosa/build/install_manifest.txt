@@ -1,0 +1,5 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libsysconf/.formosa/build/include/sysconf.h
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libsysconf/.formosa/build/bin/entropy
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libsysconf/.formosa/build/lib/libsysconf.so
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libsysconf/.formosa/build/lib/libsysconf.a
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libsysconf/.formosa/build/bin/check_cfg

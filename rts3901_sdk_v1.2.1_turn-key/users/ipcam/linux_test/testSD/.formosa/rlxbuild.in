@@ -1,0 +1,8 @@
+#
+# Realtek Semiconductor Corp.
+#
+# code by shanjian_fei 2015.8.5
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_linuxtest_testSD) += ipcam/linux_test/testSD

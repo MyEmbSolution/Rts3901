@@ -1,0 +1,18 @@
+comment "rts3901"
+choice
+prompt "Selected target configuration"
+default TARGET_ASIC_HD_RTS3901
+
+config TARGET_FPGA_RTS3901
+        bool "FPGA"
+
+config TARGET_ASIC_MINIMAL
+	bool "Minimal Setting"
+
+config TARGET_ASIC_FHD_RTS3901
+        bool "RTS3901 FHD Preview"
+
+config TARGET_ASIC_HD_RTS3901
+        bool "RTS3901 HD Preview"
+
+endchoice

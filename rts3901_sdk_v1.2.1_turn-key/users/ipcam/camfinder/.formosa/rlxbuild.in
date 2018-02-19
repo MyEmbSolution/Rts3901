@@ -1,0 +1,11 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Miranda Wu (miranda_wu@realsil.com.cn)
+# Jan. 06, 2015
+#
+
+pkg_$(CONFIG_PACKAGE_camfinder) += ipcam/camfinder
+
+#dependency
+camfinder: libauth libsysconf librtsnm

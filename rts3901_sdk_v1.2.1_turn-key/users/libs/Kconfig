@@ -1,0 +1,130 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2008
+#
+
+menu "Libraries"
+
+config PACKAGE_binutils
+	tristate "binutils"
+	default n
+	help
+	  Include binutils-2.19, bfd, libiberty and opcodes. objdump will be
+	  installed.
+
+config PACKAGE_elfutils
+	tristate "elfutils"
+	default n
+	select PACKAGE_gettext
+	select PACKAGE_zlib
+	help
+	  elfutils
+
+config PACKAGE_libaio
+	tristate "libaio"
+	default n
+	help
+	  libaio
+
+config PACKAGE_libdwarf
+	tristate "libdwarf"
+	default n
+	select PACKAGE_elfutils
+	help
+	  libdwarf
+
+config PACKAGE_gettext
+	tristate "gettext"
+	default n
+	select PACKAGE_libiconv
+	help
+	  gettext
+
+config PACKAGE_libiconv
+	tristate "libiconv"
+	default n
+	help
+	  iconv library
+
+config PACKAGE_openssl
+	bool "openssl"
+	default n
+	select PACKAGE_zlib
+	help
+	  This is the openssl library.
+
+config PACKAGE_libpng
+	bool "libpng"
+	default n
+	select PACKAGE_zlib
+	help
+	  This is the png library, only for demonstration.
+
+config PACKAGE_libusb
+	tristate "libusb"
+	default n
+	help
+	  This is the libusb library.
+
+config PACKAGE_zlib
+	bool "zlib"
+	default n
+	help
+	  This is the zlib compression library.
+
+config PACKAGE_lzo
+	bool "lzo"
+	default n
+	help
+	  LZO is a portable lossless data compression library written in ANSI C.
+
+config PACKAGE_libuuid
+	bool "libuuid"
+	default n
+	help
+	  The libuuid library is used to generate unique identifiers for objects
+	  that may be accessible beyond the local system.
+
+config PACKAGE_libpopt
+	tristate "libpopt"
+	default n
+	help
+	  libpopt
+
+config PACKAGE_jsonc
+	tristate "json-c"
+	default n
+	help
+	  json-c
+
+config PACKAGE_alsalib
+	tristate "alsa-lib"
+	default n
+	help
+	  alsa-lib
+
+config PACKAGE_pcre
+	tristate "pcre"
+	default n
+	help
+	  The Perl Compatible Regular Expressions (PCRE) library
+
+config PACKAGE_cunit
+	tristate "cunit"
+	default n
+	help
+	  A Unit Testing Framework for C
+
+config PACKAGE_opencore_amr
+	tristate "opencore-amr"
+	default n
+	help
+	  library opencore-amr
+
+config PACKAGE_libmtd
+	tristate "libmtd"
+	default n
+
+endmenu

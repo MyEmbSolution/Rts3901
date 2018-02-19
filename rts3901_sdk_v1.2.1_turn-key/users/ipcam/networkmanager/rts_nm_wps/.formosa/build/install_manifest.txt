@@ -1,0 +1,2 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/networkmanager/rts_nm_wps/.formosa/build/bin/nm_wps
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/networkmanager/rts_nm_wps/.formosa/build/etc/rcS.d/S51nm_wps

@@ -1,0 +1,2 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/CMakeFiles/init_camera.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/.formosa/build/CMakeFiles/sync_osd_time.dir

@@ -1,0 +1,22 @@
+menu "Benchmarks"
+
+config PACKAGE_iperf
+	tristate "iperf"
+	default n
+	help
+
+config PACKAGE_iozone
+	tristate "iozone"
+	default n
+	help
+	  Enable iozone test suite
+
+config PACKAGE_fio
+	tristate "fio"
+	default n
+	select PACKAGE_libaio
+	select PACKAGE_zlib
+	help
+	  Enable flexible I/O tester synthetic benchmark
+
+endmenu

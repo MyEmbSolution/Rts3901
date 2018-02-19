@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../include/rts_errno.h
+
+../../include/rts_linux_lock.h
+sys/ipc.h
+-
+
+../../include/rts_log.h
+stdarg.h
+-
+
+../../include/rts_queue.h
+
+../../include/rtscamkit.h
+stdint.h
+-
+stddef.h
+-
+sys/types.h
+-
+rts_errno.h
+-
+rts_log.h
+-
+rts_linux_lock.h
+-
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/test/test_queue.c
+stdio.h
+-
+stdlib.h
+-
+rtscamkit.h
+-
+rts_queue.h
+-
+

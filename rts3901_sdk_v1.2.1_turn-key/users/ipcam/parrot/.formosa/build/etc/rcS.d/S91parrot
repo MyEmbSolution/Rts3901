@@ -1,0 +1,3 @@
+#!/bin/sh
+
+parrot -v 0x10 &

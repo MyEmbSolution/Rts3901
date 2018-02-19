@@ -1,0 +1,4 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libsysconf/.formosa/build/CMakeFiles/check_cfg.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libsysconf/.formosa/build/CMakeFiles/entropy.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libsysconf/.formosa/build/CMakeFiles/sysconf_dynamic.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/libsysconf/.formosa/build/CMakeFiles/sysconf_static.dir

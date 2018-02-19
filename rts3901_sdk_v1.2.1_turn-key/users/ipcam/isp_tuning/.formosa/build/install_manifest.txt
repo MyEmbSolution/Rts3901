@@ -1,0 +1,2 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/isp_tuning/.formosa/build/bin/tuning-server
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/isp_tuning/.formosa/build/etc/rcS.d/S99isptuning

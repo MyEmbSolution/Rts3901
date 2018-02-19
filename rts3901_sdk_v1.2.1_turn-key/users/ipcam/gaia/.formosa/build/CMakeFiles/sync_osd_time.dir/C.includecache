@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/gaia/sync_osd_time.c
+unistd.h
+-
+sys/time.h
+-
+time.h
+-
+syslog.h
+-
+stdio.h
+-
+octopus/rts_cam.h
+-
+sysconf.h
+-
+

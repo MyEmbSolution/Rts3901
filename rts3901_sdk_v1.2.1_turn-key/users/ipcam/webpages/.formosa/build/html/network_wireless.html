@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Network Wireless</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-switch.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid main-content-bg">
+      <div class="row">
+        <div class="col-md-offset-1 col-xs-offset-1 col-md-6 col-xs-6"><h3>Wireless Setting</h3></div>
+        <div class="col-md-4 col-xs-4">
+          <ul class="nav nav-tabs nav-justified" role="tablist">
+            <li role="presentation" class="active"><a href="#tab_station" aria-controls="tab_station" role="tab" data-toggle="tab"><strong>Station</strong></a></li>
+            <li role="presentation"><a href="#tab_softAp" aria-controls="tab_softAp" role="tab" data-toggle="tab"><strong>SoftAP</strong></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="tab_station">
+          <div class="tab-first-row">
+            <div class="row">
+              <div class="col-md-offset-1 col-xs-offset-1 col-md-2 col-xs-2"><strong>Enable:</strong></div>
+              <div class="col-md-8 col-xs-8"><input type="checkbox" id="station_enable"></div>
+            </div>
+          </div>
+          <div class="tab-second-row">
+            <div class="row fit-height">
+              <div class="col-md-offset-1 col-xs-offset-1 col-md-5 col-xs-5 fit-height">
+                <div class="ap-list"><table id="station_apList"><tbody></tbody></table></div>
+                <button class="btn btn-primary btn-sm" id="station_scan">Scan</button>
+              </div>
+              <div class="col-md-5 col-xs-5">
+                <table class="table column2">
+                  <thead><tr><th colspan="2">Access Point Info:</th></tr></thead>
+                  <tbody>
+                    <tr><th>BSSID</th><td id="station_bssid"></td></tr>
+                    <tr><th>Channel</th><td id="station_channel"></td></tr>
+                    <tr><th>Signal</th><td id="station_signal"></td></tr>
+                    <tr><th>Flag</th><td id="station_flag"></td></tr>
+                  </tbody>
+                </table>
+                <table class="table column2">
+                  <thead><tr><th colspan="2">Connect Info:</th></tr></thead>
+                  <tbody>
+                    <tr><th>WPS</th><td><input id="station_wpsEnable" type="checkbox"></td></tr>
+                    <tr class="station_wps" style="display: none;"><td colspan="2">PBC<input type="radio" name="station_wpsMode" id="station_wpsPbc" checked></td></tr>
+                    <tr class="station_wps" style="display: none;"><td colspan="2">PIN<input type="radio" name="station_wpsMode"><input id="station_wpsServerPin" readonly><button class="btn btn-primary btn-xs" id="station_wpsGenerate">Generate</button></td></tr>
+                    <tr class="station_wps" style="display: none;"><td colspan="2">Router PIN<input type="radio" name="station_wpsMode"><input id="station_wpsClientPin"></td></tr>
+                    <tr class="station_noWps"><th>ESSID</th><td><input id="station_essid"></td></tr>
+                    <tr class="station_noWps"><th>Auth</th><td><select id="station_auth"><option value="0" selected>OPEN</option><option value="1">WEP</option><option value="2">WPA</option><option value="3">WPA2</option><option value="4">AUTO</option></select></td></tr>
+                    <tr class="station_noWps" id="station_wepTr" style="display:none"><th>Index</th><td><select id="station_index"><option>1</option><option>2</option><option>3</option><option>4</option></select></td></tr>
+                    <tr class="station_noWps" id="station_wpaTr" style="display:none"><th>Cipher Suite</th><td><select id="station_cipher"><option value="0">AES</option><option value="1">TKIP</option><option value="2">AUTO</option></select></td></tr>
+                    <tr class="station_noWps" id="station_passwordTr" style="display:none"><th>Password</th><td><div class="input-password"><input type="password" id="station_password"><div class="image-eye-off eye_ctrl">&nbsp</div></div></td></tr>
+                  </tbody>
+                </table>
+                <div>
+                    <button class="btn btn-primary btn-sm" id="station_save" style="position: absolute;right: 0px;">Connect</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="tab_softAp">
+          <div class="tab-first-row">
+            <div class="row">
+              <div class="col-md-offset-1 col-xs-offset-1 col-md-2 col-xs-2"><strong>Enable:</strong></div>
+              <div class="col-md-8 col-xs-8"><input type="checkbox" id="softAp_enable"></div>
+            </div>
+          </div>
+          <div class="tab-second-row">
+            <div class="row">
+              <div class="col-md-offset-1 col-xs-offset-1 col-md-10 col-xs-10">
+                <table class="table column2">
+                  <thead>
+                    <tr><th colspan="2">Wifi Setting</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>ESSID</th><td><input id="softAp_essid"></td></tr>
+                    <tr><th>Hide</th><td><input type="checkbox" id="softAp_hide"></td></tr>
+                    <tr><th>Protocol</th><td><select id="softAp_protocol"><option value="0">802.11b</option><option value="1">802.11b/g</option><option value="2">802.11b/g/n</option></select></td></tr>
+                    <tr><th>Channel</th><td><select id="softAp_channel"></select></td></tr>
+                    <tr><th>Auth</th><td><select id="softAp_auth"><option value="0" selected>OPEN</option><option value="1">WEP</option><option value="2">WPA</option><option value="3">WPA2</option><option value="4">AUTO</option></select></td></tr>
+                    <tr id="softAp_wepTr" style="display:none"><th>Index</th><td><select id="softAp_index"><option>1</option><option>2</option><option>3</option><option>4</option></select></td></tr>
+                    <tr id="softAp_wpaTr" style="display:none"><th>Cipher</th><td><select id="softAp_cipher"><option value="0">AES</option><option value="1">TKIP</option><option value="2">AUTO</option></select></td></tr>
+                    <tr id="softAp_passwordTr" style="display:none"><th>Password</th><td><div class="input-password"><input type="password" id="softAp_password"><div class="image-eye-off eye_ctrl">&nbsp</div></div></td></tr>
+                  </tbody>
+                </table>
+                <div>
+                  <button class="btn btn-primary btn-sm" id="softAp_save" style="position: absolute;right: 0px;">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="waitModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="text-danger" id="modalLabel">This operation will reboot device to take effect!</h4>
+          </div>
+          <div class="modal-body">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-danger active" id="rebootProgress" role="progressbar" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+            <button type="button" class="btn btn-primary" id="doJob">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/network_wireless.js"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/test/CMakeFiles/my_kill.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/test/CMakeFiles/rts_errno.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/src/CMakeFiles/rtscamkit.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/src/CMakeFiles/rtscamkit_static.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/test/CMakeFiles/test_mem.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/test/CMakeFiles/test_pthreadpool.dir
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/rtscore/librtscam/librtscamkit/.formosa/build/test/CMakeFiles/test_queue.dir

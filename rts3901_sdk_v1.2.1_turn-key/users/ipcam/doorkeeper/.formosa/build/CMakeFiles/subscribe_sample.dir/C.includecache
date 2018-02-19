@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/doorkeeper/subscribe_sample.c
+stdio.h
+-
+sys/socket.h
+-
+sys/un.h
+-
+string.h
+-
+unistd.h
+-
+signal.h
+-
+stdlib.h
+-
+

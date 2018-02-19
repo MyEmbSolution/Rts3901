@@ -1,0 +1,1 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/isp_tuning/.formosa/build/CMakeFiles/tuning-server.dir

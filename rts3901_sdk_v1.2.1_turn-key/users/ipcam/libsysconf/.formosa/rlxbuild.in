@@ -1,0 +1,12 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Hurray Niu (hurray_niu@realsil.com.cn)
+# May. 21, 2015
+#
+
+# build target
+pkg_$(CONFIG_PACKAGE_libsysconf) += ipcam/libsysconf
+
+#dependency
+libsysconf: json-c

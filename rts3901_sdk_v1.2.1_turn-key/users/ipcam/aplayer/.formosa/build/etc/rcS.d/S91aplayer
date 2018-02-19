@@ -1,0 +1,9 @@
+#!/bin/sh
+#if [ -x /bin/areceiver ]; then
+#	areceiver&
+#fi
+
+#if [ -x /bin/aplayer ]; then
+#	aplayer &
+#fi
+

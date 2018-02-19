@@ -1,0 +1,19 @@
+{
+	"ftp":[
+		{
+			"enabled":"1",
+			"ip":"192.168.11.6",
+			"port":"21",
+			"account":"elvis",
+			"password":"elvis"
+		},
+		{
+			"enabled":"0",
+			"ip":"",
+			"port":"",
+			"account":"",
+			"password":""
+
+		},
+	]
+}

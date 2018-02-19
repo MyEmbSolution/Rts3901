@@ -1,0 +1,31 @@
+config OCTOPUS_PLUGIN_CAM
+	bool "plugin camera"
+	select PACKAGE_peacock
+	select PACKAGE_libmtd
+	default n
+
+config OCTOPUS_PLUGIN_CAM_UNIT_TEST
+	bool "plugin camera unit test"
+	depends on OCTOPUS_PLUGIN_CAM
+	select PACKAGE_cunit
+	select PACKAGE_jsonc
+	select PACKAGE_peacock
+	default n
+
+config OCTOPUS_PLUGIN_NM
+	bool "plugin network manager"
+	default n
+
+if (OCTOPUS_PLUGIN_NM)
+config FEATURE_IPV6
+	bool "Enable IPv6 support"
+	default n
+	help
+	  add ipv6 interface support for webpages
+	  nm_cfg & nm_init.
+endif
+
+config OCTOPUS_PLUGIN_UVC
+	bool  "plugin UVC"
+	select PACKAGE_peacock
+	default n

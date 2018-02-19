@@ -1,0 +1,3 @@
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/networkmanager/rts_nm_init/.formosa/build/bin/nm_init
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/networkmanager/rts_nm_init/.formosa/build/etc/conf/network.json
+/home/tony_nie/ipcam/4dpocket/release/.build/build/users/ipcam/networkmanager/rts_nm_init/.formosa/build/etc/rcS.d/S50nm_init

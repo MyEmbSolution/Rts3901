@@ -1,0 +1,108 @@
+#
+# Automatically generated make config: don't edit
+# RLX Linux MCONF
+#
+
+#
+# Base system
+#
+CONFIG_PACKAGE_busybox=y
+# CONFIG_PACKAGE_example is not set
+CONFIG_PACKAGE_scripts=y
+CONFIG_PACKAGE_scripts_automount=y
+CONFIG_PACKAGE_scripts_udhcpc=y
+
+#
+# Libraries
+#
+# CONFIG_PACKAGE_binutils is not set
+# CONFIG_PACKAGE_elfutils is not set
+# CONFIG_PACKAGE_libaio is not set
+# CONFIG_PACKAGE_libdwarf is not set
+# CONFIG_PACKAGE_gettext is not set
+# CONFIG_PACKAGE_libiconv is not set
+CONFIG_PACKAGE_openssl=y
+# CONFIG_PACKAGE_libpng is not set
+# CONFIG_PACKAGE_libusb is not set
+CONFIG_PACKAGE_zlib=y
+# CONFIG_PACKAGE_lzo is not set
+# CONFIG_PACKAGE_libuuid is not set
+# CONFIG_PACKAGE_libpopt is not set
+CONFIG_PACKAGE_jsonc=y
+CONFIG_PACKAGE_alsalib=y
+# CONFIG_PACKAGE_pcre is not set
+# CONFIG_PACKAGE_cunit is not set
+# CONFIG_PACKAGE_fcgi is not set
+# CONFIG_PACKAGE_3rdparty is not set
+
+#
+# Network applications
+#
+# CONFIG_PACKAGE_lighttpd is not set
+# CONFIG_PACKAGE_dropbear is not set
+# CONFIG_PACKAGE_iptables is not set
+# CONFIG_PACKAGE_iproute2 is not set
+# CONFIG_PACKAGE_portmap is not set
+# CONFIG_PACKAGE_samba is not set
+# CONFIG_PACKAGE_stunnel is not set
+# CONFIG_PACKAGE_ethtool is not set
+# CONFIG_PACKAGE_wpa_supplicant_hostapd is not set
+# CONFIG_PACKAGE_super_link is not set
+
+#
+# Darkside Applications
+#
+# CONFIG_PACKAGE_duma is not set
+# CONFIG_PACKAGE_gdbserver is not set
+# CONFIG_PACKAGE_ltrace is not set
+# CONFIG_PACKAGE_lttng is not set
+# CONFIG_PACKAGE_oprofile is not set
+# CONFIG_PACKAGE_perf is not set
+# CONFIG_PACKAGE_strace is not set
+# CONFIG_PACKAGE_systemtap is not set
+# CONFIG_PACKAGE_valgrind is not set
+CONFIG_PACKAGE_dbgutils=y
+CONFIG_PACKAGE_dbgutils_iomem=y
+# CONFIG_PACKAGE_dbgutils_uphymdio is not set
+CONFIG_PACKAGE_dbgutils_veridisk=y
+CONFIG_PACKAGE_dbgutils_dbgisp=y
+CONFIG_PACKAGE_dbgutils_sgctrl=y
+# CONFIG_PACKAGE_dbgutils_ptz is not set
+
+#
+# Utils
+#
+# CONFIG_PACKAGE_adb is not set
+CONFIG_PACKAGE_neuralyzer=y
+# CONFIG_PACKAGE_iwlib is not set
+CONFIG_PACKAGE_lrzsz=y
+# CONFIG_PACKAGE_mptest is not set
+# CONFIG_PACKAGE_prelink is not set
+# CONFIG_PACKAGE_usbutils is not set
+# CONFIG_PACKAGE_mtdutils is not set
+# CONFIG_PACKAGE_alsautils is not set
+# CONFIG_PACKAGE_linuxtest is not set
+
+#
+# Benchmarks
+#
+# CONFIG_PKG_BENCH_CPU is not set
+# CONFIG_PACKAGE_whetstone is not set
+# CONFIG_PKG_BENCH_NET is not set
+# CONFIG_PKG_BENCH_IO is not set
+# CONFIG_PKG_BENCH_SYSTEM is not set
+# CONFIG_PKG_BENCH_MEM is not set
+# CONFIG_PACKAGE_linpack is not set
+
+#
+# IPCam packages
+#
+# CONFIG_PACKAGE_ffmpeg is not set
+# CONFIG_PACKAGE_peacock is not set
+# CONFIG_PACKAGE_pangolin is not set
+CONFIG_PACKAGE_h1_encoder=y
+CONFIG_H264_IRQ=y
+# CONFIG_H264_POLLING is not set
+# CONFIG_PACKAGE_webpages is not set
+CONFIG_PACKAGE_librtsisp=y
+CONFIG_PACKAGE_rtstream=y

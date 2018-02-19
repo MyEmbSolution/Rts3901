@@ -1,0 +1,8 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Jim Cao (jim_cao@realsil.com.cn)
+# Aug. 4, 2015
+#
+
+pkg_$(CONFIG_PACKAGE_libpcap) += network/libpcap

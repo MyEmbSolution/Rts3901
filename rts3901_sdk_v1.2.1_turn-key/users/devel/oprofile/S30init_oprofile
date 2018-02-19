@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mkdir /dev/oprofile -p > /dev/null
+mount -t oprofilefs nodev /dev/oprofile > /dev/null
+mount -t ramfs ramfs /root > /dev/null

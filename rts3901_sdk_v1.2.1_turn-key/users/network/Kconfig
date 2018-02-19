@@ -1,0 +1,108 @@
+#
+# Realtek Semiconductor Corp.
+#
+# Tony Wu (tonywu@realtek.com)
+# Dec. 7, 2008
+#
+
+menu "Network Applications"
+
+config PACKAGE_lighttpd
+	tristate "lighttpd"
+	default n
+	select PACKAGE_pcre
+	select PACKAGE_libauth
+	help
+	  Lighttpd web server
+
+config PACKAGE_iptables
+	tristate "iptables"
+	default n
+
+config PACKAGE_curl
+	tristate "curl"
+	default n
+
+config PACKAGE_tcpdump
+	bool "tcpdump"
+	default n
+	select PACKAGE_libpcap
+	help
+	  dump traffic on a network
+
+config PACKAGE_libpcap
+	bool "libpcap"
+	default n
+	help
+	  Packet Capture library
+
+config PACKAGE_iproute2
+	tristate "iproute2"
+	default n
+
+config PACKAGE_samba
+	tristate "samba"
+	default n
+
+config PACKAGE_ppp
+	bool "ppp"
+	default n
+	help
+	  ppp (Paul's PPP Package) is an open source
+	  package which implements the Point-to-Point
+	  Protocol (PPP) on Linux and Solaris systems.
+
+config PACKAGE_ethtool
+	tristate "ethtool"
+	default n
+
+config PACKAGE_ifstat
+	bool "ifstat"
+	default n
+	help
+	  Ifstat is a little tool to report interface
+	  activity, just like iostat/vmstat do for
+	  other system statistics.
+
+config PACKAGE_wpa_supplicant_hostapd
+	tristate "wpa_supplicant_hostapd"
+	default n
+
+if PACKAGE_wpa_supplicant_hostapd
+
+config PACKAGE_hostapd
+	tristate "hostapd"
+	select PACKAGE_openssl
+	default n
+config PACKAGE_supplicant
+	tristate "wpa_supplicant"
+	select PACKAGE_openssl
+	default n
+
+endif
+
+config PACKAGE_dnrd
+	tristate "dnrd"
+	default n
+
+config PACKAGE_miniupnpd
+	tristate "miniupnpd"
+	select PACKAGE_librtsnm
+	default y
+
+config PACKAGE_mDNSResponder
+	tristate "mDNSResponder"
+	select PACKAGE_librtsnm
+	default y
+
+config PACKAGE_autoipd
+	tristate "autoipd"
+	default y
+
+config PACKAGE_rtwpriv
+	tristate "rtwpriv"
+	default n
+config PACKAGE_wireless_tool
+	tristate "wireless_tool"
+	default n
+endmenu
